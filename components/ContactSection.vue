@@ -10,12 +10,13 @@
         <div>
           <div class="badge mb-4">Get In Touch</div>
           <h2 class="section-title mb-6">
-            Let's Build Something
-            <span class="gradient-text"> Great Together</span>
+            Hire a Python &amp; Automation
+            <span class="gradient-text"> Developer Today</span>
           </h2>
           <p class="text-slate-500 leading-relaxed mb-10">
-            Have a project in mind? Tell me about it and I'll get back to you within 24 hours
-            with a detailed scope and quote. No commitment required.
+            Need a web scraping expert, full-stack developer, or voice AI engineer? Tell me about
+            your project and I'll respond within 24 hours with a detailed scope and quote.
+            No commitment required.
           </p>
 
           <!-- Contact options -->

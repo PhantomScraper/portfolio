@@ -27,11 +27,11 @@
 
           <!-- Subtext -->
           <p class="text-lg sm:text-xl text-slate-500 leading-relaxed max-w-lg">
-            Full-stack engineer specializing in <strong class="text-slate-700">web scraping</strong>,
-            <strong class="text-slate-700">automation pipelines</strong>,
+            Python &amp; full-stack engineer specializing in <strong class="text-slate-700">web scraping</strong>,
+            <strong class="text-slate-700">browser automation</strong>,
             <strong class="text-slate-700">API integration</strong>, and
             <strong class="text-slate-700">voice AI</strong>.
-            Turning complex data challenges into clean, reliable systems.
+            Delivering clean, scalable <strong class="text-slate-700">data pipelines</strong> and web applications.
           </p>
 
           <!-- Typing indicator -->

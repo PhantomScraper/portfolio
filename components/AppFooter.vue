@@ -27,8 +27,9 @@
             <span class="font-bold text-white text-lg">Vuong Phan</span>
           </div>
           <p class="text-sm leading-relaxed mb-6">
-            Full-stack engineer specializing in web scraping, automation, and voice AI.
-            Building reliable systems that scale.
+            Freelance Python developer specializing in web scraping, browser automation, API
+            integration, full-stack development, and voice AI. Top Rated on Upwork with 6,300+
+            hours and 5.0 rating.
           </p>
           <!-- Social links -->
           <div class="flex items-center gap-3">
@@ -97,7 +98,7 @@
           © {{ new Date().getFullYear() }} Vuong Phan. All rights reserved.
         </p>
         <p class="text-xs text-slate-600">
-          Web Scraping Expert · Automation Engineer · Full-Stack Developer
+          Python Web Scraping · Browser Automation · API Integration · Full-Stack Developer · Voice AI
         </p>
       </div>
     </div>

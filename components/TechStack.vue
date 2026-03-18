@@ -8,8 +8,8 @@
       <div class="text-center mb-12">
         <div class="badge mx-auto mb-4">Tech Stack</div>
         <h2 class="section-title">
-          Tools &
-          <span class="gradient-text"> Technologies</span>
+          Scraping & Automation
+          <span class="gradient-text"> Tech Stack</span>
         </h2>
       </div>
 

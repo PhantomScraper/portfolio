@@ -9,12 +9,12 @@
       <div class="text-center mb-16">
         <div class="badge mx-auto mb-4">What I Do</div>
         <h2 class="section-title">
-          End-to-End
+          Python Web Scraping &
           <span class="gradient-text"> Automation Services</span>
         </h2>
         <p class="section-subtitle mx-auto text-center">
-          From scraping millions of records to building full-stack apps and voice AI — I deliver
-          robust, scalable solutions tailored to your needs.
+          From scraping millions of records and bypassing anti-bot protection to building full-stack
+          apps and voice AI, scalable, reliable solutions for any data challenge.
         </p>
       </div>
 
@@ -91,51 +91,51 @@ const IconMic = defineComponent({
 const services = [
   {
     title: 'Web Scraping & Data Extraction',
-    description: 'Extract structured and unstructured data from any website at scale — product listings, pricing, reviews, or raw HTML content. Handles dynamic pages, login-protected sites, and exports to CSV, JSON, Excel or directly into your database.',
+    description: 'Extract structured data from any website at scale, e-commerce product listings, price monitoring, competitor data, lead generation, real estate, and job boards. Handles dynamic JS pages, login-protected sites, and pagination. Exports to CSV, JSON, Excel, or directly into your database.',
     icon: IconScraping,
     iconBg: 'bg-blue-50',
     iconColor: 'text-blue-600',
-    tags: ['Playwright', 'Scrapy', 'Python', 'Puppeteer', 'Selenium'],
+    tags: ['Python', 'Playwright', 'Scrapy', 'Puppeteer', 'Selenium', 'BeautifulSoup', 'aiohttp'],
   },
   {
     title: 'Anti-Bot Bypass & Stealth',
-    description: 'Navigate CAPTCHA, Cloudflare, Akamai, DataDome and other bot detection systems with fingerprint spoofing, residential proxies, and browser stealth techniques. Reliable data access even on the most heavily protected websites.',
+    description: 'Navigate Cloudflare, Akamai, DataDome, PerimeterX, and CAPTCHA systems with fingerprint spoofing, residential proxies, and headless browser stealth. Reliable, uninterrupted data access even on the most aggressively protected websites.',
     icon: IconShield,
     iconBg: 'bg-orange-50',
     iconColor: 'text-orange-600',
-    tags: ['Captcha Solving', 'Fingerprint Spoofing', 'Proxies', '2Captcha'],
+    tags: ['CAPTCHA Solving', 'Fingerprint Spoofing', 'Residential Proxy', 'Rotating Proxy', '2Captcha'],
   },
   {
     title: 'API Integration & Reverse Engineering',
-    description: 'Integrate third-party APIs and reverse-engineer unofficial or undocumented APIs for seamless data exchange. Build invoice pipelines, order tracking systems, and automated data sync across platforms — REST, GraphQL, WebSocket, any protocol.',
+    description: 'Integrate third-party APIs and reverse-engineer unofficial or undocumented APIs for seamless data exchange. Build invoice pipelines, order tracking systems, and automated data sync across platforms, REST, GraphQL, WebSocket, any protocol.',
     icon: IconApi,
     iconBg: 'bg-green-50',
     iconColor: 'text-green-600',
-    tags: ['REST API', 'GraphQL', 'WebSocket', 'OAuth', 'Postman'],
+    tags: ['REST API', 'GraphQL', 'WebSocket', 'OAuth', 'Webhook', 'API Scraping'],
   },
   {
     title: 'Full-Stack Web Development',
-    description: 'End-to-end web applications with modern frameworks — responsive frontends, robust backends, database design, and cloud deployment. From internal dashboards and data pipelines to customer-facing products.',
+    description: 'End-to-end web application, SaaS dashboards, admin panels, REST APIs, internal tools, and customer-facing products. Responsive frontends, robust backends, database design, and cloud deployment on AWS or Vercel.',
     icon: IconCode,
     iconBg: 'bg-primary-50',
     iconColor: 'text-primary-600',
-    tags: ['NuxtJS', 'React', 'FastAPI', 'Node.js', 'PostgreSQL', 'AWS'],
+    tags: ['NuxtJS', 'Vue.js', 'React', 'FastAPI', 'Node.js', 'PostgreSQL', 'MongoDB', 'Docker'],
   },
   {
     title: 'AI & Document Intelligence',
-    description: 'Parse PDFs, invoices, receipts, and scanned documents into structured data using OCR and LLMs. Build AI-powered extraction pipelines, automate document workflows, and connect unstructured data to your business systems.',
+    description: 'Parse PDFs, invoices, receipts, contracts, and scanned documents into structured data using OCR and LLMs. Automate document workflows, extract tables from reports, and feed unstructured data into your business systems or databases.',
     icon: IconAI,
     iconBg: 'bg-pink-50',
     iconColor: 'text-pink-600',
-    tags: ['PDF Parsing', 'OCR', 'OpenAI', 'Claude API', 'LangChain', 'RAG'],
+    tags: ['PDF Parsing', 'OCR', 'Invoice Processing', 'OpenAI', 'GPT-4', 'Claude API', 'LangChain', 'RAG'],
   },
   {
     title: 'Voice AI & Conversational Bots',
-    description: 'Build real-time voice assistants and IVR solutions using LiveKit, Dialogflow, and Voximplant. Automate inbound/outbound calls, lead qualification, and customer support with natural-sounding conversational AI.',
+    description: 'Build real-time voice AI assistants, IVR systems, and conversational bots using LiveKit, Dialogflow, and Voximplant. Automate inbound/outbound calls, appointment booking, lead qualification, and customer support with OpenAI, Gemini, and Grok.',
     icon: IconMic,
     iconBg: 'bg-teal-50',
     iconColor: 'text-teal-600',
-    tags: ['LiveKit', 'Dialogflow', 'Voximplant', 'WebRTC', 'TTS/STT'],
+    tags: ['LiveKit', 'Dialogflow', 'Voximplant', 'WebRTC', 'TTS/STT', 'IVR', 'Chatbot'],
   },
 ]
 </script>

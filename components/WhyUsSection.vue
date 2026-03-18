@@ -10,12 +10,13 @@
         <div>
           <div class="badge mb-4">Why Choose Me</div>
           <h2 class="section-title mb-6">
-            Reliable, Fast &
-            <span class="gradient-text"> Results-Driven</span>
+            Why Hire Me as Your
+            <span class="gradient-text"> Web Scraping Expert</span>
           </h2>
           <p class="text-slate-500 leading-relaxed mb-10">
-            As a dedicated full-time freelancer, I bring hands-on expertise to every project.
-            No middlemen, no delays — just high-quality delivery and transparent communication.
+            As a dedicated full-time freelance Python developer, I bring 7+ years of hands-on
+            expertise to every scraping, automation, and full-stack project. No middlemen, no
+            delays — just clean code, on-time delivery, and transparent communication.
           </p>
 
           <ul class="space-y-5">

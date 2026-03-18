@@ -9,11 +9,12 @@
       <div class="text-center mb-16">
         <div class="badge mx-auto mb-4">Simple Process</div>
         <h2 class="section-title">
-          From Brief to
-          <span class="gradient-text"> Delivery</span>
+          Hire a Developer —
+          <span class="gradient-text"> Simple Process</span>
         </h2>
         <p class="section-subtitle mx-auto text-center">
-          A straightforward 3-step process designed to keep things fast, clear, and stress-free.
+          A straightforward 3-step process to get your web scraping, automation, or development
+          project built fast, clearly, and stress-free.
         </p>
       </div>
 
@@ -89,7 +90,7 @@ const IconCheck = defineComponent({
 const steps = [
   {
     title: 'Discuss Your Requirements',
-    description: 'Tell me about your project — what data you need, what you want automated, or what app you want to build. I\'ll provide a clear scope and estimate within 24 hours.',
+    description: 'Tell me about your project, what data you need, what you want automated, or what app you want to build. I\'ll provide a clear scope and estimate within 24 hours.',
     bg: 'bg-primary-600',
     icon: IconMsg,
     iconColor: 'text-primary-600',
