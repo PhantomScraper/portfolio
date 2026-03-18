@@ -16,7 +16,7 @@
           <p class="text-slate-500 leading-relaxed mb-10">
             As a dedicated full-time freelance Python developer, I bring 7+ years of hands-on
             expertise to every scraping, automation, and full-stack project. No middlemen, no
-            delays — just clean code, on-time delivery, and transparent communication.
+            delays ,just clean code, on-time delivery, and transparent communication.
           </p>
 
           <ul class="space-y-5">
