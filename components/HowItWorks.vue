@@ -9,7 +9,7 @@
       <div class="text-center mb-16">
         <div class="badge mx-auto mb-4">Simple Process</div>
         <h2 class="section-title">
-          Hire a Developer —
+          Hire a Developer,
           <span class="gradient-text"> Simple Process</span>
         </h2>
         <p class="section-subtitle mx-auto text-center">

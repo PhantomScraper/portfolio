@@ -14,7 +14,7 @@
         </h2>
         <p class="section-subtitle mx-auto text-center">
           From scraping millions of records and bypassing anti-bot protection to building full-stack
-          apps and voice AI, scalable, reliable solutions for any data challenge.
+          apps and voice AI. Scalable, reliable solutions for any data challenge.
         </p>
       </div>
 
@@ -91,11 +91,11 @@ const IconMic = defineComponent({
 const services = [
   {
     title: 'Web Scraping & Data Extraction',
-    description: 'Extract structured data from any website at scale, e-commerce product listings, price monitoring, competitor data, lead generation, real estate, and job boards. Handles dynamic JS pages, login-protected sites, and pagination. Exports to CSV, JSON, Excel, or directly into your database.',
+    description: 'Custom web scraper and data scraping solutions for any website at scale. Extract e-commerce product listings, price monitoring data, competitor intelligence, lead lists, real estate records, and job board data. Handles JS-rendered pages, login-protected sites, infinite scroll, and pagination. Outputs to CSV, JSON, Excel, or directly into your database.',
     icon: IconScraping,
     iconBg: 'bg-blue-50',
     iconColor: 'text-blue-600',
-    tags: ['Python', 'Playwright', 'Scrapy', 'Puppeteer', 'Selenium', 'BeautifulSoup', 'aiohttp'],
+    tags: ['Python', 'Scrapy', 'Puppeteer', 'Selenium', 'Price Monitoring', 'Lead Scraping', 'E-commerce Scraping', 'Data Harvesting'],
   },
   {
     title: 'Anti-Bot Bypass & Stealth',
@@ -107,7 +107,7 @@ const services = [
   },
   {
     title: 'API Integration & Reverse Engineering',
-    description: 'Integrate third-party APIs and reverse-engineer unofficial or undocumented APIs for seamless data exchange. Build invoice pipelines, order tracking systems, and automated data sync across platforms, REST, GraphQL, WebSocket, any protocol.',
+    description: 'Integrate third-party APIs and reverse-engineer unofficial or undocumented APIs for seamless data exchange. Build invoice pipelines, order tracking systems, and automated data sync across platforms: REST, GraphQL, WebSocket, any protocol.',
     icon: IconApi,
     iconBg: 'bg-green-50',
     iconColor: 'text-green-600',
@@ -115,7 +115,7 @@ const services = [
   },
   {
     title: 'Full-Stack Web Development',
-    description: 'End-to-end web application, SaaS dashboards, admin panels, REST APIs, internal tools, and customer-facing products. Responsive frontends, robust backends, database design, and cloud deployment on AWS or Vercel.',
+    description: 'End-to-end web applications: SaaS dashboards, admin panels, REST APIs, internal tools, and customer-facing products. Responsive frontends, robust backends, database design, and cloud deployment on AWS or Vercel.',
     icon: IconCode,
     iconBg: 'bg-primary-50',
     iconColor: 'text-primary-600',

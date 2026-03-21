@@ -40,7 +40,17 @@ useHead({
             },
             knowsAbout: [
               'Web Scraping',
+              'Web Scraper',
+              'Data Scraping',
+              'Web Crawler',
+              'Web Crawling',
               'Data Extraction',
+              'Data Harvesting',
+              'Data Mining',
+              'E-commerce Scraping',
+              'Price Monitoring',
+              'Lead Scraping',
+              'Headless Browser',
               'Browser Automation',
               'Anti-Bot Bypass',
               'CAPTCHA Solving',
@@ -98,7 +108,7 @@ useHead({
             '@type': 'Service',
             provider: { '@id': 'https://vuongphan.dev/#person' },
             name: 'Web Scraping & Data Extraction',
-            description: 'Large-scale web scraping solutions with anti-bot bypass, proxy management, and multi-format data export.',
+            description: 'Custom web scraper and data scraping service. Large-scale web crawling, data harvesting, e-commerce scraping, price monitoring, lead scraping, and multi-format data export (CSV, JSON, Excel, database).',
             serviceType: 'Web Scraping',
           },
           {
@@ -195,7 +205,7 @@ useHead({
             name: 'What web scraping services do you offer?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'I offer large-scale web scraping and data extraction services using Python, Playwright, Scrapy, Puppeteer, and Selenium. This includes scraping e-commerce sites, price monitoring, competitor data, lead generation, real estate listings, and any structured or unstructured data source. Data is delivered in CSV, JSON, Excel, or directly into your database.',
+              text: 'I build custom web scrapers and data scraping pipelines using Python, Playwright, Scrapy, Puppeteer, and Selenium. Services include web crawling, data harvesting, e-commerce scraping, price monitoring, lead scraping, competitor data collection, real estate data, and job board extraction. Works on JS-rendered pages, login-protected sites, and sites with anti-bot protection. Data delivered in CSV, JSON, Excel, or directly into your database.',
             },
           },
           {
