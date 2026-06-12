@@ -10,14 +10,28 @@ export default defineNuxtConfig({
     '@nuxt/content',
   ],
 
+  // Hardcoded to www so Vercel's auto-detected apex URL
+  // (VERCEL_PROJECT_PRODUCTION_URL = vuongphan.dev) cannot override it and
+  // reintroduce the www/non-www canonical split.
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.vuongphan.dev',
+    url: 'https://www.vuongphan.dev',
     name: 'Vuong Phan',
   },
 
   sitemap: {
-    siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.vuongphan.dev',
+    siteUrl: 'https://www.vuongphan.dev',
     sources: ['/api/__sitemap__/urls'],
+  },
+
+  // @nuxt/content v3 queries a SQLite DB that does not run in Vercel's
+  // serverless functions, so prerender all content routes at build time
+  // (where better-sqlite3 works) and serve them as static files.
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', '/blog', '/rss.xml'],
+      failOnError: false,
+    },
   },
 
   css: ['~/assets/css/main.css'],
