@@ -9,8 +9,13 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
   ],
 
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.vuongphan.dev',
+    name: 'Vuong Phan',
+  },
+
   sitemap: {
-    siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://vuongphan.dev',
+    siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.vuongphan.dev',
   },
 
   css: ['~/assets/css/main.css'],
@@ -21,6 +26,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       htmlAttrs: { lang: 'en' },
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         // DNS prefetch for third-party services
         { rel: 'dns-prefetch', href: 'https://api.emailjs.com' },
@@ -41,7 +47,7 @@ export default defineNuxtConfig({
       emailjsServiceId: process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID || '',
       emailjsTemplateId: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
       emailjsPublicKey: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://vuongphan.dev',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.vuongphan.dev',
     },
   },
 })

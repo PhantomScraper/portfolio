@@ -6,6 +6,7 @@
     <HowItWorks />
     <TechStack />
     <TestimonialsSection />
+    <FAQSection />
     <ContactSection />
   </main>
 </template>
@@ -21,9 +22,9 @@ useHead({
         '@graph': [
           {
             '@type': 'Person',
-            '@id': 'https://vuongphan.dev/#person',
+            '@id': 'https://www.vuongphan.dev/#person',
             name: 'Phan Vuong',
-            url: 'https://vuongphan.dev',
+            url: 'https://www.vuongphan.dev',
             jobTitle: 'Web Scraping & Automation Engineer | Full-Stack Developer',
             description: 'Expert web scraping engineer and full-stack developer specializing in data extraction, anti-bot bypass, API integration, voice AI with LiveKit, and scalable automation systems.',
             sameAs: [
@@ -89,63 +90,63 @@ useHead({
           },
           {
             '@type': 'WebSite',
-            '@id': 'https://vuongphan.dev/#website',
-            url: 'https://vuongphan.dev',
+            '@id': 'https://www.vuongphan.dev/#website',
+            url: 'https://www.vuongphan.dev',
             name: 'Vuong Phan - Web Scraping & Automation Expert',
             description: 'Expert web scraping engineer & full-stack developer. Data extraction, anti-bot bypass, API integration, voice AI with LiveKit, and scalable automation systems.',
-            author: { '@id': 'https://vuongphan.dev/#person' },
+            author: { '@id': 'https://www.vuongphan.dev/#person' },
             inLanguage: 'en-US',
           },
           {
             '@type': 'Service',
-            provider: { '@id': 'https://vuongphan.dev/#person' },
+            provider: { '@id': 'https://www.vuongphan.dev/#person' },
             name: 'Web Scraping & Data Extraction',
             description: 'Custom web scraper and data scraping service. Large-scale web crawling, data harvesting, e-commerce scraping, price monitoring, lead scraping, and multi-format data export (CSV, JSON, Excel, database).',
             serviceType: 'Web Scraping',
           },
           {
             '@type': 'Service',
-            provider: { '@id': 'https://vuongphan.dev/#person' },
+            provider: { '@id': 'https://www.vuongphan.dev/#person' },
             name: 'Full-Stack Web Development',
             description: 'End-to-end web applications using NuxtJS, React, FastAPI, Node.js with cloud deployment.',
             serviceType: 'Web Development',
           },
           {
             '@type': 'Service',
-            provider: { '@id': 'https://vuongphan.dev/#person' },
+            provider: { '@id': 'https://www.vuongphan.dev/#person' },
             name: 'Anti-Bot Bypass & Stealth Automation',
             description: 'Bypass Cloudflare, CAPTCHA, and bot detection systems using fingerprint spoofing, residential proxies, and stealth browser techniques.',
             serviceType: 'Automation',
           },
           {
             '@type': 'Service',
-            provider: { '@id': 'https://vuongphan.dev/#person' },
+            provider: { '@id': 'https://www.vuongphan.dev/#person' },
             name: 'API Integration & Reverse Engineering',
             description: 'Integrate REST, GraphQL, and WebSocket APIs. Reverse-engineer unofficial or undocumented APIs for automated data exchange.',
             serviceType: 'API Development',
           },
           {
             '@type': 'Service',
-            provider: { '@id': 'https://vuongphan.dev/#person' },
+            provider: { '@id': 'https://www.vuongphan.dev/#person' },
             name: 'AI & Document Intelligence',
             description: 'Parse PDFs, invoices, and scanned documents using OCR and LLMs. Build AI-powered extraction pipelines with OpenAI, Claude API, and LangChain.',
             serviceType: 'AI Development',
           },
           {
             '@type': 'Service',
-            provider: { '@id': 'https://vuongphan.dev/#person' },
+            provider: { '@id': 'https://www.vuongphan.dev/#person' },
             name: 'Voice AI & Conversational Bots',
             description: 'Real-time voice assistants and IVR solutions using LiveKit, Dialogflow, and Voximplant. Automate calls with natural-sounding conversational AI.',
             serviceType: 'AI Development',
           },
           {
             '@type': 'WebPage',
-            '@id': 'https://vuongphan.dev/#webpage',
-            url: 'https://vuongphan.dev',
+            '@id': 'https://www.vuongphan.dev/#webpage',
+            url: 'https://www.vuongphan.dev',
             name: 'Vuong Phan - Python Web Scraping & Automation Expert for Hire',
             description: 'Hire a Python web scraping expert & full-stack developer. Data extraction, anti-bot bypass, API integration, voice AI, and automation pipelines.',
-            isPartOf: { '@id': 'https://vuongphan.dev/#website' },
-            about: { '@id': 'https://vuongphan.dev/#person' },
+            isPartOf: { '@id': 'https://www.vuongphan.dev/#website' },
+            about: { '@id': 'https://www.vuongphan.dev/#person' },
             inLanguage: 'en-US',
             breadcrumb: {
               '@type': 'BreadcrumbList',
@@ -154,7 +155,7 @@ useHead({
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://vuongphan.dev',
+                  item: 'https://www.vuongphan.dev',
                 },
               ],
             },

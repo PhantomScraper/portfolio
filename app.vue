@@ -24,17 +24,17 @@ useSeoMeta({
 
   // Open Graph
   ogType: 'website',
-  ogUrl: 'https://vuongphan.dev',
+  ogUrl: 'https://www.vuongphan.dev/',
   ogTitle: 'Web Scraping & Automation Expert | Full-Stack Developer',
   ogDescription: 'Hire a Python web scraping expert & full-stack developer. Data extraction, anti-bot bypass, API integration, voice AI systems, and automation pipelines. 5.0 ★ Top Rated on Upwork.',
-  ogImage: 'https://vuongphan.dev/og-image.png',
+  ogImage: 'https://www.vuongphan.dev/og-image.png',
   ogImageWidth: '1200',
   ogImageHeight: '630',
   ogSiteName: 'Vuong Phan',
   ogLocale: 'en_US',
 
   // Twitter / X Card
-  twitterImage: 'https://vuongphan.dev/og-image.png',
+  twitterImage: 'https://www.vuongphan.dev/og-image.png',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Web Scraping & Automation Expert | Full-Stack Developer',
   twitterDescription: 'Python web scraping expert & full-stack developer. Data extraction, anti-bot bypass, API integration, voice AI. 5.0 ★ Top Rated on Upwork.',
@@ -44,7 +44,7 @@ useSeoMeta({
 // Canonical + lang
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://vuongphan.dev' },
+    { rel: 'canonical', href: 'https://www.vuongphan.dev/' },
   ],
 })
 </script>
