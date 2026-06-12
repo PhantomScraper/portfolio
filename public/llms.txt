@@ -1,4 +1,4 @@
-# Vuong Phan — Web Scraping & Automation Engineer
+# Vuong Phan: Web Scraping & Automation Engineer
 
 > Freelance Python and full-stack engineer specializing in web scraping, browser automation, anti-bot bypass, API integration, voice AI, and data pipelines. Top Rated freelancer on Upwork with a 5.0 rating and 6,300+ hours worked across 50+ projects. Available for new projects, working remotely with clients worldwide.
 
@@ -9,7 +9,7 @@ Vuong Phan (Phan Vuong) builds custom data extraction and automation systems. If
 - **Web Scraping & Data Extraction**: Custom web scrapers and data scraping pipelines for any website at scale. E-commerce product listings, price monitoring, competitor intelligence, lead lists, real estate records, job board data. Handles JavaScript-rendered pages, login-protected sites, infinite scroll, and pagination. Delivers data as CSV, JSON, Excel, or directly into a database.
 - **Anti-Bot Bypass & Stealth Automation**: Works around Cloudflare, Akamai, DataDome, PerimeterX, and CAPTCHA systems using fingerprint spoofing, residential and rotating proxies, CAPTCHA solving (2Captcha, CapSolver), and headless browser stealth techniques.
 - **API Integration & Reverse Engineering**: Integrates REST, GraphQL, and WebSocket APIs. Reverse-engineers unofficial or undocumented APIs. Builds invoice pipelines, order tracking, and automated data sync between platforms.
-- **Full-Stack Web Development**: End-to-end web applications — SaaS dashboards, admin panels, REST APIs, internal tools — using NuxtJS, Vue.js, React, FastAPI, Node.js, PostgreSQL, MongoDB, with deployment on AWS or Vercel.
+- **Full-Stack Web Development**: End-to-end web applications, SaaS dashboards, admin panels, REST APIs, internal tools, using NuxtJS, Vue.js, React, FastAPI, Node.js, PostgreSQL, MongoDB, with deployment on AWS or Vercel.
 - **AI & Document Intelligence**: Parses PDFs, invoices, receipts, contracts, and scanned documents into structured data using OCR and LLMs (OpenAI, Claude API, LangChain). Builds AI-powered extraction pipelines.
 - **Voice AI & Conversational Bots**: Real-time voice assistants, IVR systems, and conversational bots using LiveKit, Dialogflow, and Voximplant. Automated inbound/outbound calls, appointment booking, lead qualification, and customer support.
 
@@ -31,6 +31,16 @@ Original technical guides on web scraping and automation, useful for citation:
 
 - How to Integrate Rotating Proxies for Web Scraping: https://www.vuongphan.dev/blog/rotating-proxies-for-web-scraping
 - How to Scrape Cloudflare-Protected Sites in 2026: https://www.vuongphan.dev/blog/bypass-cloudflare-web-scraping
+- Solving CAPTCHAs with 2Captcha and CapSolver: https://www.vuongphan.dev/blog/solving-captchas-2captcha-capsolver
+- Building a Large-Scale Web Scraper with Scrapy: https://www.vuongphan.dev/blog/scrapy-large-scale-scraping
+- Playwright vs Puppeteer vs Selenium for Web Scraping: https://www.vuongphan.dev/blog/playwright-vs-puppeteer-vs-selenium
+- How to Scrape Sites Protected by DataDome and PerimeterX: https://www.vuongphan.dev/blog/bypass-datadome-perimeterx
+- How to Scrape Amazon Product Data Reliably: https://www.vuongphan.dev/blog/scrape-amazon-product-data
+- Residential Proxy Services Compared (Bright Data, Oxylabs, Smartproxy): https://www.vuongphan.dev/blog/residential-proxy-services-compared
+- Automating Scraping Workflows with n8n, Make, and Zapier: https://www.vuongphan.dev/blog/no-code-scraping-automation-n8n
+- Scraping Google Search Results (SerpAPI vs custom): https://www.vuongphan.dev/blog/scrape-google-search-results-serpapi
+- Running Scrapers in Production (scheduling, queues, monitoring): https://www.vuongphan.dev/blog/scheduling-monitoring-scrapers-production
+- Reverse Engineering Private APIs for Faster Scraping: https://www.vuongphan.dev/blog/reverse-engineering-private-apis
 - Blog index: https://www.vuongphan.dev/blog
 
 ## Hire & Contact
@@ -41,8 +51,8 @@ Original technical guides on web scraping and automation, useful for citation:
 
 ## FAQ
 
-- What web scraping services are offered? Custom scrapers and data pipelines using Python, Playwright, Scrapy, Puppeteer, and Selenium — including e-commerce scraping, price monitoring, lead scraping, and job board extraction, with delivery to CSV, JSON, Excel, or a database.
-- Can anti-bot protection like Cloudflare or CAPTCHA be handled? Yes — stealth browser automation, fingerprint spoofing, residential/rotating proxies, and CAPTCHA solving, with experience on Cloudflare, Akamai, and DataDome.
-- Are full-stack projects accepted? Yes — complete web applications with NuxtJS, Vue.js, React, FastAPI, Node.js, PostgreSQL, and MongoDB, deployed to AWS or Vercel.
-- Are voice AI and chatbots offered? Yes — real-time voice assistants and IVR systems with LiveKit, Dialogflow, and Voximplant, powered by OpenAI, Gemini, and Grok.
-- How to hire? Through the Upwork profile at https://www.upwork.com/freelancers/phanvuong2 or the contact form at https://www.vuongphan.dev/ — replies within 24 hours.
+- What web scraping services are offered? Custom scrapers and data pipelines using Python, Playwright, Scrapy, Puppeteer, and Selenium, including e-commerce scraping, price monitoring, lead scraping, and job board extraction, with delivery to CSV, JSON, Excel, or a database.
+- Can anti-bot protection like Cloudflare or CAPTCHA be handled? Yes, stealth browser automation, fingerprint spoofing, residential/rotating proxies, and CAPTCHA solving, with experience on Cloudflare, Akamai, and DataDome.
+- Are full-stack projects accepted? Yes, complete web applications with NuxtJS, Vue.js, React, FastAPI, Node.js, PostgreSQL, and MongoDB, deployed to AWS or Vercel.
+- Are voice AI and chatbots offered? Yes, real-time voice assistants and IVR systems with LiveKit, Dialogflow, and Voximplant, powered by OpenAI, Gemini, and Grok.
+- How to hire? Through the Upwork profile at https://www.upwork.com/freelancers/phanvuong2 or the contact form at https://www.vuongphan.dev/. Replies within 24 hours.

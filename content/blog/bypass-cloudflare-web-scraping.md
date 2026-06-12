@@ -1,6 +1,6 @@
 ---
 title: "How to Scrape Cloudflare-Protected Sites in 2026 (A Practical Approach)"
-description: "What Cloudflare actually checks, why most scrapers fail against it, and the layered approach — stealth browsers, fingerprinting, and residential proxies — that reliably gets through."
+description: "What Cloudflare actually checks, why most scrapers fail against it, and the layered approach of stealth browsers, fingerprinting, and residential proxies that reliably gets through."
 date: "2026-06-10"
 tags: ["web scraping", "cloudflare", "anti-bot", "playwright", "python"]
 readingTime: "7 min read"
@@ -12,7 +12,7 @@ Cloudflare protects a large share of the web, and its bot management has gotten 
 
 ## What Cloudflare actually checks
 
-Cloudflare doesn't rely on one signal — it scores you across several layers, and failing any one can flag you:
+Cloudflare doesn't rely on one signal. It scores you across several layers, and failing any one can flag you:
 
 - **TLS fingerprint (JA3/JA4).** The way your HTTP client negotiates TLS reveals whether you're a real browser or a Python `requests` session. This is why plain `requests` gets blocked instantly, before any JavaScript runs.
 - **HTTP/2 fingerprint.** Header order, pseudo-header order, and frame settings differ between real Chrome and automation libraries.
@@ -42,7 +42,7 @@ This gets you past the TLS check and works on Cloudflare's *lower* security sett
 
 ## The reliable approach: a stealth browser
 
-For managed challenges, run an actual browser with anti-detection patches. With Playwright, the base setup looks like this — but the stock launch is *not* enough:
+For managed challenges, run an actual browser with anti-detection patches. With Playwright, the base setup looks like this, but the stock launch is *not* enough:
 
 ```python
 from playwright.async_api import async_playwright
@@ -74,11 +74,11 @@ async def scrape(url: str):
         return await page.content()
 ```
 
-The hidden work is in the patches that hide automation: removing `navigator.webdriver`, spoofing the permissions API, faking plugins and WebGL vendor strings, and matching the user-agent to the actual browser build. Tools like `playwright-stealth`, `undetected-chromedialog`, or the Camoufox/nodriver projects automate much of this — but they need maintenance as Cloudflare updates its detection.
+The hidden work is in the patches that hide automation: removing `navigator.webdriver`, spoofing the permissions API, faking plugins and WebGL vendor strings, and matching the user-agent to the actual browser build. Tools like `playwright-stealth`, `undetected-chromedialog`, or the Camoufox/nodriver projects automate much of this, but they need maintenance as Cloudflare updates its detection.
 
 ## Residential proxies are not optional here
 
-On Cloudflare-protected sites, datacenter IPs start with a trust deficit you usually can't overcome. Pair the stealth browser with residential or mobile proxies, and **match the proxy country to the site's audience** — a US store accessed through a foreign IP often triggers extra verification even when everything else is perfect.
+On Cloudflare-protected sites, datacenter IPs start with a trust deficit you usually can't overcome. Pair the stealth browser with residential or mobile proxies, and **match the proxy country to the site's audience**. A US store accessed through a foreign IP often triggers extra verification even when everything else is perfect.
 
 See my detailed guide on [integrating rotating proxies](/blog/rotating-proxies-for-web-scraping) for the rotation and retry logic.
 
@@ -106,12 +106,12 @@ def is_blocked(html: str) -> bool:
     return any(m in html for m in markers)
 ```
 
-If `is_blocked()` returns true, rotate the proxy, back off, and retry — don't treat it as success.
+If `is_blocked()` returns true, rotate the proxy, back off, and retry. Do not treat it as success.
 
 ## When this gets hard
 
-Cloudflare updates its detection continuously, so a setup that works today can break next month. A production scraper needs monitoring, alerting on block-rate spikes, and a maintenance plan — not a one-off script. That ongoing reliability is the real deliverable, and it's where most DIY scrapers fall apart.
+Cloudflare updates its detection continuously, so a setup that works today can break next month. A production scraper needs monitoring, alerting on block-rate spikes, and a maintenance plan, not a one-off script. That ongoing reliability is the real deliverable, and it's where most DIY scrapers fall apart.
 
 ## Need a Cloudflare-protected site scraped reliably?
 
-I build and maintain production scrapers that get through Cloudflare, DataDome, and Akamai — with the stealth, proxy, and monitoring infrastructure to keep them running. If you have a project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out via the [contact form](/#contact). I respond within 24 hours.
+I build and maintain production scrapers that get through Cloudflare, DataDome, and Akamai, with the stealth, proxy, and monitoring infrastructure to keep them running. If you have a project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out via the [contact form](/#contact). I respond within 24 hours.

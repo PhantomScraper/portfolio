@@ -9,7 +9,7 @@
           <span class="gradient-text">Automation Guides</span>
         </h1>
         <p class="section-subtitle mx-auto text-center">
-          Practical, hands-on guides on web scraping, anti-bot bypass, proxies, and automation — from real client projects.
+          Practical, hands-on guides on web scraping, anti-bot bypass, proxies, and automation, from real client projects.
         </p>
       </div>
 
