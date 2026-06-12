@@ -27,7 +27,16 @@
               :key="tech.name"
               class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 border border-slate-100 hover:border-primary-200 hover:bg-primary-50 transition-colors group cursor-default"
             >
-              <span class="text-xl" aria-hidden="true">{{ tech.emoji }}</span>
+              <img
+                v-if="tech.icon"
+                :src="`/icons/tech/${tech.icon}.svg`"
+                :alt="`${tech.name} logo`"
+                class="w-5 h-5 object-contain"
+                width="20"
+                height="20"
+                loading="lazy"
+              >
+              <span v-else class="text-xl" aria-hidden="true">{{ tech.emoji }}</span>
               <span class="text-sm font-medium text-slate-700 group-hover:text-primary-700">{{ tech.name }}</span>
             </div>
           </div>
@@ -38,59 +47,61 @@
 </template>
 
 <script setup lang="ts">
+// Brand logos self-hosted in /public/icons/tech (Simple Icons + Devicon).
+// `emoji` is the fallback for techs without an official logo in those sets.
 const categories = [
   {
     name: 'Scraping & Automation',
     techs: [
-      { name: 'Python', emoji: '🐍' },        // snake = Python official logo
-      { name: 'Playwright', emoji: '🎭' },     // theater masks = Playwright official logo
-      { name: 'Puppeteer', emoji: '🐕' },      // dog character = Puppeteer mascot
-      { name: 'Scrapy', emoji: '🕷️' },        // spider = Scrapy official logo
-      { name: 'Selenium', emoji: '🔍' },       // inspect/search = web testing tool
-      { name: 'BeautifulSoup', emoji: '🍲' },  // soup pot = BeautifulSoup (HTML soup)
+      { name: 'Python', icon: 'python' },
+      { name: 'Playwright', icon: 'playwright' },
+      { name: 'Puppeteer', icon: 'puppeteer' },
+      { name: 'Scrapy', icon: 'scrapy' },
+      { name: 'Selenium', icon: 'selenium' },
+      { name: 'BeautifulSoup', emoji: '🍲' },
     ],
   },
   {
     name: 'Backend & APIs',
     techs: [
-      { name: 'FastAPI', emoji: '⚡' },        // lightning = FastAPI official logo
-      { name: 'Node.js', emoji: '🟢' },        // green hexagon = Node.js brand
-      { name: 'Express.js', emoji: '🖤' },     // black minimalist = Express wordmark
-      { name: 'Django', emoji: '🌿' },         // green brand color
-      { name: 'Flask', emoji: '🧪' },          // test tube = Flask name
-      { name: 'GraphQL', emoji: '🌸' },        // pink #e535ab = official GraphQL brand color
+      { name: 'FastAPI', icon: 'fastapi' },
+      { name: 'Node.js', icon: 'nodejs' },
+      { name: 'Express.js', icon: 'express' },
+      { name: 'Django', icon: 'django' },
+      { name: 'Flask', icon: 'flask' },
+      { name: 'GraphQL', icon: 'graphql' },
     ],
   },
   {
     name: 'Frontend',
     techs: [
-      { name: 'NuxtJS', emoji: '🏔️' },       // two green triangles/mountains = Nuxt official logo
-      { name: 'Vue.js', emoji: '🔼' },         // green upward chevron/V = Vue official logo
-      { name: 'React', emoji: '⚛️' },          // atom = React official logo
-      { name: 'Tailwind CSS', emoji: '💨' },   // wind/breeze = Tailwind name & fan-shape logo
-      { name: 'TypeScript', emoji: '🟦' },     // blue square with TS = TypeScript official logo
+      { name: 'NuxtJS', icon: 'nuxt' },
+      { name: 'Vue.js', icon: 'vue' },
+      { name: 'React', icon: 'react' },
+      { name: 'Tailwind CSS', icon: 'tailwindcss' },
+      { name: 'TypeScript', icon: 'typescript' },
     ],
   },
   {
     name: 'AI & Voice',
     techs: [
-      { name: 'OpenAI', emoji: '🌀' },         // concentric circle swirl = OpenAI official logo
-      { name: 'Claude API', emoji: '🧠' },
-      { name: 'LiveKit', emoji: '🎙️' },       // microphone = voice/audio
-      { name: 'Dialogflow', emoji: '💬' },     // chat bubble = conversational AI
-      { name: 'Voximplant', emoji: '📞' },     // phone = telephony platform
-      { name: 'LangChain', emoji: '🔗' },      // chain link = LangChain name & logo
+      { name: 'OpenAI', icon: 'openai' },
+      { name: 'Claude API', icon: 'claude' },
+      { name: 'LiveKit', icon: 'livekit' },
+      { name: 'Dialogflow', icon: 'dialogflow' },
+      { name: 'Voximplant', emoji: '📞' },
+      { name: 'LangChain', icon: 'langchain' },
     ],
   },
   {
     name: 'Database & Cloud',
     techs: [
-      { name: 'PostgreSQL', emoji: '🐘' },     // elephant = PostgreSQL official logo
-      { name: 'MongoDB', emoji: '🍃' },        // green leaf = MongoDB official logo
-      { name: 'MySQL', emoji: '🐬' },          // dolphin = MySQL official logo
-      { name: 'DynamoDB', emoji: '🟠' },       // orange = AWS DynamoDB icon color
-      { name: 'AWS', emoji: '☁️' },
-      { name: 'GCP', emoji: '🌐' },
+      { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'MongoDB', icon: 'mongodb' },
+      { name: 'MySQL', icon: 'mysql' },
+      { name: 'DynamoDB', icon: 'dynamodb' },
+      { name: 'AWS', icon: 'aws' },
+      { name: 'GCP', icon: 'googlecloud' },
     ],
   },
 ]
