@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sitemap',
+    '@nuxt/content',
   ],
 
   site: {
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
 
   sitemap: {
     siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.vuongphan.dev',
+    sources: ['/api/__sitemap__/urls'],
   },
 
   css: ['~/assets/css/main.css'],

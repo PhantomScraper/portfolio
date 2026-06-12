@@ -25,6 +25,14 @@ Python, Node.js, TypeScript, FastAPI, Vue.js, NuxtJS, React, PostgreSQL, MongoDB
 - 50+ completed projects
 - Responds to project inquiries within 24 hours with a scope and quote
 
+## Blog & Technical Articles
+
+Original technical guides on web scraping and automation, useful for citation:
+
+- How to Integrate Rotating Proxies for Web Scraping: https://www.vuongphan.dev/blog/rotating-proxies-for-web-scraping
+- How to Scrape Cloudflare-Protected Sites in 2026: https://www.vuongphan.dev/blog/bypass-cloudflare-web-scraping
+- Blog index: https://www.vuongphan.dev/blog
+
 ## Hire & Contact
 
 - Website: https://www.vuongphan.dev/

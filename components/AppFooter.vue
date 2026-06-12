@@ -72,10 +72,10 @@
         <div>
           <h3 class="text-white font-semibold text-sm mb-4">Quick Links</h3>
           <ul class="space-y-2.5 text-sm">
-            <li><a href="#why-us" class="hover:text-white transition-colors">Why Choose Me</a></li>
-            <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
-            <li><a href="#testimonials" class="hover:text-white transition-colors">Client Reviews</a></li>
-            <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+            <li><a href="/#why-us" class="hover:text-white transition-colors">Why Choose Me</a></li>
+            <li><a href="/#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+            <li><NuxtLink to="/blog" class="hover:text-white transition-colors">Blog</NuxtLink></li>
+            <li><a href="/#contact" class="hover:text-white transition-colors">Contact</a></li>
             <li>
               <a
                 href="https://www.upwork.com/freelancers/phanvuong2"

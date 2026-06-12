@@ -42,6 +42,63 @@
   }
 }
 
+/* Blog article typography */
+.prose-blog {
+  @apply text-slate-600 leading-relaxed;
+}
+.prose-blog > h1 {
+  @apply text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mt-0 mb-6 leading-tight;
+}
+.prose-blog h2 {
+  @apply text-2xl font-bold text-slate-900 tracking-tight mt-12 mb-4;
+}
+.prose-blog h3 {
+  @apply text-xl font-semibold text-slate-900 mt-8 mb-3;
+}
+.prose-blog p {
+  @apply my-5 text-base leading-7;
+}
+.prose-blog a {
+  @apply text-primary-600 font-medium hover:text-primary-700 hover:underline;
+}
+.prose-blog strong {
+  @apply text-slate-900 font-semibold;
+}
+.prose-blog ul,
+.prose-blog ol {
+  @apply my-5 pl-6 space-y-2;
+}
+.prose-blog ul {
+  @apply list-disc;
+}
+.prose-blog ol {
+  @apply list-decimal;
+}
+.prose-blog li {
+  @apply leading-7;
+}
+.prose-blog :not(pre) > code {
+  @apply px-1.5 py-0.5 rounded-md bg-slate-100 text-primary-700 text-sm font-mono;
+}
+.prose-blog pre {
+  @apply my-6 p-4 rounded-xl bg-slate-900 overflow-x-auto text-sm leading-relaxed;
+}
+.prose-blog pre code {
+  @apply text-slate-200 font-mono bg-transparent p-0;
+}
+.prose-blog table {
+  @apply my-6 w-full text-sm border-collapse;
+}
+.prose-blog th {
+  @apply text-left font-semibold text-slate-900 border-b border-slate-200 px-3 py-2;
+}
+.prose-blog td {
+  @apply border-b border-slate-100 px-3 py-2 align-top;
+}
+.prose-blog blockquote {
+  @apply my-6 pl-4 border-l-4 border-primary-200 text-slate-500 italic;
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);

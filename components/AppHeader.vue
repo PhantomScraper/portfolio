@@ -6,7 +6,7 @@
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <a href="#hero" class="flex items-center gap-2 group" aria-label="Vuong Phan - Home">
+        <a href="/" class="flex items-center gap-2 group" aria-label="Vuong Phan - Home">
           <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center group-hover:bg-primary-700 transition-colors">
             <svg class="w-4 h-4 text-white" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <line x1="10" y1="0.5" x2="10" y2="4" stroke="currentColor" stroke-width="0.8"/>
@@ -102,11 +102,11 @@ const scrolled = ref(false)
 const mobileOpen = ref(false)
 
 const navLinks = [
-  { href: '#services', label: 'Services' },
-  { href: '#why-us', label: 'Why Me' },
-  { href: '#how-it-works', label: 'Process' },
-  { href: '#testimonials', label: 'Reviews' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#why-us', label: 'Why Me' },
+  { href: '/#how-it-works', label: 'Process' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 onMounted(() => {
