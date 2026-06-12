@@ -4,6 +4,11 @@ description: "What Cloudflare actually checks, why most scrapers fail against it
 date: "2026-06-10"
 tags: ["web scraping", "cloudflare", "anti-bot", "playwright", "python"]
 readingTime: "7 min read"
+takeaways:
+  - "Cloudflare scores you across TLS, HTTP/2, browser fingerprint, behavior, and IP reputation."
+  - "Plain HTTP clients fail at the TLS layer; curl_cffi can impersonate a real browser."
+  - "Managed challenges need a real, patched stealth browser, not a stock headless launch."
+  - "Residential proxies matched to the site's country are required, and a 200 response can still be a block page."
 ---
 
 # How to Scrape Cloudflare-Protected Sites in 2026 (A Practical Approach)

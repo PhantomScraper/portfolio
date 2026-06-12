@@ -6,6 +6,7 @@
     <HowItWorks />
     <TechStack />
     <TestimonialsSection />
+    <LatestArticles />
     <FAQSection />
     <ContactSection />
   </main>

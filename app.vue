@@ -45,6 +45,7 @@ useSeoMeta({
 useHead({
   link: [
     { rel: 'canonical', href: 'https://www.vuongphan.dev/' },
+    { rel: 'alternate', type: 'application/rss+xml', title: 'Vuong Phan Blog', href: 'https://www.vuongphan.dev/rss.xml' },
   ],
 })
 </script>

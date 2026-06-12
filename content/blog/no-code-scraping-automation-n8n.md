@@ -4,6 +4,11 @@ description: "How to connect a scraper to no-code automation tools so data flows
 date: "2026-05-15"
 tags: ["automation", "n8n", "make", "zapier", "web scraping"]
 readingTime: "7 min read"
+takeaways:
+  - "Separate concerns: a real scraper for extraction, no-code tools for orchestration."
+  - "n8n is the best fit for scraping work thanks to self-hosting, custom code, and no per-task fees."
+  - "Connect a scraper to the automation layer with a webhook for instant data flow."
+  - "Do not scrape protected sites directly in Zapier; it only handles simple static pages."
 ---
 
 # Automating Scraping Workflows with n8n, Make, and Zapier

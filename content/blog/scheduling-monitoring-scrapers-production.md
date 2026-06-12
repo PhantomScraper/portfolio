@@ -4,6 +4,11 @@ description: "How to take a scraper from a script to a reliable production syste
 date: "2026-05-05"
 tags: ["automation", "web scraping", "production", "monitoring", "python"]
 readingTime: "8 min read"
+takeaways:
+  - "The difference between a script and a system is recovery and alerting."
+  - "Use a task queue like Celery so one failure does not kill the whole run."
+  - "Retry transient failures with capped exponential backoff, but do not retry hard 404s."
+  - "Monitor success rate, null rate, and block rate, and alert on threshold breaches."
 ---
 
 # Running Scrapers in Production: Scheduling, Queues, and Monitoring

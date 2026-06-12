@@ -1,22 +1,40 @@
 <template>
   <main id="main-content" class="pt-16">
     <article v-if="post" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <!-- Back link -->
-      <NuxtLink
-        to="/blog"
-        class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-primary-600 mb-8"
-      >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-        All articles
-      </NuxtLink>
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-1.5 text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
+        <NuxtLink to="/" class="hover:text-primary-600">Home</NuxtLink>
+        <span aria-hidden="true">/</span>
+        <NuxtLink to="/blog" class="hover:text-primary-600">Blog</NuxtLink>
+        <span aria-hidden="true">/</span>
+        <span class="text-slate-500 truncate">{{ post.title }}</span>
+      </nav>
 
       <!-- Meta -->
       <div class="flex flex-wrap items-center gap-3 text-xs text-slate-400 mb-6">
         <time :datetime="post.date">{{ formatDate(post.date) }}</time>
         <span v-if="post.readingTime" aria-hidden="true">•</span>
         <span v-if="post.readingTime">{{ post.readingTime }}</span>
+      </div>
+
+      <!-- Key takeaways (TL;DR for readers and LLMs) -->
+      <div
+        v-if="post.takeaways?.length"
+        class="mb-10 card bg-primary-50 border-primary-100"
+      >
+        <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-3">Key takeaways</h2>
+        <ul class="space-y-2">
+          <li
+            v-for="point in post.takeaways"
+            :key="point"
+            class="flex gap-2.5 text-sm text-slate-600 leading-relaxed"
+          >
+            <svg class="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>{{ point }}</span>
+          </li>
+        </ul>
       </div>
 
       <!-- Rendered content -->
@@ -53,6 +71,9 @@
           <NuxtLink to="/#contact" class="btn-outline">Contact form</NuxtLink>
         </div>
       </div>
+
+      <!-- Author bio for E-E-A-T -->
+      <AuthorBio />
     </article>
   </main>
 </template>
@@ -78,6 +99,9 @@ function formatDate(date: string) {
 
 const siteUrl = 'https://www.vuongphan.dev'
 const url = `${siteUrl}${route.path}`
+// Per-article OG image, pre-generated into /public/og/blog/<slug>.png at build
+const slug = route.path.split('/').pop()
+const ogImage = `${siteUrl}/og/blog/${slug}.png`
 
 useSeoMeta({
   title: () => post.value?.title ?? 'Article',
@@ -86,6 +110,9 @@ useSeoMeta({
   ogUrl: url,
   ogTitle: () => post.value?.title,
   ogDescription: () => post.value?.description,
+  ogImage,
+  twitterImage: ogImage,
+  twitterCard: 'summary_large_image',
   articlePublishedTime: () => post.value?.date,
   articleModifiedTime: () => post.value?.updated ?? post.value?.date,
 })
@@ -109,13 +136,21 @@ useHead(() => ({
             dateModified: post.value.updated ?? post.value.date,
             keywords: (post.value.tags ?? []).join(', '),
             mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+            image: ogImage,
             author: {
               '@type': 'Person',
+              '@id': `${siteUrl}/#person`,
               name: 'Phan Vuong',
               url: siteUrl,
+              jobTitle: 'Web Scraping & Automation Engineer',
+              sameAs: [
+                'https://www.upwork.com/freelancers/phanvuong2',
+                'https://github.com/hienvuong2810',
+              ],
             },
             publisher: {
               '@type': 'Person',
+              '@id': `${siteUrl}/#person`,
               name: 'Phan Vuong',
               url: siteUrl,
             },

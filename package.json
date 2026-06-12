@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "og": "node scripts/generate-og-images.mjs",
     "send:poster-email": "node test.js"
   },
   "dependencies": {

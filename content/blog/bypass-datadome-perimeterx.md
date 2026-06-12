@@ -4,6 +4,11 @@ description: "What DataDome and PerimeterX detect, why they are harder than basi
 date: "2026-05-28"
 tags: ["datadome", "perimeterx", "anti-bot", "web scraping", "proxies"]
 readingTime: "8 min read"
+takeaways:
+  - "DataDome and PerimeterX score consistency and humanity, not just IP reputation."
+  - "A clean IP with a headless fingerprint still fails; fix every layer together."
+  - "Match timezone and locale to the proxy's geolocation to stay consistent."
+  - "Add human-like mouse movement and scrolling, especially against PerimeterX."
 ---
 
 # How to Scrape Sites Protected by DataDome and PerimeterX

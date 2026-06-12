@@ -4,6 +4,11 @@ description: "A practical guide to scraping Amazon product listings, prices, and
 date: "2026-05-24"
 tags: ["amazon", "e-commerce", "web scraping", "price monitoring", "python"]
 readingTime: "8 min read"
+takeaways:
+  - "Amazon serves several price layouts, so use multiple fallback selectors per field."
+  - "Use residential proxies matched to the marketplace country to get correct prices."
+  - "The robot check returns a 200 with a block page, so validate the content."
+  - "Consider Amazon's official APIs where compliance is a hard requirement."
 ---
 
 # How to Scrape Amazon Product Data Reliably

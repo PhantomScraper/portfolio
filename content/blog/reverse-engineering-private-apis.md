@@ -4,6 +4,11 @@ description: "How to find and use a site's internal API instead of scraping HTML
 date: "2026-04-30"
 tags: ["api", "reverse engineering", "web scraping", "automation", "python"]
 readingTime: "8 min read"
+takeaways:
+  - "Many sites load their data from an internal JSON API you can call directly."
+  - "Find it in the browser Network tab, then replicate the request and trim headers."
+  - "Handle auth with captured tokens or reused session cookies."
+  - "APIs are faster and cleaner than HTML scraping but still need rate limiting and monitoring."
 ---
 
 # Reverse Engineering Private APIs for Faster, Cleaner Scraping

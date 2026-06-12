@@ -4,6 +4,11 @@ description: "How to use Scrapy for production scraping at scale. Covers spiders
 date: "2026-06-05"
 tags: ["scrapy", "web scraping", "python", "data pipeline", "automation"]
 readingTime: "9 min read"
+takeaways:
+  - "Use Scrapy when the job is recurring and spans many pages, not for a one-off scrape."
+  - "Item pipelines clean, validate, and store data in stages."
+  - "AutoThrottle adapts the request rate to avoid bans; raise concurrency only while block rate stays at zero."
+  - "Use ON CONFLICT upserts so re-runs update existing rows instead of duplicating."
 ---
 
 # Building a Large-Scale Web Scraper with Scrapy

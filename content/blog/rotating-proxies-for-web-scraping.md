@@ -4,6 +4,11 @@ description: "A practical guide to integrating residential and rotating proxies 
 date: "2026-06-12"
 tags: ["web scraping", "proxies", "python", "anti-bot", "playwright"]
 readingTime: "8 min read"
+takeaways:
+  - "Datacenter proxies are cheapest but blocked fast; residential and mobile cost more but pass protected sites."
+  - "Start with datacenter and escalate to residential only when you actually see blocks."
+  - "Treat 403 and 429 responses as a signal to rotate, and silently skip dead proxies."
+  - "Match proxy geolocation to the site's audience, and pair proxies with fingerprint stealth and human-like timing."
 ---
 
 # How to Integrate Rotating Proxies for Web Scraping (Without Getting Blocked)

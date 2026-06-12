@@ -4,6 +4,11 @@ description: "A practical guide to integrating CAPTCHA solving services into a P
 date: "2026-06-08"
 tags: ["captcha", "web scraping", "python", "automation", "anti-bot"]
 readingTime: "8 min read"
+takeaways:
+  - "Solving services return a token you inject; you do not solve the puzzle yourself."
+  - "CapSolver is fast for token challenges; 2Captcha gives broad coverage as a fallback."
+  - "The cheapest CAPTCHA is one you never trigger, so reduce triggers with clean IPs and fingerprints first."
+  - "Cache sessions and solve only when actually blocked to keep costs down."
 ---
 
 # Solving CAPTCHAs in Your Scraper with 2Captcha and CapSolver
