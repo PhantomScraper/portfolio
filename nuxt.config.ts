@@ -65,13 +65,12 @@ export default defineNuxtConfig({
       emailjsTemplateId: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
       emailjsPublicKey: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.vuongphan.dev',
-      // Google Ads conversion tracking. ID is hardcoded (it's a public
+      // Google Ads conversion tracking. ID + labels hardcoded (public
       // client-side tag); env vars can still override per-environment.
-      // TODO: fill in the two conversion labels from each conversion action's
-      // event snippet (the part after "AW-18250162476/") to start recording.
+      // TODO: add the Upwork-click conversion label once that action is created.
       gtag: {
         adsId: process.env.NUXT_PUBLIC_GTAG_ADS_ID || 'AW-18250162476',
-        formLabel: process.env.NUXT_PUBLIC_GTAG_FORM_LABEL || '',
+        formLabel: process.env.NUXT_PUBLIC_GTAG_FORM_LABEL || 'xQ9ACIalp8EcEKzCrf5D',
         upworkLabel: process.env.NUXT_PUBLIC_GTAG_UPWORK_LABEL || '',
       },
     },
