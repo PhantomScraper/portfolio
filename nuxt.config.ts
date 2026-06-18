@@ -47,6 +47,7 @@ export default defineNuxtConfig({
         // DNS prefetch for third-party services
         { rel: 'dns-prefetch', href: 'https://api.emailjs.com' },
         { rel: 'dns-prefetch', href: 'https://www.upwork.com' },
+        { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' },
         // Preconnect for fonts (LCP improvement)
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
@@ -64,6 +65,12 @@ export default defineNuxtConfig({
       emailjsTemplateId: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
       emailjsPublicKey: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.vuongphan.dev',
+      // Google Ads conversion tracking. Leave the ID empty to keep gtag dormant.
+      gtag: {
+        adsId: process.env.NUXT_PUBLIC_GTAG_ADS_ID || '',
+        formLabel: process.env.NUXT_PUBLIC_GTAG_FORM_LABEL || '',
+        upworkLabel: process.env.NUXT_PUBLIC_GTAG_UPWORK_LABEL || '',
+      },
     },
   },
 })

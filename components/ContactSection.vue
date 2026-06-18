@@ -163,6 +163,7 @@
 import emailjs from '@emailjs/browser'
 
 const config = useRuntimeConfig()
+const { $trackConversion } = useNuxtApp()
 const formRef = ref<HTMLFormElement | null>(null)
 
 const form = reactive({
@@ -191,6 +192,8 @@ async function handleSubmit() {
     )
     status.value = 'success'
     statusMessage.value = 'Message sent! I\'ll get back to you within 24 hours.'
+    // Google Ads: primary conversion (no-op until a Conversion ID is configured)
+    $trackConversion((config.public.gtag as { formLabel: string })?.formLabel)
     form.name = ''
     form.email = ''
     form.service = ''
