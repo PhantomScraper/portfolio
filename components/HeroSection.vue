@@ -20,18 +20,18 @@
 
           <!-- H1 -->
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
-            Automate.
-            <span class="gradient-text block">Scrape.</span>
-            Scale.
+            Custom
+            <span class="gradient-text block">Web Scraping</span>
+            &amp; Data Extraction
           </h1>
 
           <!-- Subtext -->
           <p class="text-lg sm:text-xl text-slate-500 leading-relaxed max-w-lg">
-            Python &amp; full-stack engineer specializing in <strong class="text-slate-700">web scraping</strong>,
-            <strong class="text-slate-700">browser automation</strong>,
-            <strong class="text-slate-700">API integration</strong>, and
-            <strong class="text-slate-700">voice AI</strong>.
-            Delivering clean, scalable <strong class="text-slate-700">data pipelines</strong> and web applications.
+            A <strong class="text-slate-700">website scraping service</strong> run by one freelance developer,
+            not an agency. I build <strong class="text-slate-700">custom web scrapers</strong>,
+            <strong class="text-slate-700">browser automation</strong>, and
+            <strong class="text-slate-700">API integrations</strong>, and deliver clean
+            <strong class="text-slate-700">web data extraction</strong> as CSV, JSON, or a live API.
           </p>
 
           <!-- Typing indicator -->

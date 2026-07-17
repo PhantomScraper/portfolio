@@ -49,6 +49,10 @@
 // Keep in sync with the FAQPage JSON-LD in pages/index.vue
 const faqs = [
   {
+    question: 'Do you offer a custom web scraping service for businesses?',
+    answer: 'Yes. This is a done-for-you website scraping service: you describe the sites and the data you need, and I build and run custom scrapers that deliver clean, structured data to you as CSV, JSON, Excel, a database, or an API. Unlike a web scraping company, you work directly with the developer writing the code, which means faster turnaround and lower cost. See the Web Scraping Service page for details, pricing, and a free sample offer.',
+  },
+  {
     question: 'What web scraping services do you offer?',
     answer: 'I build custom web scrapers and data scraping pipelines using Python, Playwright, Scrapy, Puppeteer, and Selenium. Services include web crawling, data harvesting, e-commerce scraping, price monitoring, lead scraping, competitor data collection, real estate data, and job board extraction. Works on JS-rendered pages, login-protected sites, and sites with anti-bot protection. Data delivered in CSV, JSON, Excel, or directly into your database.',
   },

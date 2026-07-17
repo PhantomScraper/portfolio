@@ -102,7 +102,8 @@ const scrolled = ref(false)
 const mobileOpen = ref(false)
 
 const navLinks = [
-  { href: '/#services', label: 'Services' },
+  { href: '/web-scraping-service', label: 'Scraping Service' },
+  { href: '/#services', label: 'All Services' },
   { href: '/#why-us', label: 'Why Me' },
   { href: '/#how-it-works', label: 'Process' },
   { href: '/blog', label: 'Blog' },

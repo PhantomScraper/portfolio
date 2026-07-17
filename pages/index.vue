@@ -26,13 +26,17 @@ useHead({
             '@id': 'https://www.vuongphan.dev/#person',
             name: 'Phan Vuong',
             url: 'https://www.vuongphan.dev',
-            jobTitle: 'Web Scraping & Automation Engineer | Full-Stack Developer',
-            description: 'Expert web scraping engineer and full-stack developer specializing in data extraction, anti-bot bypass, API integration, voice AI with LiveKit, and scalable automation systems.',
+            jobTitle: 'Freelance Web Scraping Developer | Full-Stack Engineer',
+            description: 'Freelance web scraping developer offering a custom web scraping service: website scraping, web data extraction, anti-bot bypass, API integration, voice AI with LiveKit, and scalable automation systems.',
             sameAs: [
               'https://www.upwork.com/freelancers/phanvuong2',
               'https://github.com/hienvuong2810',
             ],
             knowsAbout: [
+              'Custom Web Scraping',
+              'Website Scraping Service',
+              'Web Data Extraction',
+              'Data Extraction Service',
               'Web Scraping',
               'Web Scraper',
               'Data Scraping',
@@ -101,9 +105,10 @@ useHead({
           {
             '@type': 'Service',
             provider: { '@id': 'https://www.vuongphan.dev/#person' },
-            name: 'Web Scraping & Data Extraction',
-            description: 'Custom web scraper and data scraping service. Large-scale web crawling, data harvesting, e-commerce scraping, price monitoring, lead scraping, and multi-format data export (CSV, JSON, Excel, database).',
-            serviceType: 'Web Scraping',
+            name: 'Custom Web Scraping Service & Web Data Extraction',
+            description: 'Custom web scraping service and website scraping for businesses. Large-scale web crawling, data harvesting, e-commerce scraping, price monitoring, lead scraping, and multi-format data export (CSV, JSON, Excel, database).',
+            serviceType: 'Web Scraping Service',
+            url: 'https://www.vuongphan.dev/web-scraping-service',
           },
           {
             '@type': 'Service',
@@ -144,8 +149,8 @@ useHead({
             '@type': 'WebPage',
             '@id': 'https://www.vuongphan.dev/#webpage',
             url: 'https://www.vuongphan.dev',
-            name: 'Vuong Phan - Python Web Scraping & Automation Expert for Hire',
-            description: 'Hire a Python web scraping expert & full-stack developer. Data extraction, anti-bot bypass, API integration, voice AI, and automation pipelines.',
+            name: 'Vuong Phan - Custom Web Scraping Service & Web Data Extraction',
+            description: 'Custom web scraping service by a Top Rated freelance developer. Website scraping, web data extraction, anti-bot bypass, API integration, and automation pipelines.',
             isPartOf: { '@id': 'https://www.vuongphan.dev/#website' },
             about: { '@id': 'https://www.vuongphan.dev/#person' },
             inLanguage: 'en-US',
@@ -170,6 +175,14 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Do you offer a custom web scraping service for businesses?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes. This is a done-for-you website scraping service: you describe the sites and the data you need, and I build and run custom scrapers that deliver clean, structured data to you as CSV, JSON, Excel, a database, or an API. Unlike a web scraping company, you work directly with the developer writing the code, which means faster turnaround and lower cost.',
+            },
+          },
           {
             '@type': 'Question',
             name: 'What web scraping services do you offer?',

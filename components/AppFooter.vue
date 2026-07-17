@@ -72,6 +72,7 @@
         <div>
           <h3 class="text-white font-semibold text-sm mb-4">Quick Links</h3>
           <ul class="space-y-2.5 text-sm">
+            <li><NuxtLink to="/web-scraping-service" class="hover:text-white transition-colors">Web Scraping Service</NuxtLink></li>
             <li><a href="/#why-us" class="hover:text-white transition-colors">Why Choose Me</a></li>
             <li><a href="/#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
             <li><NuxtLink to="/blog" class="hover:text-white transition-colors">Blog</NuxtLink></li>
