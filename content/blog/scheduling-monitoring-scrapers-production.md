@@ -122,4 +122,4 @@ Even a well built scraper needs ongoing care because the targets change. The dif
 
 ## Need a production grade scraping system?
 
-I build scraping systems with scheduling, queues, retries, and monitoring so they run reliably and alert you when something needs attention. If you need a scraper that runs in production, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I build scraping systems with scheduling, queues, retries, and monitoring so they run reliably and alert you when something needs attention, delivered as a managed [web scraping service](/web-scraping-service). If you need a scraper that runs in production, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.

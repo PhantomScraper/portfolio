@@ -94,4 +94,4 @@ Start with the cheapest tier that works for your target, and escalate only when 
 
 ## Need help choosing and integrating proxies?
 
-I build scraping systems with the right proxy setup for each target, from datacenter to premium residential, with the rotation and retry logic to run reliably. If you need help, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I build scraping systems with the right proxy setup for each target, from datacenter to premium residential, with the rotation and retry logic to run reliably. Proxy selection and integration are included in my [web scraping service](/web-scraping-service), so you never manage vendors yourself. If you need help, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.

@@ -27,9 +27,10 @@
             <span class="font-bold text-white text-lg">Vuong Phan</span>
           </div>
           <p class="text-sm leading-relaxed mb-6">
-            Freelance Python developer specializing in web scraping, browser automation, API
-            integration, full-stack development, and voice AI. Top Rated on Upwork with 6,300+
-            hours and 5.0 rating.
+            Vuong Phan is an independent freelance Python developer specializing in web scraping,
+            browser automation, API integration, full-stack development, and voice AI. Top Rated
+            on Upwork with 6,300+ hours and a 5.0 rating, and available for direct engagements
+            through the contact form on this site.
           </p>
           <!-- Social links -->
           <div class="flex items-center gap-3">

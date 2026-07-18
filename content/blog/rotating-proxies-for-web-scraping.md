@@ -151,4 +151,4 @@ Exponential backoff prevents you from hammering a site that's already rate-limit
 
 ## Need this built for your project?
 
-I build production scraping systems with proxy integration, anti-bot bypass, and the retry infrastructure to keep them running at scale, across Cloudflare, DataDome, and Akamai-protected sites. If you have a scraping or automation project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or get in touch through the [contact form](/#contact). I reply within 24 hours with a scope and quote.
+I build production scraping systems with proxy integration, anti-bot bypass, and the retry infrastructure to keep them running at scale, across Cloudflare, DataDome, and Akamai-protected sites, all delivered as a [custom web scraping service](/web-scraping-service). If you have a scraping or automation project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or get in touch through the [contact form](/#contact). I reply within 24 hours with a scope and quote.

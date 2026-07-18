@@ -69,6 +69,14 @@ const faqs = [
     answer: 'Yes. I build real-time voice AI assistants and IVR systems using LiveKit, Dialogflow, and Voximplant. These include automated inbound/outbound call handling, lead qualification bots, appointment booking, and customer support automation powered by OpenAI, Gemini, and Grok.',
   },
   {
+    question: 'How much does it cost to hire you for a web scraping or automation project?',
+    answer: 'Most one-off web scraping projects cost between $100 and $500, and recurring pipelines with scheduling and monitoring typically run from $200 to $1,000+ per month depending on volume and anti-bot difficulty. Larger automation and full-stack builds are quoted as fixed-price projects, and hourly engagements through Upwork are available for ongoing maintenance and consulting. Every project starts with a free scoping call and a fixed quote within 24 hours, so there are no surprise hours.',
+  },
+  {
+    question: 'What timezones do you work in and how do we communicate?',
+    answer: 'I work with clients across the US, Europe, and Asia and schedule calls to overlap with US (EST and PST) and European business hours. Day-to-day collaboration is asynchronous with regular written updates, and I communicate fluently in English over Slack, Microsoft Teams, Jira, or email, whichever your team already uses.',
+  },
+  {
     question: 'How do I hire you for a web scraping or automation project?',
     answer: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/phanvuong2, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated freelancer with 6,300+ hours and a 5.0 rating on Upwork.',
   },

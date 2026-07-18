@@ -155,4 +155,4 @@ Reach for Scrapy when the job is recurring, spans many pages, and needs reliabil
 
 ## Need a production scraping pipeline built?
 
-I build Scrapy based pipelines with proxy rotation, retry logic, and database export that run on a schedule and stay reliable at scale. If you have a recurring scraping need, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I build Scrapy based pipelines with proxy rotation, retry logic, and database export that run on a schedule and stay reliable at scale, delivered through my [custom web scraping service](/web-scraping-service). If you have a recurring scraping need, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.

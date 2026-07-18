@@ -117,4 +117,4 @@ Amazon changes its markup and tightens its defenses regularly. A scraper that wo
 
 ## Need Amazon or e-commerce data at scale?
 
-I build e-commerce scrapers for price monitoring, catalog extraction, and competitor tracking, with the proxy and anti-bot infrastructure to run reliably. If you need product data at scale, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I build e-commerce scrapers for price monitoring, catalog extraction, and competitor tracking, with the proxy and anti-bot infrastructure to run reliably. E-commerce data is one of the most common requests in my [custom web scraping service](/web-scraping-service). If you need product data at scale, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.

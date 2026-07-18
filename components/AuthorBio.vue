@@ -33,6 +33,9 @@
         >
           GitHub
         </a>
+        <NuxtLink to="/web-scraping-service" class="text-primary-600 font-medium hover:text-primary-700 hover:underline">
+          Web Scraping Service
+        </NuxtLink>
         <NuxtLink to="/#contact" class="text-primary-600 font-medium hover:text-primary-700 hover:underline">
           Contact
         </NuxtLink>

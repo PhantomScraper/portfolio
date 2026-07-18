@@ -217,6 +217,22 @@ useHead({
           },
           {
             '@type': 'Question',
+            name: 'How much does it cost to hire you for a web scraping or automation project?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Most one-off web scraping projects cost between $100 and $500, and recurring pipelines with scheduling and monitoring typically run from $200 to $1,000+ per month depending on volume and anti-bot difficulty. Larger automation and full-stack builds are quoted as fixed-price projects, and hourly engagements through Upwork are available for ongoing maintenance and consulting. Every project starts with a free scoping call and a fixed quote within 24 hours, so there are no surprise hours.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What timezones do you work in and how do we communicate?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'I work with clients across the US, Europe, and Asia and schedule calls to overlap with US (EST and PST) and European business hours. Day-to-day collaboration is asynchronous with regular written updates, and I communicate fluently in English over Slack, Microsoft Teams, Jira, or email, whichever your team already uses.',
+            },
+          },
+          {
+            '@type': 'Question',
             name: 'How do I hire you for a web scraping or automation project?',
             acceptedAnswer: {
               '@type': 'Answer',

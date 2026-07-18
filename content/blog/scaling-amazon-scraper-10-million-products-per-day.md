@@ -16,6 +16,12 @@ takeaways:
 
 This is a write-up of a real pattern I build for clients as a senior web scraping expert and data pipeline engineer. Names and exact numbers are generalized, but the architecture and the problems are exactly what you hit at this scale.
 
+## Project Overview (TL;DR)
+
+- **Challenge:** Track roughly 10 million Amazon product pages every day past IP blocks, robot checks, and CAPTCHAs. That is a sustained 116+ pages per second, far beyond what a single script can do.
+- **Tech stack:** Python, distributed Scrapy workers behind a Redis URL frontier, a separate Playwright browser tier for JavaScript-rendered pages, rotating residential proxies with geo matching, and storage in PostgreSQL and S3.
+- **Result:** The rebuilt pipeline sustained 10 million pages per day with headroom. Roughly 90 percent of pages were served through cheap HTTP requests instead of headless browsers, the CAPTCHA solving bill dropped to a rounding error, and per-field success monitoring caught Amazon markup changes within hours.
+
 ## The Challenge
 
 A client in the e-commerce intelligence space needed to track pricing and availability across roughly **10 million Amazon product pages every day**. They had an existing script that worked for a few thousand products, then fell over the moment they tried to scale it.
@@ -123,4 +129,4 @@ Building a scraper that hits the number once is the easy part. Amazon changes it
 
 ## Need a scraper that scales to millions of pages?
 
-I design and build production data pipelines that scrape at scale through IP blocks, CAPTCHAs, and dynamic JavaScript sites, using rotating proxies, Playwright, and distributed Scrapy. If you have a high-volume scraping or data pipeline project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I design and build production data pipelines that scrape at scale through IP blocks, CAPTCHAs, and dynamic JavaScript sites, using rotating proxies, Playwright, and distributed Scrapy. Pipelines like this are the top end of my [custom web scraping service](/web-scraping-service). If you have a high-volume scraping or data pipeline project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.

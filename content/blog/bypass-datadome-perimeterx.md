@@ -106,4 +106,4 @@ DataDome and PerimeterX update their detection continuously. A setup that works 
 
 ## Need a hard target scraped reliably?
 
-I build and maintain scrapers that get through DataDome, PerimeterX, Cloudflare, and Akamai, with the stealth, proxy, and monitoring infrastructure to keep them running. If you have a tough target, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I build and maintain scrapers that get through DataDome, PerimeterX, Cloudflare, and Akamai, with the stealth, proxy, and monitoring infrastructure to keep them running. Hard targets like these are the core of my [website scraping service](/web-scraping-service). If you have a tough target, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.

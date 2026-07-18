@@ -192,7 +192,7 @@ const deliverables = [
   },
   {
     title: 'Scales from 1 page to millions',
-    text: 'The same service covers a one-off extraction of a single site and distributed crawlers processing millions of pages per day.',
+    text: 'The same service covers a one-off extraction of a single site and distributed crawlers sustaining 10 million pages per day, the scale documented in my Amazon scraping case study.',
   },
   {
     title: 'Maintenance when sites change',
@@ -232,6 +232,10 @@ const faqs = [
   {
     question: 'Why hire a freelance developer instead of a web scraping company?',
     answer: 'With a web scraping company you pay for sales, account management, and office overhead before any code gets written. Hiring a freelance developer means the person quoting your project is the person building it. You get faster answers, lower cost, and direct accountability through a public Upwork track record with escrow protection.',
+  },
+  {
+    question: 'Why hire a developer instead of using a no-code scraping tool like Octoparse or ParseHub?',
+    answer: 'No-code tools work well for simple public pages, but they break on Cloudflare, DataDome, and CAPTCHA protected sites and struggle past a few thousand pages. A custom-built scraper handles anti-bot protection with rotating residential proxies and fingerprint control, scales to millions of pages per day on a distributed architecture, and gets fixed when the target site changes instead of failing silently. You also own the code and the pipeline instead of renting a tool your team has to operate.',
   },
   {
     question: 'Is web scraping legal?',
@@ -281,6 +285,22 @@ useHead({
             provider: { '@id': `${siteUrl}/#person` },
             areaServed: 'Worldwide',
             url: pageUrl,
+            offers: {
+              '@type': 'AggregateOffer',
+              priceCurrency: 'USD',
+              lowPrice: '100',
+              description: 'One-off extractions typically $100 to $500. Managed recurring pipelines with monitoring from $200 per month. Fixed quote within 24 hours after a free scoping call.',
+            },
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Web Scraping Services',
+              itemListElement: [
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'E-commerce and price monitoring scraping' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Anti-bot bypass (Cloudflare, DataDome, PerimeterX, Akamai)' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lead generation and B2B list building' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Managed scraping pipelines with scheduling and monitoring' } },
+              ],
+            },
           },
           {
             '@type': 'WebPage',

@@ -140,4 +140,4 @@ Some sites layer behavioral analysis on top of the CAPTCHA. A valid token from a
 
 ## Need CAPTCHAs handled in your scraping project?
 
-I build scraping systems that combine stealth, proxy rotation, and CAPTCHA solving so they keep running on protected sites. If you have a project that keeps hitting CAPTCHAs, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I reply within 24 hours with a scope and quote.
+I build scraping systems that combine stealth, proxy rotation, and CAPTCHA solving so they keep running on protected sites. CAPTCHA handling is included in every project in my [web scraping service](/web-scraping-service). If you have a project that keeps hitting CAPTCHAs, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I reply within 24 hours with a scope and quote.

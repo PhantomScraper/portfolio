@@ -96,4 +96,4 @@ Google's terms prohibit automated scraping of search results. SERP API services 
 
 ## Need SERP or search data for your project?
 
-I build rank tracking and SERP data pipelines using the right mix of API services and custom scraping for your volume and budget. If you need Google search data, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I build rank tracking and SERP data pipelines using the right mix of API services and [custom scraping](/web-scraping-service) for your volume and budget. If you need Google search data, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.

@@ -108,4 +108,4 @@ For a new scraping project in 2026, Playwright is the right default for its API,
 
 ## Need browser automation built for your scraping project?
 
-I build scrapers on Playwright, Puppeteer, and Selenium with the stealth and proxy infrastructure to run reliably on protected sites. If you have a project that needs real browser automation, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I reply within 24 hours.
+I build scrapers on Playwright, Puppeteer, and Selenium with the stealth and proxy infrastructure to run reliably on protected sites, as part of my [custom web scraping service](/web-scraping-service). If you have a project that needs real browser automation, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I reply within 24 hours.
