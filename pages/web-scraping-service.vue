@@ -90,7 +90,7 @@
           </h2>
           <p class="section-subtitle mx-auto text-center">
             A web scraping company puts an account manager between you and the person writing the code.
-            Hiring a freelance developer removes that layer.
+            <NuxtLink to="/hire-web-scraping-developer" class="text-primary-600 hover:underline">Hiring a freelance developer</NuxtLink> removes that layer.
           </p>
         </div>
         <div class="overflow-x-auto">

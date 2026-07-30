@@ -106,6 +106,6 @@ Choose a **self-serve tool** when:
 
 ## Where I fit in
 
-I run a one-person [custom web scraping service](/web-scraping-service): scoping, a free sample from your target sites, fixed-price quotes within 24 hours, and optional managed pipelines with monitoring and maintenance. My track record is public on [Upwork](https://www.upwork.com/freelancers/phanvuong2): Top Rated, 5.0 rating, 6,300+ hours across 50+ projects, protected by escrow.
+I run a one-person [custom web scraping service](/web-scraping-service): scoping, a free sample from your target sites, fixed-price quotes within 24 hours, and optional managed pipelines with monitoring and maintenance. My track record is public on [Upwork](https://www.upwork.com/freelancers/phanvuong2): Top Rated, 5.0 rating, 6,300+ hours across 50+ projects, protected by escrow. Rates, process, and a vetting checklist are on the [hire a web scraping developer](/hire-web-scraping-developer) page.
 
 If you are weighing a web scraping company against hiring a developer directly, send me the sites and fields you need through the [contact form](/#contact). You will get a scope, a price, and a sample fast enough to make the comparison with any agency quote an easy one.

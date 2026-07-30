@@ -1,6 +1,6 @@
 ---
 title: "Case Study: Scaling an Amazon Scraper to 10 Million Products a Day"
-description: "How I built a data pipeline that scrapes 10 million Amazon products per day through IP blocks and CAPTCHAs, using rotating proxies, Playwright, and a distributed Scrapy architecture."
+description: "How I built a scalable asynchronous crawler that scrapes 10 million Amazon products per day for a US business, through IP blocks and CAPTCHAs, using rotating proxies, Playwright, and a distributed Scrapy architecture."
 date: "2026-06-18"
 tags: ["case study", "amazon", "data pipeline", "web scraping", "scrapy", "playwright", "proxies"]
 readingTime: "9 min read"

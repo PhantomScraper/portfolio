@@ -1,6 +1,6 @@
 ---
 title: "How to Scrape Sites Protected by DataDome and PerimeterX"
-description: "What DataDome and PerimeterX detect, why they are harder than basic WAFs, and the layered approach of stealth browsers, residential proxies, and session management that gets through."
+description: "How to scrape PerimeterX and DataDome protected pages: what these anti-bot systems detect, why they are harder than basic WAFs, and the layered approach of stealth browsers, residential proxies, and session management that gets through."
 date: "2026-05-28"
 tags: ["datadome", "perimeterx", "anti-bot", "web scraping", "proxies"]
 readingTime: "8 min read"
