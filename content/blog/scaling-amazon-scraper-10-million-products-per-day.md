@@ -2,6 +2,7 @@
 title: "Case Study: Scaling an Amazon Scraper to 10 Million Products a Day"
 description: "How I built a scalable asynchronous crawler that scrapes 10 million Amazon products per day for a US business, through IP blocks and CAPTCHAs, using rotating proxies, Playwright, and a distributed Scrapy architecture."
 date: "2026-06-18"
+updated: "2026-07-30"
 tags: ["case study", "amazon", "data pipeline", "web scraping", "scrapy", "playwright", "proxies"]
 readingTime: "9 min read"
 takeaways:
@@ -129,4 +130,4 @@ Building a scraper that hits the number once is the easy part. Amazon changes it
 
 ## Need a scraper that scales to millions of pages?
 
-I design and build production data pipelines that scrape at scale through IP blocks, CAPTCHAs, and dynamic JavaScript sites, using rotating proxies, Playwright, and distributed Scrapy. Pipelines like this are the top end of my [custom web scraping service](/web-scraping-service). If you have a high-volume scraping or data pipeline project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I design and build production data pipelines that scrape at scale through IP blocks, CAPTCHAs, and dynamic JavaScript sites, using rotating proxies, Playwright, and distributed Scrapy. Pipelines like this are the top end of my [custom web scraping service](/web-scraping-service). If you have a high-volume scraping or data pipeline project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours. If you are still comparing options, my guide to [hiring a web scraping developer](/hire-web-scraping-developer) covers 2026 rates and how to vet candidates.

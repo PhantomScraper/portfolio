@@ -2,6 +2,7 @@
 title: "How to Scrape Sites Protected by DataDome and PerimeterX"
 description: "How to scrape PerimeterX and DataDome protected pages: what these anti-bot systems detect, why they are harder than basic WAFs, and the layered approach of stealth browsers, residential proxies, and session management that gets through."
 date: "2026-05-28"
+updated: "2026-07-30"
 tags: ["datadome", "perimeterx", "anti-bot", "web scraping", "proxies"]
 readingTime: "8 min read"
 takeaways:
@@ -106,4 +107,4 @@ DataDome and PerimeterX update their detection continuously. A setup that works 
 
 ## Need a hard target scraped reliably?
 
-I build and maintain scrapers that get through DataDome, PerimeterX, Cloudflare, and Akamai, with the stealth, proxy, and monitoring infrastructure to keep them running. Hard targets like these are the core of my [website scraping service](/web-scraping-service). If you have a tough target, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I build and maintain scrapers that get through DataDome, PerimeterX, Cloudflare, and Akamai, with the stealth, proxy, and monitoring infrastructure to keep them running. Hard targets like these are the core of my [website scraping service](/web-scraping-service). If you have a tough target, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours. Not sure who to bring in? My guide on [hiring a web scraping developer](/hire-web-scraping-developer) lists the vetting questions that expose weak candidates.
