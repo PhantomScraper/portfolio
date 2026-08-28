@@ -14,7 +14,7 @@ takeaways:
 
 # How to Hire the Best Web Scraping Freelancer on Upwork (2026 Guide)
 
-Type "web scraping" into Upwork and you get tens of thousands of freelancers, from genuine anti-bot specialists to people who watched one BeautifulSoup tutorial. The price spread is just as wide: $8 an hour to $150 an hour for what looks like the same gig. I have spent 6,300+ hours on the platform as a scraping freelancer, and this guide is the filter I would use if I were the one hiring.
+Type "web scraping" into Upwork and you get tens of thousands of freelancers, from genuine anti-bot specialists to people who watched one BeautifulSoup tutorial. The price spread is just as wide: $8 an hour to $150 an hour for what looks like the same gig. I have spent 7,200+ hours on the platform as a scraping freelancer, and this guide is the filter I would use if I were the one hiring.
 
 ## Why Upwork is still the best place to hire scraping talent
 
@@ -79,7 +79,7 @@ Total vetting cost: under $50 and two days. Compare that with a month of onboard
 
 ## Where I fit, since you are reading this on my site
 
-Full disclosure: I am one of the freelancers this guide teaches you to vet. I hold Upwork's Top Rated badge with a 5.0 rating across 6,300+ hours and 50+ projects, specializing in anti-bot bypass, large-scale crawlers, and full data pipelines, with full-stack work on top when the project needs an app around the data. Run me through the checklist above: [my Upwork profile](https://www.upwork.com/freelancers/phanvuong2) or the [hire a web scraping developer](/hire-web-scraping-developer) page has everything, and a sample from your target sites is free for most projects.
+Full disclosure: I am one of the freelancers this guide teaches you to vet. I hold Upwork's Top Rated Plus badge with a 5.0 rating across 7,200+ hours and 50+ projects, specializing in anti-bot bypass, large-scale crawlers, and full data pipelines, with full-stack work on top when the project needs an app around the data. Run me through the checklist above: [my Upwork profile](https://www.upwork.com/freelancers/phanvuong2) or the [hire a web scraping developer](/hire-web-scraping-developer) page has everything, and a sample from your target sites is free for most projects.
 
 ## Frequently asked questions
 

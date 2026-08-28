@@ -1,159 +1,142 @@
 <template>
-  <section
-    id="contact"
-    class="py-24 bg-white"
-    aria-label="Contact"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
-        <!-- Left: info -->
+  <!-- Hallmark · C2 inline form as CTA, in the Split Studio diptych.
+       The EmailJS field names (from_name / reply_to / service / message), the
+       submit handler, and the Google Ads conversion call are untouched. -->
+  <section id="contact" class="band" aria-label="Contact">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow">08 / Contact</p>
         <div>
-          <div class="badge mb-4">Get In Touch</div>
-          <h2 class="section-title mb-6">
-            Hire a Python &amp; Automation
-            <span class="gradient-text"> Developer Today</span>
-          </h2>
-          <p class="text-slate-500 leading-relaxed mb-10">
+          <h2 class="section-head__title">Hire a Python &amp; Automation Developer Today</h2>
+          <p class="section-head__lede">
             Need a web scraping expert, full-stack developer, or voice AI engineer? Tell me about
             your project and I'll respond within 24 hours with a detailed scope and quote.
             No commitment required.
           </p>
-
-          <!-- Contact options -->
-          <div class="space-y-4">
-            <a
-              href="https://www.upwork.com/freelancers/phanvuong2"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 hover:border-primary-200 hover:bg-primary-50/40 transition-colors group"
-            >
-              <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-green-700" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.546-1.14-2.546-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="font-semibold text-slate-900 text-sm">Hire on Upwork</div>
-                <div class="text-slate-500 text-xs">upwork.com/freelancers/phanvuong2</div>
-              </div>
-              <svg class="w-4 h-4 text-slate-400 group-hover:text-primary-500 ml-auto transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-              </svg>
-            </a>
-
-          </div>
         </div>
+      </div>
 
-        <!-- Right: form -->
-        <div class="card border-slate-200">
-          <form ref="formRef" novalidate @submit.prevent="handleSubmit">
-            <div class="space-y-5">
-              <div class="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label for="contact-name" class="block text-sm font-medium text-slate-700 mb-1.5">
-                    Your Name <span class="text-red-500" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    id="contact-name"
-                    v-model="form.name"
-                    name="from_name"
-                    type="text"
-                    autocomplete="name"
-                    required
-                    placeholder="John Smith"
-                    class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow"
-                  >
-                </div>
-                <div>
-                  <label for="contact-email" class="block text-sm font-medium text-slate-700 mb-1.5">
-                    Email Address <span class="text-red-500" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    id="contact-email"
-                    v-model="form.email"
-                    name="reply_to"
-                    type="email"
-                    autocomplete="email"
-                    required
-                    placeholder="you@company.com"
-                    class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow"
-                  >
-                </div>
-              </div>
+      <div class="contact">
+        <!-- Direct channel -->
+        <div class="contact__aside">
+          <a
+            href="https://www.upwork.com/freelancers/phanvuong2"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="channel"
+          >
+            <IconUpwork class="channel__icon" />
+            <span>
+              <span class="channel__title">Hire on Upwork</span>
+              <span class="channel__sub">upwork.com/freelancers/phanvuong2</span>
+            </span>
+            <span class="channel__arrow" aria-hidden="true">↗</span>
+          </a>
 
-              <div>
-                <label for="contact-service" class="block text-sm font-medium text-slate-700 mb-1.5">
-                  Service Needed
-                </label>
-                <select
-                  id="contact-service"
-                  v-model="form.service"
-                  name="service"
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow bg-white"
-                >
-                  <option value="" disabled>Select a service...</option>
-                  <option>Web Scraping & Data Extraction</option>
-                  <option>Anti-Bot Bypass & Stealth Automation</option>
-                  <option>API Integration & Reverse Engineering</option>
-                  <option>Full-Stack Web Development</option>
-                  <option>Automation Tools & Desktop Apps</option>
-                  <option>AI & LLM Integration</option>
-                  <option>Voice AI & Conversational Bots</option>
-                  <option>Other / Consultation</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="contact-message" class="block text-sm font-medium text-slate-700 mb-1.5">
-                  Project Details <span class="text-red-500" aria-hidden="true">*</span>
-                </label>
-                <textarea
-                  id="contact-message"
-                  v-model="form.message"
-                  name="message"
-                  required
-                  rows="5"
-                  placeholder="Describe your project: what data you need, what you want automated, your timeline and budget..."
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow resize-none"
-                />
-              </div>
-
-              <!-- Status messages -->
-              <transition name="fade">
-                <div
-                  v-if="status"
-                  class="text-sm px-4 py-3 rounded-xl flex items-center gap-2"
-                  :class="status === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'"
-                  role="alert"
-                >
-                  <svg v-if="status === 'success'" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  <svg v-else class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                  {{ statusMessage }}
-                </div>
-              </transition>
-
-              <button
-                type="submit"
-                class="btn-primary w-full justify-center"
-                :disabled="loading"
-              >
-                <svg v-if="loading" class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
-                </svg>
-                {{ loading ? 'Sending...' : 'Send Message' }}
-              </button>
-
-              <p class="text-xs text-slate-400 text-center">
-                I'll reply within 24 hours. No spam, ever.
-              </p>
+          <dl class="terms">
+            <div>
+              <dt>Response time</dt>
+              <dd>Within 24 hours</dd>
             </div>
-          </form>
+            <div>
+              <dt>First deliverable</dt>
+              <dd>Fixed scope and quote</dd>
+            </div>
+            <div>
+              <dt>Sample extraction</dt>
+              <dd>Free, before you commit</dd>
+            </div>
+          </dl>
         </div>
+
+        <!-- Form -->
+        <form ref="formRef" class="form" novalidate @submit.prevent="handleSubmit">
+          <div class="form__pair">
+            <div>
+              <label for="contact-name" class="field-label">
+                Your name <span aria-hidden="true" style="color: var(--color-critical)">*</span>
+              </label>
+              <input
+                id="contact-name"
+                v-model="form.name"
+                name="from_name"
+                type="text"
+                autocomplete="name"
+                required
+                placeholder="John Smith"
+                class="field"
+              >
+            </div>
+            <div>
+              <label for="contact-email" class="field-label">
+                Email address <span aria-hidden="true" style="color: var(--color-critical)">*</span>
+              </label>
+              <input
+                id="contact-email"
+                v-model="form.email"
+                name="reply_to"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="you@company.com"
+                class="field"
+              >
+            </div>
+          </div>
+
+          <div>
+            <label for="contact-service" class="field-label">Service needed</label>
+            <select
+              id="contact-service"
+              v-model="form.service"
+              name="service"
+              class="field"
+            >
+              <option value="" disabled>Select a service...</option>
+              <option>Web Scraping &amp; Data Extraction</option>
+              <option>Anti-Bot Bypass &amp; Stealth Automation</option>
+              <option>API Integration &amp; Reverse Engineering</option>
+              <option>Full-Stack Web Development</option>
+              <option>Automation Tools &amp; Desktop Apps</option>
+              <option>AI &amp; LLM Integration</option>
+              <option>Voice AI &amp; Conversational Bots</option>
+              <option>Other / Consultation</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="contact-message" class="field-label">
+              Project details <span aria-hidden="true" style="color: var(--color-critical)">*</span>
+            </label>
+            <textarea
+              id="contact-message"
+              v-model="form.message"
+              name="message"
+              required
+              rows="6"
+              placeholder="Describe your project: what data you need, what you want automated, your timeline and budget..."
+              class="field"
+              style="resize: vertical"
+            />
+          </div>
+
+          <!-- Silent success. A hairline status line, never a toast. -->
+          <p
+            v-if="status"
+            class="status"
+            :class="status === 'success' ? 'status--ok' : 'status--bad'"
+            role="alert"
+          >
+            {{ statusMessage }}
+          </p>
+
+          <div class="form__submit">
+            <button type="submit" class="btn btn-primary" :disabled="loading">
+              {{ loading ? 'Sending' : 'Send message' }}
+            </button>
+            <span class="form__note">I'll reply within 24 hours. No spam, ever.</span>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -191,7 +174,7 @@ async function handleSubmit() {
       { publicKey: config.public.emailjsPublicKey as string },
     )
     status.value = 'success'
-    statusMessage.value = 'Message sent! I\'ll get back to you within 24 hours.'
+    statusMessage.value = 'Message sent. I\'ll get back to you within 24 hours.'
     // Google Ads: primary conversion (no-op until a Conversion ID is configured)
     $trackConversion((config.public.gtag as { formLabel: string })?.formLabel)
     form.name = ''
@@ -210,10 +193,144 @@ async function handleSubmit() {
 </script>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s ease;
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-xl);
 }
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
+
+@media (min-width: 900px) {
+  .contact {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--dur-short) var(--ease-out);
+}
+
+.channel:hover {
+  border-color: var(--color-upwork);
+}
+
+.channel__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  color: var(--color-upwork);
+}
+
+.channel__title {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.channel__sub {
+  display: block;
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  color: var(--color-neutral);
+  overflow-wrap: anywhere;
+}
+
+.channel__arrow {
+  margin-left: auto;
+  color: var(--color-neutral);
+}
+
+.terms {
+  margin: var(--space-md) 0 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.terms > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+  padding-block: var(--space-2xs);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.terms dt {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+.terms dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper-2);
+}
+
+@media (min-width: 640px) {
+  .form {
+    padding: var(--space-lg);
+  }
+}
+
+.form__pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+}
+
+@media (min-width: 560px) {
+  .form__pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.form__submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs) var(--space-sm);
+}
+
+.form__note {
+  font-size: var(--text-xs);
+  color: var(--color-neutral);
+}
+
+.status {
+  padding: var(--space-2xs) var(--space-xs);
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.status--ok {
+  border-color: var(--color-positive);
+  background: var(--color-positive-wash);
+  color: var(--color-positive);
+}
+
+.status--bad {
+  border-color: var(--color-critical);
+  background: var(--color-critical-wash);
+  color: var(--color-critical);
 }
 </style>

@@ -1,51 +1,38 @@
 <template>
-  <section
-    id="blog"
-    class="py-24 bg-slate-50"
-    aria-label="Latest articles"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <div class="badge mx-auto mb-4">Blog</div>
-        <h2 class="section-title">
-          Web Scraping &amp;
-          <span class="gradient-text">Automation Guides</span>
-        </h2>
-        <p class="section-subtitle mx-auto text-center">
-          Practical, hands-on guides from real client projects on scraping, anti-bot bypass, proxies, and automation.
-        </p>
+  <!-- Hallmark · index rows. Three posts as hairline-ruled entries, not cards. -->
+  <section id="blog" class="band band--tint" aria-label="Latest articles">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow">06 / Writing</p>
+        <div>
+          <h2 class="section-head__title">Web Scraping &amp; Automation Guides</h2>
+          <p class="section-head__lede">
+            Practical, hands-on guides from real client projects on scraping, anti-bot bypass, proxies, and automation.
+          </p>
+        </div>
       </div>
 
-      <!-- Latest posts -->
-      <div class="grid md:grid-cols-3 gap-6">
-        <NuxtLink
-          v-for="post in posts"
-          :key="post.path"
-          :to="post.path"
-          class="card flex flex-col hover:border-primary-200 group"
-        >
-          <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-3">
-            <time :datetime="post.date">{{ formatDate(post.date) }}</time>
-            <span v-if="post.readingTime" aria-hidden="true">•</span>
-            <span v-if="post.readingTime">{{ post.readingTime }}</span>
-          </div>
-          <h3 class="font-bold text-slate-900 group-hover:text-primary-700 transition-colors mb-2 leading-snug">
-            {{ post.title }}
-          </h3>
-          <p class="text-slate-500 text-sm leading-relaxed line-clamp-3">{{ post.description }}</p>
-        </NuxtLink>
-      </div>
+      <ul class="entries">
+        <li v-for="post in posts" :key="post.path">
+          <NuxtLink :to="post.path" class="entry">
+            <div class="entry__meta">
+              <time :datetime="post.date">{{ formatDate(post.date) }}</time>
+              <span v-if="post.readingTime">{{ post.readingTime }}</span>
+            </div>
+            <div>
+              <h3 class="entry__title">{{ post.title }}</h3>
+              <p class="entry__desc">{{ post.description }}</p>
+            </div>
+          </NuxtLink>
+        </li>
+      </ul>
 
-      <!-- View all -->
-      <div class="text-center mt-12">
-        <NuxtLink to="/blog" class="btn-outline">
-          View all articles
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
+      <p class="mt-lg">
+        <NuxtLink to="/blog" class="btn-text">
+          All articles
+          <span aria-hidden="true">→</span>
         </NuxtLink>
-      </div>
+      </p>
     </div>
   </section>
 </template>
@@ -67,3 +54,59 @@ function formatDate(date: string) {
   })
 }
 </script>
+
+<style scoped>
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.entries > li {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2xs);
+  padding-block: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .entry {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: var(--space-lg);
+    align-items: baseline;
+  }
+}
+
+.entry__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+.entry__title {
+  font-size: var(--text-md);
+  letter-spacing: -0.02em;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.entry:hover .entry__title {
+  color: var(--color-accent);
+}
+
+.entry__desc {
+  margin-top: var(--space-3xs);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  max-width: 68ch;
+}
+</style>

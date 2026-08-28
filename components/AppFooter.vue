@@ -1,106 +1,77 @@
 <template>
-  <footer class="bg-slate-900 text-slate-400" role="contentinfo">
-    <!-- Main footer -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid md:grid-cols-3 gap-12">
-        <!-- Brand -->
-        <div class="md:col-span-1">
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
-              <svg class="w-4 h-4 text-white" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <line x1="10" y1="0.5" x2="10" y2="4" stroke="currentColor" stroke-width="0.8"/>
-                <circle cx="10" cy="6.2" r="2.2" fill="currentColor"/>
-                <circle cx="9" cy="5.9" r="0.5" fill="white"/>
-                <circle cx="11" cy="5.9" r="0.5" fill="white"/>
-                <line x1="10" y1="8.4" x2="10" y2="9.6" stroke="currentColor" stroke-width="1.1"/>
-                <ellipse cx="10" cy="13" rx="2.8" ry="3.2" fill="currentColor"/>
-                <path d="M7.8 8.5 C6.2 7.8 4.8 7.2 3 6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                <path d="M7.5 10 C5.8 9.7 4.2 9.4 2.5 9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                <path d="M7.5 11.8 C5.8 12.2 4.2 12.7 2.5 13.2" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                <path d="M7.8 13.5 C6.2 14.5 4.8 15.3 3.5 16" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                <path d="M12.2 8.5 C13.8 7.8 15.2 7.2 17 6.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                <path d="M12.5 10 C14.2 9.7 15.8 9.4 17.5 9" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                <path d="M12.5 11.8 C14.2 12.2 15.8 12.7 17.5 13.2" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                <path d="M12.2 13.5 C13.8 14.5 15.2 15.3 16.5 16" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <span class="font-bold text-white text-lg">Vuong Phan</span>
+  <!-- Hallmark · footer: Ft5 Statement
+       knobs: sentence 38ch · wordmark under sentence · hairline rule above meta
+       Previous footer was Ft3 (four link columns + social row + tiny
+       copyright), banned for modern-minimal as the AI footer fingerprint.
+       Every unique internal destination it carried is preserved below; the six
+       duplicate links that all pointed at #services are consolidated into one. -->
+  <footer class="foot" role="contentinfo">
+    <div class="shell">
+      <!-- The statement -->
+      <p class="foot__statement">
+        Tell me the sites and the fields.<br>
+        I send you the data.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-md mt-lg">
+        <a
+          href="https://www.upwork.com/freelancers/phanvuong2"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-upwork"
+        >
+          <IconUpwork class="w-4 h-4" />
+          Hire on Upwork
+        </a>
+        <NuxtLink to="/#contact" class="foot__cta">
+          Send a project brief
+          <span aria-hidden="true">→</span>
+        </NuxtLink>
+      </div>
+
+      <hr class="foot__rule">
+
+      <!-- Meta -->
+      <div class="foot__meta">
+        <div class="foot__brand">
+          <div class="flex items-center gap-2xs">
+            <BrandMark class="w-5 h-5 text-accent-hi" />
+            <span class="font-display font-bold tracking-[-0.03em] text-[1.0625rem]" style="color: var(--color-on-deep)">
+              Vuong Phan
+            </span>
           </div>
-          <p class="text-sm leading-relaxed mb-6">
+          <p class="foot__bio">
             Vuong Phan is an independent freelance Python developer specializing in web scraping,
-            browser automation, API integration, full-stack development, and voice AI. Top Rated
-            on Upwork with 6,300+ hours and a 5.0 rating, and available for direct engagements
+            browser automation, API integration, full-stack development, and voice AI. Top Rated Plus
+            on Upwork with 7,200+ hours and a 5.0 rating, and available for direct engagements
             through the contact form on this site.
           </p>
-          <!-- Social links -->
-          <div class="flex items-center gap-3">
-            <a
-              href="https://www.upwork.com/freelancers/phanvuong2"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors"
-              aria-label="Upwork profile"
-            >
-              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.546-1.14-2.546-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
-              </svg>
-            </a>
-            <a
-              href="https://github.com/hienvuong2810"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors"
-              aria-label="GitHub profile"
-            >
-              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-              </svg>
-            </a>
-          </div>
         </div>
 
-        <!-- Services -->
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-4">Services</h3>
-          <ul class="space-y-2.5 text-sm">
-            <li v-for="service in footerServices" :key="service">
-              <a href="#services" class="hover:text-white transition-colors">{{ service }}</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Quick links -->
-        <div>
-          <h3 class="text-white font-semibold text-sm mb-4">Quick Links</h3>
-          <ul class="space-y-2.5 text-sm">
-            <li><NuxtLink to="/web-scraping-service" class="hover:text-white transition-colors">Web Scraping Service</NuxtLink></li>
-            <li><NuxtLink to="/hire-web-scraping-developer" class="hover:text-white transition-colors">Hire a Web Scraping Developer</NuxtLink></li>
-            <li><a href="/#why-us" class="hover:text-white transition-colors">Why Choose Me</a></li>
-            <li><a href="/#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
-            <li><NuxtLink to="/blog" class="hover:text-white transition-colors">Blog</NuxtLink></li>
-            <li><a href="/#contact" class="hover:text-white transition-colors">Contact</a></li>
-            <li>
-              <a
-                href="https://www.upwork.com/freelancers/phanvuong2"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-white transition-colors"
-              >
-                Upwork Profile ↗
-              </a>
-            </li>
-          </ul>
-        </div>
+        <nav class="foot__links" aria-label="Footer">
+          <NuxtLink to="/web-scraping-service">Web Scraping Service</NuxtLink>
+          <NuxtLink to="/hire-web-scraping-developer">Hire a Web Scraping Developer</NuxtLink>
+          <a href="/#services">All Services</a>
+          <a href="/#why-us">Why Choose Me</a>
+          <a href="/#how-it-works">How It Works</a>
+          <NuxtLink to="/blog">Blog</NuxtLink>
+          <a href="/#contact">Contact</a>
+          <a
+            href="https://www.upwork.com/freelancers/phanvuong2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Upwork Profile ↗</a>
+          <a
+            href="https://github.com/hienvuong2810"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub ↗</a>
+        </nav>
       </div>
-    </div>
 
-    <!-- Bottom bar -->
-    <div class="border-t border-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-sm">
-          © {{ new Date().getFullYear() }} Vuong Phan. All rights reserved.
-        </p>
-        <p class="text-xs text-slate-600">
+      <div class="foot__base">
+        <p>© {{ new Date().getFullYear() }} Vuong Phan. All rights reserved.</p>
+        <p class="foot__disciplines">
           Python Web Scraping · Browser Automation · API Integration · Full-Stack Developer · Voice AI
         </p>
       </div>
@@ -108,13 +79,109 @@
   </footer>
 </template>
 
-<script setup lang="ts">
-const footerServices = [
-  'Web Scraping & Data Extraction',
-  'Anti-Bot Bypass & Stealth',
-  'API Integration',
-  'Full-Stack Development',
-  'AI & Document Intelligence',
-  'Voice AI with LiveKit',
-]
-</script>
+<script setup lang="ts"></script>
+
+<style scoped>
+.foot {
+  background: var(--color-ink-deep);
+  color: var(--color-on-deep-mute);
+  padding-block: var(--space-2xl) var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .foot {
+    padding-block: var(--space-3xl) var(--space-lg);
+  }
+}
+
+.foot__statement {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--text-display-s);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 38ch;
+  color: var(--color-on-deep);
+  overflow-wrap: anywhere;
+}
+
+.foot__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-accent-hi);
+  white-space: nowrap;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.foot__cta:hover {
+  color: var(--color-on-deep);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.foot__rule {
+  margin-block: var(--space-2xl) var(--space-lg);
+  border: 0;
+  border-top: 1px solid var(--color-deep-rule);
+}
+
+.foot__meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 900px) {
+  .foot__meta {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-2xl);
+  }
+}
+
+.foot__bio {
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+/* One flowing line of links, not four columns. Same destinations, no grid. */
+.foot__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-md);
+  align-content: flex-start;
+  font-size: var(--text-sm);
+}
+
+.foot__links a {
+  color: var(--color-on-deep-mute);
+  white-space: nowrap;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.foot__links a:hover {
+  color: var(--color-on-deep);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.foot__base {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-md);
+  justify-content: space-between;
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-deep-rule);
+  font-size: var(--text-xs);
+}
+
+.foot__disciplines {
+  color: var(--color-neutral);
+}
+</style>

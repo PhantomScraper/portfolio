@@ -72,7 +72,7 @@ Hiring that engineer directly changes the math:
 
 The freelancer model has real limits: one person cannot offer 24/7 coverage, compliance certifications, or a bench of substitutes. If you need those, pick a company from the list above. I break the full decision down in [web scraping company vs freelance developer](/blog/web-scraping-company-vs-freelancer).
 
-For most price monitoring, lead generation, market research, and data pipeline projects, though, a senior freelancer is the best value on this page. That is the service I run: I am a Top Rated freelance scraping developer on Upwork with a 5.0 rating across 6,300+ hours and 50+ projects, and my [hire a web scraping developer](/hire-web-scraping-developer) page lays out rates, process, and a vetting checklist you can use on any candidate, including me.
+For most price monitoring, lead generation, market research, and data pipeline projects, though, a senior freelancer is the best value on this page. That is the service I run: I am a Top Rated Plus freelance scraping developer on Upwork with a 5.0 rating across 7,200+ hours and 50+ projects, and my [hire a web scraping developer](/hire-web-scraping-developer) page lays out rates, process, and a vetting checklist you can use on any candidate, including me.
 
 ## How to choose: a 60-second decision guide
 

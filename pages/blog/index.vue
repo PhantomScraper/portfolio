@@ -1,46 +1,35 @@
 <template>
+  <!-- Hallmark · macrostructure: 13 Index-First
+       The page IS the list. Hairline rules between rows, no hero image, no
+       card boxes, no centred badge header. -->
   <main id="main-content" class="pt-16">
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <div class="badge mx-auto mb-4">Blog</div>
-        <h1 class="section-title text-4xl md:text-5xl">
-          Web Scraping &amp;
-          <span class="gradient-text">Automation Guides</span>
-        </h1>
-        <p class="section-subtitle mx-auto text-center">
+    <section class="shell band band--lead">
+      <header class="head">
+        <p class="eyebrow">Writing</p>
+        <h1 class="head__title">Web Scraping &amp; Automation Guides</h1>
+        <p class="head__lede">
           Practical, hands-on guides on web scraping, anti-bot bypass, proxies, and automation, from real client projects.
         </p>
-      </div>
+      </header>
 
-      <!-- Post list -->
-      <div class="space-y-6">
-        <NuxtLink
-          v-for="post in posts"
-          :key="post.path"
-          :to="post.path"
-          class="card block hover:border-primary-200 group"
-        >
-          <div class="flex flex-wrap items-center gap-3 text-xs text-slate-400 mb-3">
-            <time :datetime="post.date">{{ formatDate(post.date) }}</time>
-            <span v-if="post.readingTime" aria-hidden="true">•</span>
-            <span v-if="post.readingTime">{{ post.readingTime }}</span>
-          </div>
-          <h2 class="text-xl font-bold text-slate-900 group-hover:text-primary-700 transition-colors mb-2">
-            {{ post.title }}
-          </h2>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">{{ post.description }}</p>
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="tag in post.tags"
-              :key="tag"
-              class="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-xs text-slate-500"
-            >
-              {{ tag }}
-            </span>
-          </div>
-        </NuxtLink>
-      </div>
+      <ol class="index">
+        <li v-for="(post, i) in posts" :key="post.path" class="index__row">
+          <NuxtLink :to="post.path" class="index__link">
+            <span class="index__num tnum">{{ String(i + 1).padStart(2, '0') }}</span>
+            <div class="index__main">
+              <span class="index__meta">
+                <time :datetime="post.date">{{ formatDate(post.date) }}</time>
+                <span v-if="post.readingTime">{{ post.readingTime }}</span>
+              </span>
+              <h2 class="index__title">{{ post.title }}</h2>
+              <p class="index__desc">{{ post.description }}</p>
+              <div v-if="post.tags?.length" class="index__tags">
+                <span v-for="tag in post.tags" :key="tag" class="tag">{{ tag }}</span>
+              </div>
+            </div>
+          </NuxtLink>
+        </li>
+      </ol>
     </section>
   </main>
 </template>
@@ -76,3 +65,89 @@ useHead({
   link: [{ rel: 'canonical', href: `${siteUrl}/blog` }],
 })
 </script>
+
+<style scoped>
+.head {
+  max-width: 34ch;
+  margin-bottom: var(--space-2xl);
+}
+
+.head__title {
+  margin-top: var(--space-sm);
+  font-size: var(--text-display-s);
+  line-height: 1.06;
+}
+
+.head__lede {
+  margin-top: var(--space-md);
+  color: var(--color-muted);
+  font-size: var(--text-md);
+  max-width: 56ch;
+}
+
+.index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.index__row {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.index__link {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: var(--space-sm);
+  padding-block: var(--space-lg);
+}
+
+.index__num {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  padding-top: 0.35rem;
+}
+
+.index__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-sm);
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+.index__title {
+  margin-top: var(--space-2xs);
+  font-size: var(--text-md);
+  line-height: 1.2;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+@media (min-width: 768px) {
+  .index__title {
+    font-size: var(--text-lg);
+  }
+}
+
+.index__link:hover .index__title {
+  color: var(--color-accent);
+}
+
+.index__desc {
+  margin-top: var(--space-2xs);
+  color: var(--color-muted);
+  max-width: 72ch;
+}
+
+.index__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs);
+  margin-top: var(--space-sm);
+}
+</style>

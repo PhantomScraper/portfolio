@@ -1,44 +1,25 @@
 <template>
-  <section
-    id="faq"
-    class="py-24 bg-white"
-    aria-label="Frequently asked questions"
-  >
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <div class="badge mx-auto mb-4">FAQ</div>
-        <h2 class="section-title">
-          Frequently Asked
-          <span class="gradient-text"> Questions</span>
-        </h2>
-        <p class="section-subtitle mx-auto text-center">
-          Common questions about web scraping, automation, and how to work with me.
-        </p>
+  <!-- Hallmark · disclosure list on hairlines. The chevron is replaced by a
+       plus/minus rule pair so the section carries no rounded card boxes. -->
+  <section id="faq" class="band" aria-label="Frequently asked questions">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow">07 / FAQ</p>
+        <div>
+          <h2 class="section-head__title">Frequently Asked Questions</h2>
+          <p class="section-head__lede">
+            Common questions about web scraping, automation, and how to work with me.
+          </p>
+        </div>
       </div>
 
-      <!-- FAQ list -->
-      <div class="space-y-4">
-        <details
-          v-for="faq in faqs"
-          :key="faq.question"
-          class="group card !p-0 overflow-hidden hover:border-primary-200 transition-colors"
-        >
-          <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
-            {{ faq.question }}
-            <svg
-              class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+      <div class="faq">
+        <details v-for="faq in faqs" :key="faq.question" class="faq__item">
+          <summary class="faq__q">
+            <span>{{ faq.question }}</span>
+            <span class="faq__mark" aria-hidden="true" />
           </summary>
-          <p class="px-6 pb-5 text-slate-500 text-sm leading-relaxed">
-            {{ faq.answer }}
-          </p>
+          <p class="faq__a">{{ faq.answer }}</p>
         </details>
       </div>
     </div>
@@ -78,7 +59,76 @@ const faqs = [
   },
   {
     question: 'How do I hire you for a web scraping or automation project?',
-    answer: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/phanvuong2, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated freelancer with 6,300+ hours and a 5.0 rating on Upwork.',
+    answer: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/phanvuong2, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated Plus freelancer with 7,200+ hours and a 5.0 rating on Upwork.',
   },
 ]
 </script>
+
+<style scoped>
+.faq {
+  border-top: 1px solid var(--color-rule);
+  max-width: 72ch;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.faq__q {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--color-ink);
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.faq__q::-webkit-details-marker {
+  display: none;
+}
+
+.faq__q:hover {
+  color: var(--color-accent);
+}
+
+/* A drawn plus that becomes a minus. Two rules, no icon font, no rotation. */
+.faq__mark {
+  position: relative;
+  flex: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+.faq__mark::before,
+.faq__mark::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto 0;
+  height: 1px;
+  background: var(--color-neutral);
+}
+
+.faq__mark::after {
+  transform: rotate(90deg);
+  transition: opacity var(--dur-short) var(--ease-out);
+}
+
+.faq__item[open] .faq__mark::after {
+  opacity: 0;
+}
+
+.faq__a {
+  padding-bottom: var(--space-md);
+  color: var(--color-muted);
+  max-width: 68ch;
+}
+</style>

@@ -150,7 +150,7 @@ useHead({
             '@id': 'https://www.vuongphan.dev/#webpage',
             url: 'https://www.vuongphan.dev',
             name: 'Vuong Phan - Custom Web Scraping Service & Web Data Extraction',
-            description: 'Custom web scraping service by a Top Rated freelance developer. Website scraping, web data extraction, anti-bot bypass, API integration, and automation pipelines.',
+            description: 'Custom web scraping service by a Top Rated Plus freelance developer. Website scraping, web data extraction, anti-bot bypass, API integration, and automation pipelines.',
             isPartOf: { '@id': 'https://www.vuongphan.dev/#website' },
             about: { '@id': 'https://www.vuongphan.dev/#person' },
             inLanguage: 'en-US',
@@ -236,7 +236,7 @@ useHead({
             name: 'How do I hire you for a web scraping or automation project?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/phanvuong2, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated freelancer with 6,300+ hours and a 5.0 rating on Upwork.',
+              text: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/phanvuong2, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated Plus freelancer with 7,200+ hours and a 5.0 rating on Upwork.',
             },
           },
         ],

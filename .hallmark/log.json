@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2026-08-28",
+    "verb": "redesign",
+    "scope": "app",
+    "genre": "modern-minimal",
+    "theme": "Cobalt (light drop)",
+    "designSystem": "design.md",
+    "macrostructures": {
+      "marketing": "15 Split Studio",
+      "contentIndex": "13 Index-First",
+      "contentArticle": "02 Long Document"
+    },
+    "nav": "N1b",
+    "navPrevious": "N1a",
+    "footer": "Ft5",
+    "footerPrevious": "Ft3",
+    "archetypes": [
+      "H2",
+      "S1",
+      "F3",
+      "F4",
+      "T1",
+      "T4",
+      "C1",
+      "C3"
+    ],
+    "typography": {
+      "display": "Space Grotesk",
+      "body": "Geist",
+      "outlier": "JetBrains Mono",
+      "removed": "Inter"
+    },
+    "accentHue": 248,
+    "paperBand": "light",
+    "displayStyle": "grotesk-sans",
+    "accentHueBand": "cool",
+    "motion": "reveals off",
+    "routes": [
+      "/",
+      "/web-scraping-service",
+      "/hire-web-scraping-developer",
+      "/blog",
+      "/blog/[...slug]"
+    ],
+    "notes": "Deviation from Split Studio's default: row-level direction alternation was dropped. At these row heights the zigzag broke the numbered index column and read as a layout bug rather than a rhythm. The diptych plus hairlines carry the macrostructure on their own.",
+    "amendments": [
+      "Light drop: anchor moved 258 to 248 (azure), surface chroma multiplied 3-5x at unchanged lightness, so paper and rules read pale-blue without moving any contrast ratio.",
+      "Second accent: Upwork brand green #14A800, bound to the rule \"green leaves the site for Upwork, azure acts here\". Fill variant #0F8200 (4.98:1 with white) because the brand value itself is only 3.17:1 under a white label."
+    ],
+    "contrastAudit": {
+      "ink/paper": 16.23,
+      "muted/paper": 6.82,
+      "neutral/paper": 4.82,
+      "accent/paper": 6.04,
+      "white/upwork-deep": 4.79,
+      "white/upwork-press": 5.89,
+      "upwork-glyph/paper": 3.04,
+      "failures": "none"
+    }
+  }
+]

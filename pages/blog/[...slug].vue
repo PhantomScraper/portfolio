@@ -1,76 +1,70 @@
 <template>
+  <!-- Hallmark · macrostructure: 02 Long Document
+       Single column at a 65ch measure, section heads emerging from the flow,
+       negative space as the divider, no reveals, typographic CTAs. -->
   <main id="main-content" class="pt-16">
-    <article v-if="post" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-1.5 text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
-        <NuxtLink to="/" class="hover:text-primary-600">Home</NuxtLink>
+    <article v-if="post" class="shell-narrow article">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <NuxtLink to="/">Home</NuxtLink>
         <span aria-hidden="true">/</span>
-        <NuxtLink to="/blog" class="hover:text-primary-600">Blog</NuxtLink>
-        <span aria-hidden="true">/</span>
-        <span class="text-slate-500 truncate">{{ post.title }}</span>
+        <NuxtLink to="/blog">Blog</NuxtLink>
       </nav>
 
-      <!-- Meta -->
-      <div class="flex flex-wrap items-center gap-3 text-xs text-slate-400 mb-6">
+      <p class="article__meta">
         <time :datetime="post.date">{{ formatDate(post.date) }}</time>
-        <span v-if="post.readingTime" aria-hidden="true">•</span>
         <span v-if="post.readingTime">{{ post.readingTime }}</span>
-      </div>
+      </p>
 
       <!-- Key takeaways (TL;DR for readers and LLMs) -->
-      <div
-        v-if="post.takeaways?.length"
-        class="mb-10 card bg-primary-50 border-primary-100"
-      >
-        <h2 class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-3">Key takeaways</h2>
-        <ul class="space-y-2">
-          <li
-            v-for="point in post.takeaways"
-            :key="point"
-            class="flex gap-2.5 text-sm text-slate-600 leading-relaxed"
-          >
-            <svg class="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>{{ point }}</span>
-          </li>
+      <section v-if="post.takeaways?.length" class="takeaways" aria-label="Key takeaways">
+        <h2 class="takeaways__head">Key takeaways</h2>
+        <ul>
+          <li v-for="point in post.takeaways" :key="point">{{ point }}</li>
         </ul>
-      </div>
+      </section>
 
       <!-- Rendered content -->
       <div class="prose-blog">
         <ContentRenderer :value="post" />
       </div>
 
+      <!-- FAQ (visible source for the FAQPage schema below) -->
+      <section v-if="post.faqs?.length" class="afaq">
+        <h2 class="afaq__head">Frequently asked questions</h2>
+        <dl>
+          <div v-for="faq in post.faqs" :key="faq.question" class="afaq__item">
+            <dt>{{ faq.question }}</dt>
+            <dd>{{ faq.answer }}</dd>
+          </div>
+        </dl>
+      </section>
+
       <!-- Tags -->
-      <div v-if="post.tags?.length" class="flex flex-wrap gap-2 mt-12 pt-8 border-t border-slate-100">
-        <span
-          v-for="tag in post.tags"
-          :key="tag"
-          class="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-xs text-slate-500"
-        >
-          {{ tag }}
-        </span>
+      <div v-if="post.tags?.length" class="article__tags">
+        <span v-for="tag in post.tags" :key="tag" class="tag">{{ tag }}</span>
       </div>
 
       <!-- CTA -->
-      <div class="mt-12 card bg-primary-50 border-primary-100 text-center">
-        <h2 class="text-xl font-bold text-slate-900 mb-2">Have a scraping or automation project?</h2>
-        <p class="text-slate-500 text-sm mb-6 max-w-md mx-auto">
+      <section class="endcta">
+        <h2 class="endcta__head">Have a scraping or automation project?</h2>
+        <p class="endcta__text">
           I build production scraping systems with proxy integration, anti-bot bypass, and the reliability to run at scale.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <div class="endcta__actions">
           <a
             href="https://www.upwork.com/freelancers/phanvuong2"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-primary"
+            class="btn btn-upwork"
           >
             Hire me on Upwork
           </a>
-          <NuxtLink to="/#contact" class="btn-outline">Contact form</NuxtLink>
+          <NuxtLink to="/#contact" class="btn-text">
+            Send a project brief
+            <span aria-hidden="true">→</span>
+          </NuxtLink>
         </div>
-      </div>
+      </section>
 
       <!-- Author bio for E-E-A-T -->
       <AuthorBio />
@@ -168,7 +162,169 @@ useHead(() => ({
             ],
           }),
         },
+        ...(post.value.faqs?.length
+          ? [
+              {
+                type: 'application/ld+json',
+                innerHTML: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: post.value.faqs.map((faq) => ({
+                    '@type': 'Question',
+                    name: faq.question,
+                    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+                  })),
+                }),
+              },
+            ]
+          : []),
       ]
     : [],
 }))
 </script>
+
+<style scoped>
+.article {
+  padding-block: var(--space-2xl) var(--space-3xl);
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+.crumbs a:hover {
+  color: var(--color-accent);
+}
+
+.article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-sm);
+  margin-top: var(--space-md);
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+/* The takeaways box is the one framed element in the article. It earns the
+   frame because it is a different kind of reading: a summary, not prose. */
+.takeaways {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border: 1px solid var(--color-rule);
+  border-left: 2px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper-2);
+}
+
+.takeaways__head {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+.takeaways ul {
+  margin: var(--space-2xs) 0 0;
+  padding-left: var(--space-md);
+  list-style: disc;
+}
+
+.takeaways li {
+  margin-block: var(--space-3xs);
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+}
+
+.takeaways li::marker {
+  color: var(--color-accent);
+}
+
+.article .prose-blog {
+  margin-top: var(--space-2xl);
+}
+
+.afaq {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-rule);
+  max-width: var(--measure);
+}
+
+.afaq__head {
+  font-size: var(--text-lg);
+}
+
+.afaq dl {
+  margin: var(--space-md) 0 0;
+}
+
+.afaq__item {
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.afaq__item:first-child {
+  border-top: 1px solid var(--color-rule);
+}
+
+.afaq dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.afaq dd {
+  margin: var(--space-2xs) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.article__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-rule);
+}
+
+.endcta {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-rule);
+}
+
+.endcta__head {
+  font-size: var(--text-lg);
+  max-width: 24ch;
+}
+
+.endcta__text {
+  margin-top: var(--space-2xs);
+  color: var(--color-muted);
+  max-width: 56ch;
+}
+
+.endcta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+</style>

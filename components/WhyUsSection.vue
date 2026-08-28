@@ -1,109 +1,144 @@
 <template>
-  <section
-    id="why-us"
-    class="py-24 bg-white"
-    aria-label="Why choose me"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <!-- Left: text -->
+  <!-- Hallmark · T4 numbered stat strip (4-up) + a hairline benefit list.
+       Every figure traces to the public Upwork profile. No invented metrics. -->
+  <section id="why-us" class="band band--tint" aria-label="Why choose me">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow">02 / Why me</p>
         <div>
-          <div class="badge mb-4">Why Choose Me</div>
-          <h2 class="section-title mb-6">
-            Why Hire Me as Your
-            <span class="gradient-text"> Web Scraping Expert</span>
-          </h2>
-          <p class="text-slate-500 leading-relaxed mb-10">
+          <h2 class="section-head__title">Why Hire Me as Your Web Scraping Expert</h2>
+          <p class="section-head__lede">
             As a dedicated full-time freelance Python developer, I bring 7+ years of hands-on
             expertise to every scraping, automation, and full-stack project. No middlemen, no
-            delays ,just clean code, on-time delivery, and transparent communication.
+            delays, just clean code, on-time delivery, and transparent communication.
           </p>
-
-          <ul class="space-y-5">
-            <li
-              v-for="benefit in benefits"
-              :key="benefit.title"
-              class="flex items-start gap-4"
-            >
-              <div class="mt-0.5 flex-shrink-0 w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center">
-                <component :is="benefit.icon" class="w-5 h-5 text-primary-600" aria-hidden="true" />
-              </div>
-              <div>
-                <h3 class="font-semibold text-slate-900 text-sm">{{ benefit.title }}</h3>
-                <p class="text-slate-500 text-sm mt-0.5">{{ benefit.description }}</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Right: stats grid -->
-        <div class="grid grid-cols-2 gap-5">
-          <div
-            v-for="stat in stats"
-            :key="stat.label"
-            class="card text-center group hover:border-primary-200 hover:bg-primary-50/30 transition-colors"
-          >
-            <div class="text-4xl font-extrabold text-primary-600 mb-2">{{ stat.value }}</div>
-            <div class="text-slate-600 text-sm font-medium">{{ stat.label }}</div>
-            <div class="text-slate-400 text-xs mt-1">{{ stat.sub }}</div>
-          </div>
         </div>
       </div>
+
+      <!-- T4 · Numbered stat strip -->
+      <dl class="strip">
+        <div v-for="stat in stats" :key="stat.label" class="strip__cell">
+          <dt class="strip__label">{{ stat.label }}</dt>
+          <dd class="strip__figure tnum">{{ stat.value }}</dd>
+          <dd class="strip__sub">{{ stat.sub }}</dd>
+        </div>
+      </dl>
+
+      <ul class="benefits">
+        <li v-for="benefit in benefits" :key="benefit.title" class="benefit">
+          <h3 class="benefit__title">{{ benefit.title }}</h3>
+          <p class="benefit__text">{{ benefit.description }}</p>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { defineComponent, h } from 'vue'
-
-const IconCheck = defineComponent({
-  render: () => h('svg', { fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
-    h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M5 13l4 4L19 7' }),
-  ]),
-})
-const IconClock = defineComponent({
-  render: () => h('svg', { fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
-    h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' }),
-  ]),
-})
-const IconChat = defineComponent({
-  render: () => h('svg', { fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
-    h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z' }),
-  ]),
-})
-const IconRefresh = defineComponent({
-  render: () => h('svg', { fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' }, [
-    h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2', d: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' }),
-  ]),
-})
-
 const stats = [
   { value: '50+', label: 'Projects Completed', sub: 'Across 15+ countries' },
-  { value: '5.0★', label: 'Upwork Rating', sub: 'Top Rated Freelancer' },
+  { value: '5.0', label: 'Upwork Rating', sub: 'Top Rated Plus on Upwork' },
   { value: '100%', label: 'Job Success Rate', sub: 'On-time delivery' },
   { value: '7+', label: 'Years Experience', sub: 'Automation & scraping' },
 ]
 
 const benefits = [
   {
-    icon: IconCheck,
     title: 'Clean, Maintainable Code',
     description: 'Well-structured code with documentation, easy to extend and maintain long-term.',
   },
   {
-    icon: IconClock,
     title: 'On-Time Delivery',
     description: 'Consistent track record of meeting deadlines without cutting corners on quality.',
   },
   {
-    icon: IconChat,
     title: 'Clear Communication',
     description: 'Daily updates, fast responses, and transparent progress reporting throughout the project.',
   },
   {
-    icon: IconRefresh,
     title: 'Post-Delivery Support',
     description: 'I stay available after delivery to handle adjustments, bugs, and new requirements.',
   },
 ]
 </script>
+
+<style scoped>
+.strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-rule);
+  border-left: 1px solid var(--color-rule);
+}
+
+@media (min-width: 768px) {
+  .strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.strip__cell {
+  padding: var(--space-md);
+  border-right: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  background: var(--color-paper);
+}
+
+.strip__label {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+.strip__figure {
+  margin: var(--space-2xs) 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.strip__sub {
+  margin: var(--space-3xs) 0 0;
+  font-size: var(--text-xs);
+  color: var(--color-neutral);
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  list-style: none;
+  margin: var(--space-2xl) 0 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-2xl);
+  }
+}
+
+.benefit {
+  padding-block: var(--space-md);
+  border-top: 1px solid var(--color-rule);
+}
+
+.benefit__title {
+  font-size: var(--text-base);
+  letter-spacing: -0.02em;
+}
+
+.benefit__text {
+  margin-top: var(--space-3xs);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  max-width: 48ch;
+}
+</style>

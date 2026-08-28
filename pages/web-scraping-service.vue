@@ -1,112 +1,122 @@
 <template>
+  <!-- Hallmark · macrostructure: Split Studio · design-system: design.md
+       Hero proof column on this route is the terms spec sheet, not code.
+       Every string below is the copy that was already here. -->
   <main id="main-content">
     <!-- Hero -->
-    <section class="relative pt-32 pb-20 hero-gradient grid-pattern overflow-hidden" aria-label="Web scraping service">
-      <div class="absolute top-1/4 right-0 w-96 h-96 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 pointer-events-none" aria-hidden="true" />
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="badge mx-auto mb-6">
-          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse" aria-hidden="true" />
-          Available for new projects
+    <section class="shell band band--lead hero" aria-label="Web scraping service">
+      <div class="hero__grid">
+        <div>
+          <p class="eyebrow">Available for new projects</p>
+
+          <h1 class="hero__title">
+            Website Scraping Service, Built Custom for Your Business
+          </h1>
+
+          <p class="hero__lede">
+            A <strong>custom web scraping</strong> and
+            <strong>web data extraction service</strong> delivered by one senior
+            freelance developer. You describe the websites and the data you need, I build and run the
+            scrapers, you receive clean structured data. No SaaS tool to learn, no agency overhead.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn-primary">Get a free quote in 24 hours</a>
+            <a
+              href="https://www.upwork.com/freelancers/phanvuong2"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline"
+            >
+              Hire me on Upwork
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
-          Website Scraping Service,
-          <span class="gradient-text block">Built Custom for Your Business</span>
-        </h1>
-        <p class="text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mt-8">
-          A <strong class="text-slate-700">custom web scraping</strong> and
-          <strong class="text-slate-700">web data extraction service</strong> delivered by one senior
-          freelance developer. You describe the websites and the data you need, I build and run the
-          scrapers, you receive clean structured data. No SaaS tool to learn, no agency overhead.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <a href="#contact" class="btn-primary">Get a Free Quote in 24 Hours</a>
-          <a
-            href="https://www.upwork.com/freelancers/phanvuong2"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-outline"
-          >
-            Hire Me on Upwork
-          </a>
-        </div>
-        <div class="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-slate-500">
-          <span><strong class="text-slate-700">5.0</strong> rating on Upwork</span>
-          <span>Top Rated freelancer</span>
-          <span>6,300+ hours worked</span>
-          <span>50+ projects delivered</span>
-        </div>
+
+        <!-- F3 · terms spec sheet -->
+        <dl class="terms">
+          <div v-for="term in terms" :key="term.k">
+            <dt>{{ term.k }}</dt>
+            <dd>{{ term.v }}</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
     <!-- What you get -->
-    <section class="py-24 bg-white" aria-label="What is included">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <div class="badge mx-auto mb-4">Done For You</div>
-          <h2 class="section-title">
-            What a Custom Web Scraping
-            <span class="gradient-text"> Service Includes</span>
-          </h2>
-          <p class="section-subtitle mx-auto text-center">
-            Everything from the first request to ongoing delivery is handled for you.
-          </p>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="item in deliverables" :key="item.title" class="card">
-            <h3 class="font-semibold text-slate-900 mb-2">{{ item.title }}</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">{{ item.text }}</p>
+    <section class="band" aria-label="What is included">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">01 / Included</p>
+          <div>
+            <h2 class="section-head__title">What a Custom Web Scraping Service Includes</h2>
+            <p class="section-head__lede">
+              Everything from the first request to ongoing delivery is handled for you.
+            </p>
           </div>
         </div>
+
+        <ol class="rows">
+          <li v-for="(item, i) in deliverables" :key="item.title" class="row">
+            <div class="row__lead">
+              <span class="row__index tnum">{{ String(i + 1).padStart(2, '0') }}</span>
+              <h3 class="row__title">{{ item.title }}</h3>
+            </div>
+            <p class="row__text">{{ item.text }}</p>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- Use cases -->
-    <section class="py-24 bg-slate-50" aria-label="Use cases">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <div class="badge mx-auto mb-4">Use Cases</div>
-          <h2 class="section-title">
-            Web Data Extraction for
-            <span class="gradient-text"> Every Industry</span>
-          </h2>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="uc in useCases" :key="uc.title" class="card">
-            <h3 class="font-semibold text-slate-900 mb-2">{{ uc.title }}</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">{{ uc.text }}</p>
+    <section class="band band--tint" aria-label="Use cases">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">02 / Use cases</p>
+          <div>
+            <h2 class="section-head__title">Web Data Extraction for Every Industry</h2>
           </div>
         </div>
+
+        <dl class="cases">
+          <div v-for="uc in useCases" :key="uc.title" class="cases__row">
+            <dt>{{ uc.title }}</dt>
+            <dd>{{ uc.text }}</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
     <!-- Freelancer vs company -->
-    <section class="py-24 bg-white" aria-label="Freelance developer versus web scraping company">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <div class="badge mx-auto mb-4">Why a Freelancer</div>
-          <h2 class="section-title">
-            Freelance Developer vs
-            <span class="gradient-text"> Web Scraping Company</span>
-          </h2>
-          <p class="section-subtitle mx-auto text-center">
-            A web scraping company puts an account manager between you and the person writing the code.
-            <NuxtLink to="/hire-web-scraping-developer" class="text-primary-600 hover:underline">Hiring a freelance developer</NuxtLink> removes that layer.
-          </p>
+    <section class="band" aria-label="Freelance developer versus web scraping company">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">03 / Comparison</p>
+          <div>
+            <h2 class="section-head__title">Freelance Developer vs Web Scraping Company</h2>
+            <p class="section-head__lede">
+              A web scraping company puts an account manager between you and the person writing the code.
+              <NuxtLink to="/hire-web-scraping-developer">Hiring a freelance developer</NuxtLink> removes that layer.
+            </p>
+          </div>
         </div>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm border-collapse">
+
+        <!-- F3 · tabular spec sheet, 3 columns, hairline every row -->
+        <div class="tablewrap">
+          <table class="spec">
             <thead>
-              <tr class="border-b-2 border-slate-200 text-left">
-                <th class="py-3 pr-4 font-semibold text-slate-900">&nbsp;</th>
-                <th class="py-3 pr-4 font-semibold text-primary-700">Freelance developer (me)</th>
-                <th class="py-3 font-semibold text-slate-500">Typical web scraping company</th>
+              <tr>
+                <th scope="col"><span class="sr-only">Criterion</span></th>
+                <th scope="col" class="spec__mine">Freelance developer (me)</th>
+                <th scope="col">Typical web scraping company</th>
               </tr>
             </thead>
-            <tbody class="text-slate-600">
-              <tr v-for="row in comparison" :key="row.label" class="border-b border-slate-100 align-top">
-                <td class="py-3 pr-4 font-medium text-slate-900">{{ row.label }}</td>
-                <td class="py-3 pr-4">{{ row.freelancer }}</td>
-                <td class="py-3 text-slate-500">{{ row.company }}</td>
+            <tbody>
+              <tr v-for="row in comparison" :key="row.label">
+                <th scope="row">{{ row.label }}</th>
+                <td class="spec__mine">{{ row.freelancer }}</td>
+                <td>{{ row.company }}</td>
               </tr>
             </tbody>
           </table>
@@ -115,50 +125,42 @@
     </section>
 
     <!-- Process -->
-    <section class="py-24 bg-slate-50" aria-label="How the service works">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <div class="badge mx-auto mb-4">Process</div>
-          <h2 class="section-title">
-            How the Scraping Service
-            <span class="gradient-text"> Works</span>
-          </h2>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="(step, i) in steps" :key="step.title" class="card">
-            <div class="w-9 h-9 rounded-xl bg-primary-50 text-primary-700 font-bold flex items-center justify-center mb-4">{{ i + 1 }}</div>
-            <h3 class="font-semibold text-slate-900 mb-2">{{ step.title }}</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">{{ step.text }}</p>
+    <section class="band band--tint" aria-label="How the service works">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">04 / Process</p>
+          <div>
+            <h2 class="section-head__title">How the Scraping Service Works</h2>
           </div>
         </div>
+
+        <ol class="steps">
+          <li v-for="(step, i) in steps" :key="step.title" class="step">
+            <span class="step__num tnum">{{ String(i + 1).padStart(2, '0') }}</span>
+            <h3 class="step__title">{{ step.title }}</h3>
+            <p class="step__text">{{ step.text }}</p>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="py-24 bg-white" aria-label="Service FAQ">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <div class="badge mx-auto mb-4">FAQ</div>
-          <h2 class="section-title">
-            Web Scraping Service
-            <span class="gradient-text"> Questions</span>
-          </h2>
+    <section class="band" aria-label="Service FAQ">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">05 / FAQ</p>
+          <div>
+            <h2 class="section-head__title">Web Scraping Service Questions</h2>
+          </div>
         </div>
-        <div class="space-y-4">
-          <details
-            v-for="faq in faqs"
-            :key="faq.question"
-            class="group card !p-0 overflow-hidden hover:border-primary-200 transition-colors"
-          >
-            <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
-              {{ faq.question }}
-              <svg class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+
+        <div class="faq">
+          <details v-for="faq in faqs" :key="faq.question" class="faq__item">
+            <summary class="faq__q">
+              <span>{{ faq.question }}</span>
+              <span class="faq__mark" aria-hidden="true" />
             </summary>
-            <p class="px-6 pb-5 text-slate-500 text-sm leading-relaxed">
-              {{ faq.answer }}
-            </p>
+            <p class="faq__a">{{ faq.answer }}</p>
           </details>
         </div>
       </div>
@@ -172,6 +174,17 @@
 <script setup lang="ts">
 const siteUrl = 'https://www.vuongphan.dev'
 const pageUrl = `${siteUrl}/web-scraping-service`
+
+// Hero proof column. Each line restates a commitment already made on this page.
+const terms = [
+  { k: 'Upwork rating', v: '5.0, Top Rated Plus' },
+  { k: 'Hours worked', v: '7,200+' },
+  { k: 'Projects delivered', v: '50+' },
+  { k: 'Quote', v: 'Fixed, within 24 hours' },
+  { k: 'Sample', v: 'Free, from your target sites' },
+  { k: 'Anti-bot handling', v: 'Included' },
+  { k: 'Delivery formats', v: 'CSV, JSON, Excel, database, API' },
+]
 
 const deliverables = [
   {
@@ -257,11 +270,11 @@ const faqs = [
 
 useSeoMeta({
   title: 'Website Scraping Service | Custom Web Scraping & Data Extraction',
-  description: 'Custom website scraping service by a Top Rated freelance developer. Web data extraction delivered as CSV, JSON, database, or API. Free sample, fixed quote in 24 hours, anti-bot bypass included.',
+  description: 'Custom website scraping service by a Top Rated Plus freelance developer. Web data extraction delivered as CSV, JSON, database, or API. Free sample, fixed quote in 24 hours, anti-bot bypass included.',
   ogType: 'website',
   ogUrl: pageUrl,
   ogTitle: 'Website Scraping Service | Custom Web Scraping & Data Extraction',
-  ogDescription: 'Custom website scraping service by a Top Rated freelance developer. Clean web data extraction as CSV, JSON, database, or API. Free sample and fixed quote in 24 hours.',
+  ogDescription: 'Custom website scraping service by a Top Rated Plus freelance developer. Clean web data extraction as CSV, JSON, database, or API. Free sample and fixed quote in 24 hours.',
   ogImage: `${siteUrl}/og-image.png`,
   twitterCard: 'summary_large_image',
   twitterImage: `${siteUrl}/og-image.png`,
@@ -307,7 +320,7 @@ useHead({
             '@id': `${pageUrl}#webpage`,
             url: pageUrl,
             name: 'Website Scraping Service | Custom Web Scraping & Data Extraction',
-            description: 'Custom website scraping service by a Top Rated freelance developer. Web data extraction delivered as CSV, JSON, database, or API.',
+            description: 'Custom website scraping service by a Top Rated Plus freelance developer. Web data extraction delivered as CSV, JSON, database, or API.',
             isPartOf: { '@id': `${siteUrl}/#website` },
             about: { '@id': `${siteUrl}/#person` },
             inLanguage: 'en-US',
@@ -333,3 +346,334 @@ useHead({
   ],
 })
 </script>
+
+<style scoped>
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-xl);
+}
+
+@media (min-width: 900px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+}
+
+.hero__title {
+  margin-top: var(--space-md);
+  font-size: var(--text-display-s);
+  line-height: 1.06;
+  max-width: 18ch;
+}
+
+.hero__lede {
+  margin-top: var(--space-md);
+  font-size: var(--text-md);
+  color: var(--color-muted);
+  max-width: 56ch;
+}
+
+.hero__lede strong {
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin-top: var(--space-lg);
+}
+
+/* F3 · terms spec sheet */
+.terms {
+  margin: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.terms > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2xs) var(--space-md);
+  padding-block: var(--space-2xs);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.terms dt {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+.terms dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  text-align: right;
+  color: var(--color-ink);
+}
+
+/* Split Studio rows */
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2xs);
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+}
+
+.row__lead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.row__index {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  flex: none;
+}
+
+.row__title {
+  font-size: var(--text-base);
+  line-height: 1.25;
+}
+
+.row__text {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  max-width: 66ch;
+}
+
+/* Use cases: catalogue rows, label hanging in the margin */
+.cases {
+  margin: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.cases__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3xs);
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+@media (min-width: 768px) {
+  .cases__row {
+    grid-template-columns: 18rem minmax(0, 1fr);
+    gap: var(--space-lg);
+    align-items: baseline;
+  }
+}
+
+.cases dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.cases dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  max-width: 66ch;
+}
+
+/* F3 · comparison table */
+.tablewrap {
+  overflow-x: auto;
+}
+
+.spec {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.spec thead th {
+  text-align: left;
+  padding: var(--space-2xs) var(--space-xs);
+  border-bottom: 1px solid var(--color-rule-strong);
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+}
+
+.spec tbody th {
+  text-align: left;
+  padding: var(--space-xs);
+  border-bottom: 1px solid var(--color-rule);
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--color-ink);
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.spec td {
+  padding: var(--space-xs);
+  border-bottom: 1px solid var(--color-rule);
+  vertical-align: top;
+  color: var(--color-muted);
+}
+
+/* The accent marks the column that matters, once. */
+.spec__mine {
+  background: var(--color-accent-wash);
+  color: var(--color-ink);
+}
+
+thead .spec__mine {
+  color: var(--color-accent);
+}
+
+/* F4 · step sequence, horizontal on wide screens */
+.steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-2xl);
+  }
+}
+
+@media (min-width: 1100px) {
+  .steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: var(--space-lg);
+  }
+}
+
+.step {
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.step__num {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+}
+
+.step__title {
+  margin-top: var(--space-2xs);
+  font-size: var(--text-base);
+  line-height: 1.25;
+}
+
+.step__text {
+  margin-top: var(--space-2xs);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+/* Disclosure list */
+.faq {
+  border-top: 1px solid var(--color-rule);
+  max-width: 72ch;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.faq__q {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--color-ink);
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.faq__q::-webkit-details-marker {
+  display: none;
+}
+
+.faq__q:hover {
+  color: var(--color-accent);
+}
+
+.faq__mark {
+  position: relative;
+  flex: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+.faq__mark::before,
+.faq__mark::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto 0;
+  height: 1px;
+  background: var(--color-neutral);
+}
+
+.faq__mark::after {
+  transform: rotate(90deg);
+  transition: opacity var(--dur-short) var(--ease-out);
+}
+
+.faq__item[open] .faq__mark::after {
+  opacity: 0;
+}
+
+.faq__a {
+  padding-bottom: var(--space-md);
+  color: var(--color-muted);
+  max-width: 68ch;
+}
+
+.section-head__lede a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+</style>

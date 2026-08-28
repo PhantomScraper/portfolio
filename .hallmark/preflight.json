@@ -1,0 +1,62 @@
+{
+  "scanned": "2026-08-28",
+  "designMd": null,
+  "fontStack": {
+    "display": null,
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "source": "Google Fonts <link> in nuxt.config.ts; tailwind.config.ts theme.extend.fontFamily L14-17"
+  },
+  "palette": {
+    "format": "tailwind hex ramp",
+    "brand": "primary = indigo ramp, 500 #6366f1 / 600 #4f46e5",
+    "neutral": "slate (default Tailwind)",
+    "source": "tailwind.config.ts L18-32",
+    "rootTokenBlock": false
+  },
+  "motion": {
+    "stance": "motion-cut",
+    "libsInstalled": [
+      "@vueuse/motion@2.2.6",
+      "@vueuse/core@11"
+    ],
+    "libsUsed": [],
+    "conflict": "@vueuse/motion and @vueuse/core are in package.json but imported nowhere and not registered in nuxt.config modules. The project was already motion-cut; the initial motion-on reading was wrong.",
+    "source": "grep over pages/, components/, app.vue, nuxt.config.ts, plugins/"
+  },
+  "spacing": {
+    "scale": "Tailwind default 4-pt",
+    "extend": false
+  },
+  "framework": {
+    "name": "Nuxt",
+    "version": "3.14",
+    "css": "Tailwind 3.4 via @nuxtjs/tailwindcss",
+    "content": "@nuxt/content v3",
+    "rendering": "SSR + nitro prerender (crawlLinks)",
+    "site": "https://www.vuongphan.dev"
+  },
+  "routes": [
+    "pages/index.vue",
+    "pages/web-scraping-service.vue",
+    "pages/hire-web-scraping-developer.vue",
+    "pages/blog/index.vue",
+    "pages/blog/[...slug].vue"
+  ],
+  "components": [
+    "AppHeader",
+    "AppFooter",
+    "HeroSection",
+    "ServicesSection",
+    "HowItWorks",
+    "TechStack",
+    "WhyUsSection",
+    "TestimonialsSection",
+    "FAQSection",
+    "LatestArticles",
+    "ContactSection",
+    "AuthorBio"
+  ],
+  "priorHallmarkRuns": 0,
+  "redesignedOn": "2026-08-28"
+}
