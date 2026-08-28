@@ -134,6 +134,7 @@ const clusterRef = ref<HTMLElement | null>(null)
 // groups the four that belong to the service story; the rest stay inline.
 const serviceMenu = [
   { href: '/web-scraping-service', label: 'Web Scraping Service', hint: 'Done-for-you data extraction' },
+  { href: '/staffing-data-integration', label: 'ATS & VMS Data Sync', hint: 'Integration for staffing agencies' },
   { href: '/#services', label: 'All Services', hint: 'Scraping, APIs, full-stack, voice AI' },
   { href: '/#why-us', label: 'Why Me', hint: 'Track record and working style' },
   { href: '/#how-it-works', label: 'Process', hint: 'From brief to delivered data' },

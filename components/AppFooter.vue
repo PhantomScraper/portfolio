@@ -50,6 +50,7 @@
 
         <nav class="foot__links" aria-label="Footer">
           <NuxtLink to="/web-scraping-service">Web Scraping Service</NuxtLink>
+          <NuxtLink to="/staffing-data-integration">ATS &amp; VMS Data Sync</NuxtLink>
           <NuxtLink to="/hire-web-scraping-developer">Hire a Web Scraping Developer</NuxtLink>
           <a href="/#services">All Services</a>
           <a href="/#why-us">Why Choose Me</a>
