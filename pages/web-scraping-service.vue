@@ -270,7 +270,7 @@ const faqs = [
 
 useSeoMeta({
   title: 'Website Scraping Service | Custom Web Scraping & Data Extraction',
-  description: 'Custom website scraping service by a Top Rated Plus freelance developer. Web data extraction delivered as CSV, JSON, database, or API. Free sample, fixed quote in 24 hours, anti-bot bypass included.',
+  description: 'Custom website scraping service by a Top Rated Plus developer. Web data extraction as CSV, JSON, database, or API. Free sample, quote in 24 hours.',
   ogType: 'website',
   ogUrl: pageUrl,
   ogTitle: 'Website Scraping Service | Custom Web Scraping & Data Extraction',

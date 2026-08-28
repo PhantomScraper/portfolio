@@ -1,6 +1,6 @@
 ---
 title: "How to Scrape Amazon Product Data Reliably"
-description: "A practical guide to scraping Amazon product listings, prices, and reviews at scale. Covers selectors, anti-bot handling, the official API alternative, and staying reliable."
+description: "A practical guide to scraping Amazon product listings, prices, and reviews at scale: selectors, anti-bot handling, and the official API alternative."
 date: "2026-05-24"
 updated: "2026-07-30"
 tags: ["amazon", "e-commerce", "web scraping", "price monitoring", "python"]

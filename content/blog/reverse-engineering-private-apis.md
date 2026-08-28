@@ -1,6 +1,6 @@
 ---
 title: "Reverse Engineering Private APIs for Faster, Cleaner Scraping"
-description: "How to find and use a site's internal API instead of scraping HTML. Covers inspecting network traffic, replicating requests, handling auth, and why it beats browser scraping."
+description: "How to find and use a site's internal API instead of scraping HTML. Covers network inspection, replicating requests, auth, and why it beats browsers."
 date: "2026-04-30"
 tags: ["api", "reverse engineering", "web scraping", "automation", "python"]
 readingTime: "8 min read"

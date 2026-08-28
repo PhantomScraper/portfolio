@@ -1,6 +1,6 @@
 ---
-title: "Residential Proxy Services Compared: Bright Data, Oxylabs, Smartproxy"
-description: "A practical comparison of the major residential proxy providers for web scraping. Pricing models, pool quality, geo targeting, and how to choose for your project."
+title: "Bright Data vs Oxylabs vs Smartproxy: Residential Proxies"
+description: "A practical comparison of the major residential proxy providers for scraping: pricing models, pool quality, geo targeting, and how to choose."
 date: "2026-05-20"
 tags: ["proxies", "web scraping", "bright data", "oxylabs", "anti-bot"]
 readingTime: "8 min read"

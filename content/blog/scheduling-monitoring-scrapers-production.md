@@ -1,5 +1,5 @@
 ---
-title: "Running Scrapers in Production: Scheduling, Queues, and Monitoring"
+title: "Running Scrapers in Production: Queues and Monitoring"
 description: "How to take a scraper from a script to a reliable production system. Covers scheduling, task queues, retries, error alerting, and proxy health monitoring."
 date: "2026-05-05"
 tags: ["automation", "web scraping", "production", "monitoring", "python"]

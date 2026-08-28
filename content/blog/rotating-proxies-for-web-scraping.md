@@ -1,6 +1,6 @@
 ---
-title: "How to Integrate Rotating Proxies for Web Scraping (Without Getting Blocked)"
-description: "A practical guide to integrating residential and rotating proxies into a Python scraper: proxy types, rotation strategies, retry logic, and how to avoid IP bans on protected sites."
+title: "How to Integrate Rotating Proxies for Web Scraping"
+description: "A practical guide to adding residential and rotating proxies to a Python scraper: proxy types, rotation strategies, retry logic, and avoiding IP bans."
 date: "2026-06-12"
 tags: ["web scraping", "proxies", "python", "anti-bot", "playwright"]
 readingTime: "8 min read"

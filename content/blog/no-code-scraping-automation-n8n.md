@@ -1,6 +1,6 @@
 ---
 title: "Automating Scraping Workflows with n8n, Make, and Zapier"
-description: "How to connect a scraper to no-code automation tools so data flows into your business systems automatically. Covers webhooks, scheduling, and when to add custom code."
+description: "How to connect a scraper to no-code tools so data flows into your business systems automatically. Covers webhooks, scheduling, and when to add code."
 date: "2026-05-15"
 tags: ["automation", "n8n", "make", "zapier", "web scraping"]
 readingTime: "7 min read"

@@ -1,6 +1,6 @@
 ---
-title: "How to Scrape DataDome and PerimeterX Protected Pages (2026)"
-description: "How to scrape DataDome and PerimeterX protected pages: how to identify which system you are facing, why these are harder than Cloudflare, which tools still work in 2026, and how the scraping APIs compare on hard targets."
+title: "How to Scrape DataDome and PerimeterX Protected Pages"
+description: "How to identify DataDome vs PerimeterX, why they are harder than Cloudflare, which tools still work in 2026, and how the scraping APIs compare."
 date: "2026-05-28"
 updated: "2026-08-28"
 tags: ["datadome", "perimeterx", "anti-bot", "web scraping", "proxies", "human security"]

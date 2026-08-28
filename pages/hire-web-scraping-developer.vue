@@ -361,7 +361,7 @@ const faqs = [
 
 useSeoMeta({
   title: 'Hire a Web Scraping Developer | Top Rated Plus on Upwork',
-  description: 'Hire a web scraping developer with a 5.0 rating and 7,200+ hours on Upwork. Custom scrapers, anti-bot bypass, and full-stack data pipelines. Free sample and fixed quote in 24 hours.',
+  description: 'Hire a web scraping developer with a 5.0 rating and 7,200+ hours on Upwork. Custom scrapers, anti-bot bypass, free sample, fixed quote in 24 hours.',
   ogType: 'website',
   ogUrl: pageUrl,
   ogTitle: 'Hire a Web Scraping Developer | Top Rated Plus on Upwork',

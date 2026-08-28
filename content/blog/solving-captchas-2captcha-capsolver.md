@@ -1,6 +1,6 @@
 ---
 title: "Solving CAPTCHAs in Your Scraper with 2Captcha and CapSolver"
-description: "A practical guide to integrating CAPTCHA solving services into a Python scraper. Covers reCAPTCHA v2 and v3, hCaptcha, Cloudflare Turnstile, token injection, and cost control."
+description: "How to integrate CAPTCHA solving services into a Python scraper. Covers reCAPTCHA v2 and v3, hCaptcha, Turnstile, token injection, and cost control."
 date: "2026-06-08"
 tags: ["captcha", "web scraping", "python", "automation", "anti-bot"]
 readingTime: "8 min read"

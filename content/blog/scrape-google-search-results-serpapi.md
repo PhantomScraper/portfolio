@@ -1,6 +1,6 @@
 ---
 title: "Scraping Google Search Results: SerpAPI vs Building Your Own"
-description: "How to extract Google search data for SEO and research. Compares SERP API services with a custom scraper, covering cost, reliability, and when each makes sense."
+description: "How to extract Google search data for SEO and research. Compares SERP API services with a custom scraper on cost, reliability, and when each fits."
 date: "2026-05-10"
 tags: ["serp scraping", "google", "seo", "web scraping", "api"]
 readingTime: "7 min read"
