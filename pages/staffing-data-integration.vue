@@ -194,7 +194,7 @@ const terms = [
 const gap = [
   {
     title: 'Jobs come in automatically. Submittals go out by hand.',
-    text: 'Bullhorn publishes the list of VMS portals its own VMS Sync product supports. At the time of writing it covers 124 portals for pulling jobs, and 9 for pushing candidate submittals back. For every other portal, a recruiter reads the job in the ATS and then logs into the portal and retypes the candidate, re-uploads the resume, and re-answers the screening questions.',
+    text: 'Bullhorn publishes the list of VMS portals its own VMS Sync product supports. At the time of writing it covers 124 portals for pulling jobs and 9 for pushing candidate submittals back. Net of overlaps and of entries that are really ATS or procurement systems, roughly 110 accept jobs but offer no automated submittal. For those, a recruiter reads the job in the ATS, then logs into the portal and retypes the candidate, re-uploads the resume, and re-answers the screening questions.',
   },
   {
     title: 'That retyping is the most expensive step you have.',
@@ -202,7 +202,7 @@ const gap = [
   },
   {
     title: 'The long tail is where your agency actually lives.',
-    text: 'The big names are closing this gap themselves with supplier APIs. The healthcare and niche VMS platforms mostly are not, and many publish no developer documentation at all. That long tail is exactly where a custom integration pays for itself.',
+    text: 'Beeline offers supplier API integration with no integration fees, and Magnit shipped a Gateway API in 2026 that creates and submits candidates directly. If your portals are these, use the official API and do not pay anyone to work around it. The healthcare and niche platforms are the ones that mostly still publish nothing, and that long tail is where a custom integration pays for itself.',
   },
   {
     title: 'Off the shelf connectors stop at the popular systems.',
@@ -286,7 +286,11 @@ const steps = [
 const faqs = [
   {
     question: 'Which ATS and VMS systems do you work with?',
-    answer: 'On the ATS side: Bullhorn, JobDiva, Ceipal, Avionte, JobAdder, Vincere, Recruit CRM, Loxo, and others. On the VMS side the list is long and fragmented, including the healthcare platforms that publish no developer documentation at all. The honest answer is that the system matters less than the access path: tell me the names and I will tell you within a day whether each one has a documented API, a gated one, or none, and what that means for scope and price.',
+    answer: 'On the ATS side: Bullhorn, JobDiva, Ceipal, Avionte, JobAdder, Vincere, Recruit CRM, Loxo, and others. On the VMS side the list is long and fragmented, including healthcare platforms that publish no developer documentation at all. The honest answer is that the system matters less than the access path: tell me the names and I will tell you within a day whether each has a documented API, a gated one, a vendor rule against third parties, or none at all, and what that means for scope and price.',
+  },
+  {
+    question: 'Does my vendor allow an outside developer to touch their API?',
+    answer: 'Sometimes not, and it is better to find out before the build than after. Bullhorn, for example, publishes that it does not permit third-party connector or middleware companies to build integrations, and that customers will not be given their API key if they intend to hand it to a vendor not contracted with Bullhorn. That rule is aimed at companies distributing connector products rather than at a developer working under your direction on your own systems, but the distinction is the vendor\'s to make. I raise this in scoping and you clear it with your account team. If the answer is no, we find another route or I tell you the project should not happen.',
   },
   {
     question: 'Is this the same as an off the shelf integration?',

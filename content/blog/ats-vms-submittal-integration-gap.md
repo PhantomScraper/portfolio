@@ -6,10 +6,12 @@ updated: "2026-08-29"
 tags: ["staffing", "ATS", "VMS", "integration", "automation", "recruitment"]
 readingTime: "10 min read"
 takeaways:
-  - "Bullhorn VMS Sync lists 124 portals it can pull jobs from, and 9 it can push candidate submittals to."
+  - "Bullhorn VMS Sync lists 124 portals for jobs and 9 for submittals; net of overlaps and non-VMS entries, ~110 lack automated submittal."
   - "The return trip, not the inbound feed, is where the expensive manual work sits."
   - "Access path matters more than the platform name: documented API, gated API, forbidden, or none."
   - "Beeline states publicly that scraping bots and shared credentials violate the Supplier Access Agreement."
+  - "Beeline and Magnit now ship supplier APIs with candidate submittal, so the gap is closing at the top of the market."
+  - "Bullhorn does not permit third-party connector or middleware companies to build against its API."
   - "Speed to submit decides who fills a requisition, so retyping is lost revenue, not just lost time."
   - "The healthcare and niche VMS long tail is where custom integration actually pays for itself."
 faqs:
@@ -46,11 +48,14 @@ Counting the entries at the time of writing:
 
 The nine are Beeline, Fieldglass, Fieldglass API, Pixid, HealthTrust, SimpleVMS, VNDLY API, Trio and Einsteinii.
 
-Read that again, because it is the whole point. The market-leading ATS, with a dedicated integration product and years of engineering behind it, can read jobs out of 124 systems and write candidates back into nine.
+Two honest adjustments before drawing a conclusion, because the raw subtraction overstates the case:
 
-For the other 115, a human retypes.
+- **Six of those nine also appear on the jobs list**, so the shortfall is 118 entries, not 115.
+- **Eight entries on the jobs list are not VMS portals at all.** Greenhouse, iCIMS, Taleo, Taleo Business Edition, SuccessFactors, BrassRing, SAP Ariba and Bullhorn's own VMS product are ATS and procurement systems, several with their own public APIs. Nobody is hand-typing into those.
 
-That is not a criticism of Bullhorn. Any vendor faces the same wall, and the list is honest and public, which is more than most publish. It is a description of where the industry actually is.
+Strip them out and roughly **110 portals** support inbound jobs but no automated submittal. That is a smaller number than the headline suggests, and it is still the largest unserved manual step in agency operations.
+
+That is not a criticism of Bullhorn. Any vendor faces the same wall, and publishing the list at all is more than most competitors do. It is a description of where the industry actually is.
 
 ## Why reading is easy and writing is hard
 
@@ -84,7 +89,9 @@ There are four cases, and every portal you deal with falls into one.
 
 Use it. Nothing else is worth considering. You request credentials in your agency's name, integrate against documented endpoints, and handle their auth and rate limits properly.
 
-This case is also expanding. The major VMS platforms are actively building supplier APIs, partly because they would rather suppliers used a supported path than an unsupported one. If your portal is on this list today, the integration is a straightforward engineering job.
+This case is expanding fast, and anyone telling you otherwise is selling you something. Beeline offers supplier API integration with no integration fees, included in team plans, covering job sync and candidate submittals. Magnit shipped its Gateway API in 2026, which explicitly supports creating and submitting candidate profiles against staffing requests. Workday VNDLY has an API and is on Bullhorn's submittal list.
+
+So the top of the market is closing this gap itself. If your portal is one of these, the integration is a straightforward engineering job and you should use the official API, not pay anyone to work around it. The genuine long tail is the smaller and healthcare-specific platforms, which is where the manual work actually remains.
 
 ### 2. An API exists but is gated
 
@@ -99,6 +106,12 @@ Some access agreements prohibit it outright. Beeline's supplier integrations pag
 That is unambiguous, and it should end the conversation about unofficial automation for that portal. An integration that saves ten recruiter hours a week and gets your agency flagged in a client's security questionnaire is not a saving. It is a supplier relationship at risk.
 
 This is worth saying clearly because it is the case a cheap developer will quietly ignore. Ask any prospective integrator what they do when the access agreement forbids automation. If they do not have an answer, they have not read one.
+
+### 3b. The vendor forbids third parties, not just automation
+
+This one catches people out because it is a commercial rule, not a technical one. Bullhorn's partner FAQ states: "We do not permit third-party 'connector' or 'middleware' companies to build integrations with Bullhorn," and separately that "customers will not be provided with their API Key if they intend to provide it to a third party vendor who is not contracted with Bullhorn."
+
+Read carefully, that is aimed at companies distributing a connector product. A developer working under your direction on your own systems is a different thing from a middleware vendor. But the distinction is Bullhorn's to make, not yours or mine, so raise it with your account team before scoping work that depends on their API. Discovering this after a build is an expensive surprise.
 
 ### 4. No API, and automation is permitted
 
