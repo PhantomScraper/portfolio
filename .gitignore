@@ -14,3 +14,14 @@ npm-debug.log*
 # OS
 .DS_Store
 Thumbs.db
+
+# Lead-gen tooling. This repo is public; keep prospecting method and target
+# list out of it. Move to a private repo if you want it version controlled.
+scripts/find-leads.mjs
+scripts/boards.txt
+leads.csv
+scripts/discover-boards.mjs
+scripts/discovered-boards.txt
+scripts/.yc-cache.json
+scripts/.yc-seed.json
+healthcare-leads.csv
