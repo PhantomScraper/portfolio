@@ -69,6 +69,33 @@
       </div>
     </section>
 
+    <!-- Quick answer -->
+    <section class="band band--tint" aria-label="Quick answer">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Quick answer</p>
+          <div>
+            <h2 class="section-head__title">Hiring a Web Scraping Developer in 2026</h2>
+            <p class="dateline">Updated August 31, 2026 · First published July 28, 2026</p>
+          </div>
+        </div>
+
+        <dl class="qa">
+          <div v-for="fact in quickAnswers" :key="fact.label">
+            <dt>{{ fact.label }}</dt>
+            <dd>{{ fact.value }}</dd>
+          </div>
+        </dl>
+
+        <p class="qa__note">
+          Vuong Phan is a Top Rated Plus freelance web scraping developer on Upwork with
+          a 5.0 rating across 7,200+ hours, specializing in custom scrapers, anti-bot
+          bypass, and data pipelines, with a free data sample for most projects and a
+          fixed scope and price quoted within 24 hours of your first message.
+        </p>
+      </div>
+    </section>
+
     <!-- What you can hire me for -->
     <section class="band" aria-label="Skills you can hire">
       <div class="shell">
@@ -121,11 +148,42 @@
       </div>
     </section>
 
+    <!-- Proof: recent project -->
+    <section class="band" aria-label="Recent project">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">03 / Proof</p>
+          <div>
+            <h2 class="section-head__title">Recent Project: 10 Million Amazon Products a Day</h2>
+            <p class="section-head__lede">
+              An e-commerce intelligence client needed pricing and availability across
+              roughly 10 million Amazon product pages daily, past IP blocks, robot
+              checks, and CAPTCHAs. I rebuilt their single script into a distributed
+              pipeline: Scrapy workers behind a Redis URL frontier, a separate
+              Playwright tier for JavaScript pages, and geo-matched residential proxies.
+            </p>
+          </div>
+        </div>
+
+        <div class="proofstats">
+          <div v-for="stat in proofStats" :key="stat.label" class="proofstat">
+            <p class="proofstat__num tnum">{{ stat.value }}</p>
+            <p class="proofstat__label">{{ stat.label }}</p>
+          </div>
+        </div>
+
+        <p class="footnote">
+          Full architecture write-up:
+          <NuxtLink to="/blog/scaling-amazon-scraper-10-million-products-per-day">Scaling an Amazon Scraper to 10 Million Products a Day</NuxtLink>.
+        </p>
+      </div>
+    </section>
+
     <!-- Rates -->
     <section class="band" aria-label="Web scraping developer rates">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow">03 / Rates</p>
+          <p class="eyebrow">04 / Rates</p>
           <div>
             <h2 class="section-head__title">What It Costs to Hire a Web Scraping Developer</h2>
             <p class="section-head__lede">
@@ -165,7 +223,7 @@
     <section class="band band--tint" aria-label="Ways to hire">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow">04 / Engagement</p>
+          <p class="eyebrow">05 / Engagement</p>
           <div>
             <h2 class="section-head__title">Three Ways to Work Together</h2>
           </div>
@@ -185,7 +243,7 @@
     <section class="band" aria-label="Hiring FAQ">
       <div class="shell">
         <div class="section-head">
-          <p class="eyebrow">05 / FAQ</p>
+          <p class="eyebrow">06 / FAQ</p>
           <div>
             <h2 class="section-head__title">Questions About Hiring</h2>
           </div>
@@ -211,6 +269,22 @@
 <script setup lang="ts">
 const siteUrl = 'https://www.vuongphan.dev'
 const pageUrl = `${siteUrl}/hire-web-scraping-developer`
+
+const quickAnswers = [
+  { label: 'Hourly rate', value: 'From $25 per hour. Senior freelance web scraping developers typically charge $30 to $80 per hour in 2026' },
+  { label: 'Fixed price', value: '$100 to $600 for a one-off single-site extraction, $200 to $1,000+ per month for managed pipelines' },
+  { label: 'Free sample', value: 'Real data from your target sites in 2 to 3 days, free for most projects' },
+  { label: 'Quote', value: 'Fixed scope and price within 24 hours of your first message' },
+  { label: 'Delivery formats', value: 'CSV, JSON, Excel, Google Sheets, PostgreSQL, MongoDB, or a private REST API' },
+  { label: 'Anti-bot coverage', value: 'Cloudflare, DataDome, PerimeterX, Akamai, Turnstile, and CAPTCHA-protected sites' },
+  { label: 'Track record', value: '5.0 rating, Top Rated Plus, 7,200+ hours and 50+ projects on Upwork' },
+]
+
+const proofStats = [
+  { value: '10M', label: 'product pages per day, sustained with headroom' },
+  { value: '116/s', label: 'pages per second the pipeline had to hold' },
+  { value: '~90%', label: 'of pages served by cheap HTTP requests, not headless browsers' },
+]
 
 const skills = [
   {
@@ -276,6 +350,18 @@ const stacks = [
     link: '/blog/bypass-cloudflare-web-scraping',
     linkText: 'Cloudflare bypass guide',
   },
+  {
+    title: 'Hire a full stack developer',
+    text: 'Dashboards, SaaS backends, and internal tools on Nuxt, Vue, React, FastAPI, and Node.js, usually on top of the data a scraper delivers. One developer for the pipeline and the product.',
+    link: '/hire-fullstack-developer',
+    linkText: 'Full stack hiring page',
+  },
+  {
+    title: 'Hire an automation developer',
+    text: 'n8n and Make workflows, custom Python jobs, and browser bots that move the scraped data into your CRM, sheets, or reporting without a human in the loop.',
+    link: '/hire-automation-developer',
+    linkText: 'Automation hiring page',
+  },
 ]
 
 const rates = [
@@ -327,7 +413,7 @@ const vetting = [
 const faqs = [
   {
     question: 'How much does it cost to hire a web scraping developer?',
-    answer: 'Senior freelance web scraping developers typically charge $30 to $80 per hour in 2026, or fixed prices of $100 to $600 for a single-site extraction and $200 to $1,000+ per month for recurring pipelines. Web scraping companies charge 2 to 5 times more for the same deliverable because their price includes sales, account management, and agency margin. I quote every project as a fixed price within 24 hours.',
+    answer: 'Senior freelance web scraping developers typically charge $30 to $80 per hour in 2026, or fixed prices of $100 to $600 for a single-site extraction and $200 to $1,000+ per month for recurring pipelines. Web scraping companies charge 2 to 5 times more for the same deliverable because their price includes sales, account management, and agency margin. My own hourly rate starts at $25 per hour, and I quote every project as a fixed price within 24 hours.',
   },
   {
     question: 'Should I hire a freelance developer or a web scraping company?',
@@ -360,15 +446,15 @@ const faqs = [
 ]
 
 useSeoMeta({
-  title: 'Hire a Web Scraping Developer | Top Rated Plus on Upwork',
-  description: 'Hire a web scraping developer with a 5.0 rating and 7,200+ hours on Upwork. Custom scrapers, anti-bot bypass, free sample, fixed quote in 24 hours.',
+  title: 'Hire a Web Scraping Developer | Free Sample, From $25/hr',
+  description: 'Hire a Top Rated Plus web scraping developer: 5.0 rating, 7,200+ hours on Upwork, rates from $25/hour. Free data sample and a fixed quote in 24 hours.',
   ogType: 'website',
   ogUrl: pageUrl,
-  ogTitle: 'Hire a Web Scraping Developer | Top Rated Plus on Upwork',
-  ogDescription: 'Hire a web scraping developer with a 5.0 rating and 7,200+ hours on Upwork. Custom scrapers, anti-bot bypass, and full-stack data pipelines.',
-  ogImage: `${siteUrl}/og-image.png`,
+  ogTitle: 'Hire a Web Scraping Developer | Free Sample, From $25/hr',
+  ogDescription: 'Hire a Top Rated Plus web scraping developer: 5.0 rating, 7,200+ hours on Upwork, rates from $25/hour. Free data sample and a fixed quote in 24 hours.',
+  ogImage: `${siteUrl}/og/pages/hire-web-scraping-developer.png`,
   twitterCard: 'summary_large_image',
-  twitterImage: `${siteUrl}/og-image.png`,
+  twitterImage: `${siteUrl}/og/pages/hire-web-scraping-developer.png`,
 })
 
 useHead({
@@ -380,6 +466,31 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@graph': [
+          {
+            '@type': 'Person',
+            '@id': `${siteUrl}/#person`,
+            name: 'Phan Vuong',
+            url: siteUrl,
+            jobTitle: 'Freelance Web Scraping Developer | Full-Stack Engineer',
+            description: 'Top Rated Plus freelance developer on Upwork with a 5.0 rating and 7,200+ hours: web scraping, anti-bot bypass, automation, and full-stack development.',
+            sameAs: [
+              'https://www.upwork.com/freelancers/phanvuong2',
+              'https://github.com/hienvuong2810',
+            ],
+            knowsAbout: [
+              'Web Scraping',
+              'Web Crawling',
+              'Anti-Bot Bypass',
+              'Cloudflare Bypass',
+              'Scrapy',
+              'Playwright',
+              'Data Pipelines',
+              'API Reverse Engineering',
+              'Python',
+              'Full-Stack Development',
+              'Automation',
+            ],
+          },
           {
             '@type': 'Service',
             '@id': `${pageUrl}#service`,
@@ -393,18 +504,20 @@ useHead({
               '@type': 'AggregateOffer',
               priceCurrency: 'USD',
               lowPrice: '100',
-              description: 'Fixed-price projects from $100. Recurring managed pipelines from $200 per month. Fixed quote within 24 hours, free data sample for most projects.',
+              description: 'Hourly work from $25 per hour. Fixed-price projects from $100. Recurring managed pipelines from $200 per month. Fixed quote within 24 hours, free data sample for most projects.',
             },
           },
           {
             '@type': 'WebPage',
             '@id': `${pageUrl}#webpage`,
             url: pageUrl,
-            name: 'Hire a Web Scraping Developer | Top Rated Plus on Upwork',
-            description: 'Hire a web scraping developer with a 5.0 rating and 7,200+ hours on Upwork. Custom scrapers, anti-bot bypass, and full-stack data pipelines.',
+            name: 'Hire a Web Scraping Developer | Free Sample, From $25/hr',
+            description: 'Hire a Top Rated Plus web scraping developer: 5.0 rating, 7,200+ hours on Upwork, rates from $25/hour. Free data sample and a fixed quote in 24 hours.',
             isPartOf: { '@id': `${siteUrl}/#website` },
             about: { '@id': `${siteUrl}/#person` },
             inLanguage: 'en-US',
+            datePublished: '2026-07-28',
+            dateModified: '2026-08-31',
             breadcrumb: {
               '@type': 'BreadcrumbList',
               itemListElement: [
@@ -558,6 +671,89 @@ useHead({
   border-top: 1px solid var(--color-rule);
   font-size: var(--text-xs);
   color: var(--color-neutral);
+}
+
+/* Quick answer fact list */
+.dateline {
+  margin-top: var(--space-3xs);
+  font-size: var(--text-xs);
+  color: var(--color-neutral);
+}
+
+.qa {
+  margin: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.qa > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3xs) var(--space-lg);
+  padding-block: var(--space-2xs);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+@media (min-width: 768px) {
+  .qa > div {
+    grid-template-columns: 12rem minmax(0, 1fr);
+  }
+}
+
+.qa dt {
+  font-family: var(--font-outlier);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-neutral);
+  padding-top: 0.15rem;
+}
+
+.qa dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+}
+
+.qa__note {
+  margin-top: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  max-width: 72ch;
+}
+
+/* Proof stats */
+.proofstats {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-top: 1px solid var(--color-rule);
+}
+
+@media (min-width: 768px) {
+  .proofstats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--space-2xl);
+  }
+}
+
+.proofstat {
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.proofstat__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-display-s);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.proofstat__label {
+  margin-top: var(--space-2xs);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  max-width: 32ch;
 }
 
 /* Split Studio rows */

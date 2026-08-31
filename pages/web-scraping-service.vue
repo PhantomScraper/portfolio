@@ -275,9 +275,9 @@ useSeoMeta({
   ogUrl: pageUrl,
   ogTitle: 'Website Scraping Service | Custom Web Scraping & Data Extraction',
   ogDescription: 'Custom website scraping service by a Top Rated Plus freelance developer. Clean web data extraction as CSV, JSON, database, or API. Free sample and fixed quote in 24 hours.',
-  ogImage: `${siteUrl}/og-image.png`,
+  ogImage: `${siteUrl}/og/pages/web-scraping-service.png`,
   twitterCard: 'summary_large_image',
-  twitterImage: `${siteUrl}/og-image.png`,
+  twitterImage: `${siteUrl}/og/pages/web-scraping-service.png`,
 })
 
 useHead({

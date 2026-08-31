@@ -327,9 +327,9 @@ useSeoMeta({
   ogTitle: 'ATS and VMS Data Sync for Staffing and Recruitment Agencies',
   ogDescription:
     'Stop re-typing candidates into VMS portals. Two way ATS and VMS integration, built and maintained by one senior developer.',
-  ogImage: `${siteUrl}/og-image.png`,
+  ogImage: `${siteUrl}/og/pages/staffing-data-integration.png`,
   twitterCard: 'summary_large_image',
-  twitterImage: `${siteUrl}/og-image.png`,
+  twitterImage: `${siteUrl}/og/pages/staffing-data-integration.png`,
 })
 
 useHead({

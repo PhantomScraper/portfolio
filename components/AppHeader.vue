@@ -135,6 +135,8 @@ const clusterRef = ref<HTMLElement | null>(null)
 const serviceMenu = [
   { href: '/web-scraping-service', label: 'Web Scraping Service', hint: 'Done-for-you data extraction' },
   { href: '/staffing-data-integration', label: 'ATS & VMS Data Sync', hint: 'Integration for staffing agencies' },
+  { href: '/hire-fullstack-developer', label: 'Full-Stack Development', hint: 'Dashboards, SaaS, internal tools' },
+  { href: '/hire-automation-developer', label: 'Automation Development', hint: 'Python, n8n, browser bots' },
   { href: '/#services', label: 'All Services', hint: 'Scraping, APIs, full-stack, voice AI' },
   { href: '/#why-us', label: 'Why Me', hint: 'Track record and working style' },
   { href: '/#how-it-works', label: 'Process', hint: 'From brief to delivered data' },

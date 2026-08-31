@@ -9,8 +9,20 @@ import sharp from 'sharp'
 
 const BLOG_DIR = join(process.cwd(), 'content', 'blog')
 const OUT_DIR = join(process.cwd(), 'public', 'og', 'blog')
+const PAGES_OUT_DIR = join(process.cwd(), 'public', 'og', 'pages')
+
+// Landing/service pages that get their own OG card instead of the generic
+// site-wide og-image.png. Keep slugs in sync with the ogImage URLs in pages/*.vue.
+const PAGES = [
+  { slug: 'hire-web-scraping-developer', title: 'Hire a Web Scraping Developer' },
+  { slug: 'hire-automation-developer', title: 'Hire an Automation Developer' },
+  { slug: 'hire-fullstack-developer', title: 'Hire a Full Stack Developer' },
+  { slug: 'web-scraping-service', title: 'Custom Web Scraping Service' },
+  { slug: 'staffing-data-integration', title: 'ATS & VMS Data Sync for Staffing Agencies' },
+]
 
 mkdirSync(OUT_DIR, { recursive: true })
+mkdirSync(PAGES_OUT_DIR, { recursive: true })
 
 function escapeXml(s) {
   return s
@@ -38,7 +50,7 @@ function wrap(text, maxChars) {
   return lines
 }
 
-function buildSvg(title) {
+function buildSvg(title, badge = 'Web Scraping &amp; Automation Guides') {
   // Scale font down when the title is long so it always fits.
   const fontSize = title.length > 80 ? 52 : title.length > 55 ? 60 : 68
   const maxChars = Math.floor(1060 / (fontSize * 0.52))
@@ -76,7 +88,7 @@ function buildSvg(title) {
 
   <!-- Footer -->
   <rect x="70" y="500" width="540" height="52" rx="26" fill="rgba(255,255,255,0.15)"/>
-  <text x="92" y="534" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Web Scraping &amp; Automation Guides</text>
+  <text x="92" y="534" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff">${badge}</text>
   <text x="640" y="534" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.7)">vuongphan.dev</text>
 </svg>`
 }
@@ -101,3 +113,12 @@ for (const file of files) {
 }
 
 console.log(`Generated ${count} OG image(s) in public/og/blog/`)
+
+let pageCount = 0
+for (const page of PAGES) {
+  const svg = buildSvg(page.title, 'Top Rated Plus · 5.0 on Upwork')
+  await sharp(Buffer.from(svg)).png().toFile(join(PAGES_OUT_DIR, `${page.slug}.png`))
+  pageCount++
+  console.log(`  pages/${page.slug}.png`)
+}
+console.log(`Generated ${pageCount} OG image(s) in public/og/pages/`)

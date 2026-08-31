@@ -52,6 +52,8 @@
           <NuxtLink to="/web-scraping-service">Web Scraping Service</NuxtLink>
           <NuxtLink to="/staffing-data-integration">ATS &amp; VMS Data Sync</NuxtLink>
           <NuxtLink to="/hire-web-scraping-developer">Hire a Web Scraping Developer</NuxtLink>
+          <NuxtLink to="/hire-fullstack-developer">Hire a Full Stack Developer</NuxtLink>
+          <NuxtLink to="/hire-automation-developer">Hire an Automation Developer</NuxtLink>
           <a href="/#services">All Services</a>
           <a href="/#why-us">Why Choose Me</a>
           <a href="/#how-it-works">How It Works</a>
