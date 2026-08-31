@@ -292,7 +292,7 @@ const skills = [
   },
   {
     title: 'Data-heavy backends',
-    text: 'Pipelines, schedulers, and queue-based processing feeding the UI, with PostgreSQL schemas designed for the queries the product actually makes.',
+    text: 'ETL pipelines, schedulers, and queue-based processing feeding the UI, plus sync with third-party platforms, with PostgreSQL schemas designed for the queries the product actually makes.',
   },
   {
     title: 'AI features',
@@ -442,6 +442,8 @@ useHead({
               'SaaS Development',
               'Internal Tools',
               'Dashboards',
+              'ETL Pipelines',
+              'Data Integration',
               'AI Integration',
               'Web Scraping',
             ],

@@ -91,9 +91,9 @@
 
         <p class="qa__note">
           Vuong Phan is a Top Rated Plus freelance automation developer on Upwork with a
-          5.0 rating across 7,200+ hours, building Python scripts, n8n and Make workflows,
-          browser bots, and AI document pipelines, with a fixed scope and price quoted
-          within 24 hours of your first message.
+          5.0 rating across 7,200+ hours, building platform-to-platform data sync, ETL
+          pipelines, Python scripts, n8n and Make workflows, browser bots, and AI document
+          pipelines, with a fixed scope and price quoted within 24 hours of your first message.
         </p>
       </div>
     </section>
@@ -270,6 +270,7 @@ const quickAnswers = [
   { label: 'Single script', value: '$150 to $600 fixed for one automation, delivered in 2 to 5 days' },
   { label: 'Workflow build', value: '$300 to $1,500 fixed for a typical n8n or Make workflow with error handling' },
   { label: 'Quote', value: 'Fixed scope and price within 24 hours of your first message' },
+  { label: 'Common projects', value: 'Data sync between platforms, ETL pipelines, report automation, browser bots, document parsing' },
   { label: 'Tooling', value: 'Python, n8n, Make, Playwright, cron and task queues, OpenAI and Claude APIs' },
   { label: 'Track record', value: '5.0 rating, Top Rated Plus, 7,200+ hours and 50+ projects on Upwork' },
 ]
@@ -288,8 +289,12 @@ const skills = [
     text: 'Playwright bots for systems with no API: filling forms in legacy portals, downloading statements, checking availability, and submitting entries, on a schedule and with screenshots as an audit trail.',
   },
   {
-    title: 'API integration and two-way sync',
-    text: 'REST, GraphQL, and webhook integrations that keep two platforms in sync, such as ATS to VMS, CRM to billing, or store to warehouse. When there is no official API, I reverse engineer the private one.',
+    title: 'Data sync between platforms',
+    text: 'Keep two platforms, websites, or services that do not integrate natively in sync: ATS to VMS, CRM to billing, store to fulfillment. REST, GraphQL, and webhook based, one-way or two-way, with conflict rules and idempotency so records never duplicate. When there is no official API, I reverse engineer the private one.',
+  },
+  {
+    title: 'ETL and data pipelines',
+    text: 'Extract, transform, load: pull data from APIs, databases, spreadsheets, and scraped sources, clean and reshape it, and load it into PostgreSQL, MySQL, BigQuery, or your warehouse on a schedule, with validation and alerts when a load fails or volume drops.',
   },
   {
     title: 'AI document workflows',
@@ -333,6 +338,18 @@ const tools = [
     linkText: 'Reverse engineering private APIs',
   },
   {
+    title: 'Hire a data sync developer',
+    text: 'Connect two platforms or websites that do not talk to each other and keep their records consistent: field mapping, conflict rules, retries, and a log of every change. Built as a service you own, not a per-task subscription.',
+    link: '/staffing-data-integration',
+    linkText: 'ATS and VMS sync example',
+  },
+  {
+    title: 'Hire an ETL developer',
+    text: 'Scheduled pipelines that extract from APIs, databases, files, and scraped sources, transform the mess into clean tables, and load your database or warehouse, monitored per field so silent breakage surfaces immediately.',
+    link: '/blog/sync-data-between-platforms',
+    linkText: 'Sync vs ETL explained',
+  },
+  {
     title: 'Hire a web scraping automation developer',
     text: 'When the automation starts with data that lives on someone else\'s website: scheduled scrapers feeding your sheets, database, or workflows. This is my core specialty, with its own hiring page.',
     link: '/hire-web-scraping-developer',
@@ -344,6 +361,8 @@ const rates = [
   { label: 'Hourly rate', freelancer: '$30 - $80 / hour for senior automation specialists', company: '$90 - $200 / hour blended agency rate' },
   { label: 'Single automation script', freelancer: '$150 - $600 fixed', company: '$2,000+ minimum engagement' },
   { label: 'n8n or Make workflow build', freelancer: '$300 - $1,500 fixed', company: '$3,000 - $10,000' },
+  { label: 'Platform-to-platform data sync', freelancer: '$300 - $2,500 fixed, one-way or two-way', company: '$5,000+ integration project' },
+  { label: 'ETL pipeline to a database or warehouse', freelancer: '$500 - $2,500 fixed', company: '$5,000 - $20,000' },
   { label: 'Monthly maintenance', freelancer: '$100 - $500 / month', company: '$1,000+ / month' },
   { label: 'First working version', freelancer: '2 - 5 days', company: '2 - 4 weeks after onboarding' },
 ]
@@ -381,6 +400,14 @@ const faqs = [
     answer: 'Yes, two ways. Browser automation with Playwright drives the site like a person: logging in, filling forms, downloading files, on a schedule. Or I reverse engineer the private API the site itself uses, which is faster and more stable when it works. I pick per target and confirm feasibility before quoting.',
   },
   {
+    question: 'Can you sync data between two platforms that do not integrate?',
+    answer: 'Yes, this is one of my most common projects. If both platforms have APIs, I build a sync service with field mapping, conflict rules, and idempotency keys so records never duplicate, one-way or two-way. If one side has no API, I fall back to its private API or browser automation. Typical fixed prices: $300 to $1,200 for a one-way sync, $800 to $2,500 for a two-way sync with conflict handling. A live example is my ATS and VMS data sync service for staffing agencies.',
+  },
+  {
+    question: 'Do you build ETL pipelines?',
+    answer: 'Yes. I build scheduled ETL pipelines that extract from APIs, databases, spreadsheets, and scraped sources, transform the data with cleaning, deduplication, and joins, and load it into PostgreSQL, MySQL, BigQuery, or S3. Every pipeline ships with per-field validation and alerts, because the expensive ETL failure is the silent one. Typical fixed prices run $500 to $2,500 depending on sources and volume; managed SaaS connectors like Fivetran make sense when budget allows, and custom Python when they do not cover your sources.',
+  },
+  {
     question: 'Do you maintain automations after delivery?',
     answer: 'Yes. Every build ships with logging and failure alerts, and the first days of support after delivery are included. After that, maintenance is $100 to $500 per month depending on how many workflows are in production, with a response within 24 hours and most fixes shipped the same day. Automations break when the tools they touch change, so unmaintained automation is a liability.',
   },
@@ -399,12 +426,12 @@ const faqs = [
 ]
 
 useSeoMeta({
-  title: 'Hire an Automation Developer | Python, n8n, Browser Bots',
-  description: 'Hire a freelance automation developer: Python scripts, n8n and Make workflows, browser bots, and AI document parsing. Fixed quote in 24 hours.',
+  title: 'Hire an Automation Developer | Python, Data Sync, ETL',
+  description: 'Hire a freelance automation developer to sync data between platforms, connect your services, and build ETL pipelines with Python and n8n. Quote in 24h.',
   ogType: 'website',
   ogUrl: pageUrl,
-  ogTitle: 'Hire an Automation Developer | Python, n8n, Browser Bots',
-  ogDescription: 'Hire a freelance automation developer: Python scripts, n8n and Make workflows, browser bots, and AI document parsing. Fixed quote in 24 hours.',
+  ogTitle: 'Hire an Automation Developer | Python, Data Sync, ETL',
+  ogDescription: 'Hire a freelance automation developer to sync data between platforms, connect your services, and build ETL pipelines with Python and n8n. Quote in 24h.',
   ogImage: `${siteUrl}/og/pages/hire-automation-developer.png`,
   twitterCard: 'summary_large_image',
   twitterImage: `${siteUrl}/og/pages/hire-automation-developer.png`,
@@ -433,6 +460,10 @@ useHead({
             knowsAbout: [
               'Business Process Automation',
               'Workflow Automation',
+              'Data Synchronization',
+              'Platform Integration',
+              'ETL Pipelines',
+              'Data Integration',
               'n8n',
               'Make',
               'Zapier Migration',
@@ -450,7 +481,7 @@ useHead({
             '@id': `${pageUrl}#service`,
             name: 'Freelance Automation Developer for Hire',
             serviceType: 'Automation Development',
-            description: 'Hire a Top Rated Plus freelance automation developer: Python scripts, n8n and Make workflows, browser bots, API sync, and AI document parsing. 5.0 rating and 7,200+ hours on Upwork.',
+            description: 'Hire a Top Rated Plus freelance automation developer: data sync between platforms, ETL pipelines, Python scripts, n8n and Make workflows, browser bots, and AI document parsing. 5.0 rating and 7,200+ hours on Upwork.',
             provider: { '@id': `${siteUrl}/#person` },
             areaServed: 'Worldwide',
             url: pageUrl,
@@ -465,8 +496,8 @@ useHead({
             '@type': 'WebPage',
             '@id': `${pageUrl}#webpage`,
             url: pageUrl,
-            name: 'Hire an Automation Developer | Python, n8n, Browser Bots',
-            description: 'Hire a freelance automation developer: Python scripts, n8n and Make workflows, browser bots, and AI document parsing. Fixed quote in 24 hours.',
+            name: 'Hire an Automation Developer | Python, Data Sync, ETL',
+            description: 'Hire a freelance automation developer to sync data between platforms, connect your services, and build ETL pipelines with Python and n8n. Quote in 24h.',
             isPartOf: { '@id': `${siteUrl}/#website` },
             about: { '@id': `${siteUrl}/#person` },
             inLanguage: 'en-US',
