@@ -30,11 +30,6 @@ export default defineNuxtPlugin(() => {
     return { provide: { trackConversion } }
   }
 
-  const s = document.createElement('script')
-  s.async = true
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${adsId}`
-  document.head.appendChild(s)
-
   const w = window as unknown as { dataLayer: unknown[]; gtag: (...args: unknown[]) => void }
   w.dataLayer = w.dataLayer || []
   w.gtag = function gtag() {
@@ -43,6 +38,28 @@ export default defineNuxtPlugin(() => {
   }
   w.gtag('js', new Date())
   w.gtag('config', adsId)
+
+  // gtag.js is ~155 KB and sets third-party cookies, so it loads on the first
+  // interaction; every call above (and each conversion) queues in dataLayer
+  // until then. Both conversions need an interaction anyway. Ad clicks load it
+  // at once so the click ID in the landing URL is captured for attribution.
+  const loadTag = () => {
+    const s = document.createElement('script')
+    s.async = true
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${adsId}`
+    document.head.appendChild(s)
+  }
+  if (/[?&](gclid|gbraid|wbraid|gad_source)=/.test(location.search)) {
+    loadTag()
+  }
+  else {
+    const events = ['pointerdown', 'keydown', 'scroll']
+    const onFirst = () => {
+      events.forEach(e => window.removeEventListener(e, onFirst))
+      loadTag()
+    }
+    events.forEach(e => window.addEventListener(e, onFirst, { passive: true }))
+  }
 
   // Auto-track clicks on the Upwork profile link wherever it appears.
   if (cfg.upworkLabel) {

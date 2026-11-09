@@ -2,11 +2,12 @@
 title: "How to Sync Data Between Two Platforms (Even With No API)"
 description: "Four ways to connect two platforms that do not integrate: native connectors, n8n, custom API sync, and browser automation, plus when you need ETL instead."
 date: "2026-08-31"
-updated: "2026-08-31"
+updated: "2026-11-09"
 tags: ["automation", "data sync", "integration", "etl", "n8n", "api integration"]
-readingTime: "10 min read"
+readingTime: "14 min read"
 takeaways:
   - "There are four ways to connect two platforms: native integration, an iPaaS like n8n or Make, custom API sync, and browser automation when one side has no API at all."
+  - "No API rarely means no exit. A scheduled export, an emailed report, an SFTP drop, a read-only database, or the private API behind the web app usually exists; find it before reaching for browser automation."
   - "Most sync problems are one-way pushes. True two-way sync is a conflict-resolution problem, not a plumbing problem, and costs accordingly."
   - "Webhooks beat polling for freshness and cost, but every webhook consumer still needs a reconciliation poll to catch missed events."
   - "Sync keeps two operational systems consistent. ETL feeds a warehouse for reporting. They are different jobs and mixing them up is how projects blow their budget."
@@ -25,13 +26,21 @@ faqs:
     answer: "Significantly. One-way sync is a push with retries. Two-way sync must answer what happens when the same record changes in both systems between sync runs, which requires a source-of-truth rule or field-level merge logic, loop prevention so an update does not bounce between systems forever, and idempotency keys so retries never create duplicates. Budget roughly two to three times the effort of a one-way sync."
   - question: "Should I use Zapier, Make, n8n, or custom code to sync platforms?"
     answer: "Zapier or Make for low-volume workflows between standard SaaS tools. Self-hosted n8n once volume grows, because you own the instance and per-task pricing disappears. Custom code when you need conflict resolution, complex field mapping, high volume, or a platform with no connector and no API. The common migration path is Zapier to n8n to custom code as volume and complexity grow."
+  - question: "How do I sync data between a legacy ERP and modern SaaS tools when there is no API?"
+    answer: "Read from the ERP through whatever it already exposes, usually a read-only database connection or a scheduled flat-file export, and have a small sync service push the changes into the SaaS tools' APIs. Write back into the ERP through its own import format or batch import tool rather than direct database writes, which can bypass the ERP's business rules. Browser automation is the last resort for screens with no other way in."
+  - question: "Can Zapier or Make connect to software that has no public API?"
+    answer: "Only indirectly. Zapier and Make need an API, a webhook, or a supported channel on each side. They can still work with a no-API system through what it already sends out, such as an emailed report, a file dropped into cloud storage, or an SFTP folder, or through a small custom bridge that reads the system and calls a webhook. Neither tool can log into a no-API web portal on its own."
+  - question: "Is RPA reliable for syncing data between systems?"
+    answer: "It can be, if it is treated as software rather than recorded clicks. RPA and browser automation replay what a person does in the interface, so they break when the interface changes and run slower than an API. Reliable setups use them only for steps with no other way in, prefer the system's exports or private API wherever possible, and add retries, screenshots, and an alert when a run fails or moves zero records."
+  - question: "How do MSPs and IT consultants build integrations for software that has no API?"
+    answer: "Usually by splitting the work. The MSP keeps the client relationship and the workflow layer, such as n8n, Power Automate, or a voice agent, and a specialist builds and maintains the connector that gets data in and out of the no-API system, exposed as a clean internal API or webhook the workflows can call. That keeps the fragile part in one maintained service instead of spread across every workflow."
 ---
 
 # How to Sync Data Between Two Platforms (Even With No API)
 
 Every business past a certain size runs on tools that do not talk to each other. The CRM does not know what the billing system knows, the ATS does not know what the VMS knows, and somebody on the team spends an hour a day retyping records from one screen into another.
 
-Connecting two platforms is one of the most requested automation projects I build as a freelance [automation developer](/hire-automation-developer), and it is also one of the most misquoted, because "sync our systems" can mean anything from a 30-minute Zapier setup to a two-way integration with conflict resolution. This guide lays out the four ways to connect two platforms, what each one costs in 2026, and how to tell whether you actually need sync at all, or ETL.
+Connecting two platforms is one of the most requested automation projects I build as a freelance [automation developer](/hire-automation-developer), and it is also one of the most misquoted, because "sync our systems" can mean anything from a 30-minute Zapier setup to a two-way integration with conflict resolution. This guide lays out the four ways to connect two platforms, where data gets out of systems that have no API, what each option costs in 2026, and how to tell whether you actually need sync at all, or ETL.
 
 ## The four ways to connect two platforms
 
@@ -72,6 +81,35 @@ Plenty of platforms your business depends on offer no public API: legacy portals
 **Private API reverse engineering.** The platform's own web app talks to a backend API; open the network tab and it is right there. Building against that private API is faster and far more stable than driving the UI. I wrote up the technique in [reverse engineering private APIs](/blog/reverse-engineering-private-apis).
 
 I usually quote both options after a feasibility check, because the right choice depends on the target's protection and how often its UI changes.
+
+## Where the data gets out of a system with no API
+
+"No API" rarely means no way out. Before reaching for browser automation, find where the system already lets data leave, because every exit on this list is faster and more stable than driving the screen:
+
+1. **A scheduled export**: CSV or Excel files the system saves or emails on a timer.
+2. **An emailed report** that someone on the team already receives every morning.
+3. **An SFTP drop**, still common in payroll, banking, and older enterprise software.
+4. **A read-only database connection**, typical for on-premise software.
+5. **The private API** behind the system's own web app.
+6. **The screen itself**, through browser automation, as the last resort.
+
+Here is where I look first for the systems people ask me about most:
+
+| System | Usual situation | Where I look first |
+|---|---|---|
+| Legacy or on-premise ERP | No modern API, but a database underneath | Read-only database access or scheduled exports; writes go back through the ERP's own import format |
+| Payroll to accounting | Payroll produces a journal report; QuickBooks Online and Xero have solid APIs | Parse the payroll journal export and post entries through the accounting API |
+| Practice management to tax software | Tax software is often desktop-based, with import formats instead of APIs | Generate the tax software's import file from practice management data |
+| Hotel PMS | Cloud PMSs often have APIs; older on-premise systems mostly export reports | The PMS API if there is one, scheduled report exports if not |
+| CMMS (maintenance) | API access is often limited to higher plans | The API on the right plan; otherwise exports, plus browser automation for write-backs |
+| Case management | Many sector-specific or self-hosted systems with no integration layer | The database if self-hosted, the private API behind the web app if cloud |
+| Document management (DMS) | The documents usually sit in reachable storage even when the API is limited | The storage layer for documents, exports for the metadata |
+| Insurance agency management (AMS) | APIs usually exist but sit behind partner programs | Partner access first; exports and browser automation for the gaps meanwhile |
+| CSR, grant, and donation platforms | APIs are often partner-gated; CSV exports are solid | Scheduled exports into the CRM or finance system |
+| Supply chain portals (3PL, WMS, carriers) | One portal per partner; EDI for the large ones | EDI or SFTP feeds where offered, browser automation per portal where not |
+| Staffing ATS to VMS | Jobs flow in, submittals rarely flow back | The VMS's official supplier API where one exists; see the staffing example below |
+
+Treat the table as a starting point, not a verdict. The vendor, your contract tier, and the terms of service decide which exits you may actually use, and some platforms forbid automated access outright and require their official API. That is why every quote I give starts with a feasibility check, not code.
 
 ## One-way push vs two-way sync
 
@@ -139,4 +177,4 @@ Before you brief anyone, including me, answer these six questions. They determin
 
 ## Need two systems talking to each other?
 
-I build platform-to-platform sync, integrations, and ETL pipelines as fixed-price projects: field mapping, conflict rules, retries, and monitoring included, with the source in your repository. Describe the two systems and the fields through the [contact form](/#contact) or [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2), and you will have a scope and fixed quote within 24 hours. If you are still comparing options, my [automation hiring guide](/hire-automation-developer) covers 2026 rates and the questions worth asking any candidate.
+I build platform-to-platform sync, integrations, and ETL pipelines as fixed-price projects: field mapping, conflict rules, retries, and monitoring included, with the source in your repository. Describe the two systems and the fields through the [contact form](/#contact) or [hire me on Upwork](https://www.upwork.com/freelancers/~01b9886dc1296b3a63), and you will have a scope and fixed quote within 24 hours. If you are still comparing options, my [automation hiring guide](/hire-automation-developer) covers 2026 rates and the questions worth asking any candidate.

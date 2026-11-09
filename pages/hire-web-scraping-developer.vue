@@ -22,7 +22,7 @@
 
           <div class="hero__actions">
             <a
-              href="https://www.upwork.com/freelancers/phanvuong2"
+              href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-upwork"
@@ -258,6 +258,12 @@
             <p class="faq__a">{{ faq.answer }}</p>
           </details>
         </div>
+
+        <p class="footnote">
+          Comparing platforms first? Upwork, Fiverr, Toptal, and Guru side by side, with the
+          seven questions that expose weak candidates, in
+          <NuxtLink to="/blog/best-web-scraping-freelancer-upwork">How to Hire the Best Web Scraping Freelancer on Upwork</NuxtLink>.
+        </p>
       </div>
     </section>
 
@@ -474,7 +480,7 @@ useHead({
             jobTitle: 'Freelance Web Scraping Developer | Full-Stack Engineer',
             description: 'Top Rated Plus freelance developer on Upwork with a 5.0 rating and 7,200+ hours: web scraping, anti-bot bypass, automation, and full-stack development.',
             sameAs: [
-              'https://www.upwork.com/freelancers/phanvuong2',
+              'https://www.upwork.com/freelancers/~01b9886dc1296b3a63',
               'https://github.com/hienvuong2810',
             ],
             knowsAbout: [
@@ -901,7 +907,7 @@ useHead({
   color: var(--color-ink);
 }
 
-thead .spec__mine {
+.spec thead .spec__mine {
   color: var(--color-accent);
 }
 

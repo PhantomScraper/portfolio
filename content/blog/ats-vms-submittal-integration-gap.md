@@ -132,7 +132,7 @@ A practical sequence, in order of cost:
 1. **Count the retyping.** How many submittals per week, times minutes each, times loaded recruiter cost. Do this before pricing any solution, because it is the only number that tells you what a fix is worth.
 2. **Check your vendor's current support list.** Your ATS may already cover a portal you are doing by hand, simply because nobody turned it on.
 3. **Classify each remaining portal** into the four access paths above. Documented API, gated, forbidden, or none. This takes about a day and it changes everything downstream.
-4. **Buy where you can, build where you must.** Connectors for the covered systems, custom integration for the long tail. These are complements, not competing options.
+4. **Buy where you can, build where you must.** Connectors for the covered systems, custom integration for the long tail. These are complements, not competing options. The general options for connecting systems that do not integrate are laid out in [how to sync data between two platforms](/blog/sync-data-between-platforms).
 5. **Budget for maintenance from day one.** Portals change forms and APIs. An unmaintained integration decays quietly, and the failure mode is the worst kind: it looks like it is working while submittals silently do not arrive. Monitoring and alerting are not optional extras here.
 
 ## The part people get wrong
@@ -145,4 +145,4 @@ The second most common mistake is skipping step three. Scoping an integration wi
 
 I build and maintain two way sync between agency ATS platforms, VMS portals, job boards and credentialing systems, using the official API wherever one exists and checking the access agreement before writing any automation. Details, process, and how each access path is priced are on the [ATS and VMS data sync page](/staffing-data-integration).
 
-If you want a straight answer on your specific portals, send me the list of systems and which direction the data needs to move, through the [contact form](/#contact) or [Upwork](https://www.upwork.com/freelancers/phanvuong2). I reply within 24 hours, and I will tell you when the answer is that a portal should not be automated at all.
+If you want a straight answer on your specific portals, send me the list of systems and which direction the data needs to move, through the [contact form](/#contact) or [Upwork](https://www.upwork.com/freelancers/~01b9886dc1296b3a63). I reply within 24 hours, and I will tell you when the answer is that a portal should not be automated at all.

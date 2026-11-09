@@ -15,7 +15,7 @@
 
       <div class="flex flex-wrap items-center gap-md mt-lg">
         <a
-          href="https://www.upwork.com/freelancers/phanvuong2"
+          href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-upwork"
@@ -60,7 +60,7 @@
           <NuxtLink to="/blog">Blog</NuxtLink>
           <a href="/#contact">Contact</a>
           <a
-            href="https://www.upwork.com/freelancers/phanvuong2"
+            href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
             target="_blank"
             rel="noopener noreferrer"
           >Upwork Profile ↗</a>
@@ -185,6 +185,7 @@
 }
 
 .foot__disciplines {
-  color: var(--color-neutral);
+  /* neutral was 3.85:1 on ink-deep; on-deep-mute is the AA floor on dark (8.4:1) */
+  color: var(--color-on-deep-mute);
 }
 </style>

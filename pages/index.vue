@@ -29,7 +29,7 @@ useHead({
             jobTitle: 'Freelance Web Scraping Developer | Full-Stack Engineer',
             description: 'Freelance web scraping developer offering a custom web scraping service: website scraping, web data extraction, anti-bot bypass, API integration, voice AI with LiveKit, and scalable automation systems.',
             sameAs: [
-              'https://www.upwork.com/freelancers/phanvuong2',
+              'https://www.upwork.com/freelancers/~01b9886dc1296b3a63',
               'https://github.com/hienvuong2810',
             ],
             knowsAbout: [
@@ -236,7 +236,7 @@ useHead({
             name: 'How do I hire you for a web scraping or automation project?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/phanvuong2, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated Plus freelancer with 7,200+ hours and a 5.0 rating on Upwork.',
+              text: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/~01b9886dc1296b3a63, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated Plus freelancer with 7,200+ hours and a 5.0 rating on Upwork.',
             },
           },
         ],

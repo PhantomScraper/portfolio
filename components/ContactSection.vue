@@ -20,7 +20,7 @@
         <!-- Direct channel -->
         <div class="contact__aside">
           <a
-            href="https://www.upwork.com/freelancers/phanvuong2"
+            href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
             target="_blank"
             rel="noopener noreferrer"
             class="channel"
@@ -28,7 +28,7 @@
             <IconUpwork class="channel__icon" />
             <span>
               <span class="channel__title">Hire on Upwork</span>
-              <span class="channel__sub">upwork.com/freelancers/phanvuong2</span>
+              <span class="channel__sub">upwork.com/freelancers/~01b9886dc1296b3a63</span>
             </span>
             <span class="channel__arrow" aria-hidden="true">↗</span>
           </a>

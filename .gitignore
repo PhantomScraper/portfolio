@@ -25,3 +25,4 @@ scripts/discovered-boards.txt
 scripts/.yc-cache.json
 scripts/.yc-seed.json
 healthcare-leads.csv
+prospects-*.csv

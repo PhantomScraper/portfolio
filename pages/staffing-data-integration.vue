@@ -23,7 +23,7 @@
           <div class="hero__actions">
             <a href="#contact" class="btn btn-primary">Describe your sync in 2 minutes</a>
             <a
-              href="https://www.upwork.com/freelancers/phanvuong2"
+              href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-outline"
@@ -126,6 +126,13 @@
           user credentials violate your Supplier Access Agreement, and that its official supplier
           API is the only compliant path. A cheap integration that gets your agency flagged in a
           client's security audit is not a saving.
+        </p>
+        <p class="section-head__lede" style="margin-top: 1rem">
+          The same decision applies to any system you need to connect.
+          <NuxtLink to="/blog/sync-data-between-platforms">How to sync data between two platforms, even with no API</NuxtLink>
+          covers every option, and
+          <NuxtLink to="/blog/ats-vms-submittal-integration-gap">why VMS submittals are still manual</NuxtLink>
+          goes deep on the staffing case.
         </p>
       </div>
     </section>
@@ -601,7 +608,7 @@ useHead({
   color: var(--color-ink);
 }
 
-thead .spec__mine {
+.spec thead .spec__mine {
   color: var(--color-accent);
 }
 

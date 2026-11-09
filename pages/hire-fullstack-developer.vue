@@ -23,7 +23,7 @@
 
           <div class="hero__actions">
             <a
-              href="https://www.upwork.com/freelancers/phanvuong2"
+              href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-upwork"
@@ -424,7 +424,7 @@ useHead({
             jobTitle: 'Freelance Full-Stack Developer | Web Scraping and Automation Engineer',
             description: 'Top Rated Plus freelance developer on Upwork with a 5.0 rating and 7,200+ hours: full-stack development, web scraping, automation, and API integration.',
             sameAs: [
-              'https://www.upwork.com/freelancers/phanvuong2',
+              'https://www.upwork.com/freelancers/~01b9886dc1296b3a63',
               'https://github.com/hienvuong2810',
             ],
             knowsAbout: [
@@ -822,7 +822,7 @@ useHead({
   color: var(--color-ink);
 }
 
-thead .spec__mine {
+.spec thead .spec__mine {
   color: var(--color-accent);
 }
 

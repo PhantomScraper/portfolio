@@ -23,7 +23,7 @@
           <div class="hero__actions">
             <a href="#contact" class="btn btn-primary">Get a free quote in 24 hours</a>
             <a
-              href="https://www.upwork.com/freelancers/phanvuong2"
+              href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-outline"
@@ -552,7 +552,7 @@ useHead({
   color: var(--color-ink);
 }
 
-thead .spec__mine {
+.spec thead .spec__mine {
   color: var(--color-accent);
 }
 

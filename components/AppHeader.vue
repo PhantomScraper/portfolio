@@ -73,7 +73,7 @@
         <!-- Right: CTA -->
         <div class="flex items-center gap-2xs shrink-0">
           <a
-            href="https://www.upwork.com/freelancers/phanvuong2"
+            href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-upwork hidden sm:inline-flex"
@@ -111,7 +111,7 @@
           {{ link.label }}
         </NuxtLink>
         <a
-          href="https://www.upwork.com/freelancers/phanvuong2"
+          href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-upwork w-full mt-sm sm:hidden"

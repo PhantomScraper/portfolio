@@ -9,6 +9,12 @@
       "autoPort": true
     },
     {
+      "name": "nuxt-prod",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "source ~/.nvm/nvm.sh && nvm use 20 && PORT=3100 node .output/server/index.mjs"],
+      "port": 3100
+    },
+    {
       "name": "static",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", "."],

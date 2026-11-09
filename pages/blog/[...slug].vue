@@ -52,7 +52,7 @@
         </p>
         <div class="endcta__actions">
           <a
-            href="https://www.upwork.com/freelancers/phanvuong2"
+            href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-upwork"
@@ -138,7 +138,7 @@ useHead(() => ({
               url: siteUrl,
               jobTitle: 'Web Scraping & Automation Engineer',
               sameAs: [
-                'https://www.upwork.com/freelancers/phanvuong2',
+                'https://www.upwork.com/freelancers/~01b9886dc1296b3a63',
                 'https://github.com/hienvuong2810',
               ],
             },

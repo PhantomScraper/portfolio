@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     question: 'How do I hire you for a web scraping or automation project?',
-    answer: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/phanvuong2, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated Plus freelancer with 7,200+ hours and a 5.0 rating on Upwork.',
+    answer: 'You can hire me directly through my Upwork profile at upwork.com/freelancers/~01b9886dc1296b3a63, or send a message via the contact form on this page. I respond within 24 hours with a detailed project scope and quote. I am a Top Rated Plus freelancer with 7,200+ hours and a 5.0 rating on Upwork.',
   },
 ]
 </script>

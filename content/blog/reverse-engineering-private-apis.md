@@ -108,4 +108,4 @@ Direct API access is not always possible. Some sites render everything server si
 
 ## Need an API integration or reverse engineering done?
 
-I find and integrate private and undocumented APIs to build fast, clean data pipelines, and fall back to [custom web scraping](/web-scraping-service) when an API is not available. If you have a project, [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I find and integrate private and undocumented APIs to build fast, clean data pipelines, and fall back to [custom web scraping](/web-scraping-service) when an API is not available. The same technique is often the cleanest way to [sync data between two platforms when one has no public API](/blog/sync-data-between-platforms). If you have a project, [hire me on Upwork](https://www.upwork.com/freelancers/~01b9886dc1296b3a63) or reach out through the [contact form](/#contact). I respond within 24 hours.

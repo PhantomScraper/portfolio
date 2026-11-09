@@ -82,7 +82,7 @@ No-code tools cover most of the orchestration, but you will hit limits. Add cust
 - **Real scraping logic** with browser automation, which belongs in a dedicated service, not a no-code node.
 - **Stateful comparisons** across runs that need a real database rather than a spreadsheet.
 
-The right balance is no-code for orchestration and notifications, real code for the scraping and any heavy logic.
+The right balance is no-code for orchestration and notifications, real code for the scraping and any heavy logic. The same split applies when the goal is keeping two business systems consistent rather than feeding them scraped data; [how to sync data between two platforms](/blog/sync-data-between-platforms) covers when each option makes sense.
 
 ## Why not do it all in Zapier
 
@@ -90,4 +90,4 @@ It is tempting to use Zapier's built in web request actions to scrape directly. 
 
 ## Need a scraping and automation pipeline built?
 
-I build scrapers that plug into n8n, Make, Zapier, or a custom backend, so your data flows into your business systems automatically and runs on a schedule. If you want an end to end pipeline built as a [done-for-you scraping service](/web-scraping-service), [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or reach out through the [contact form](/#contact). I respond within 24 hours.
+I build scrapers that plug into n8n, Make, Zapier, or a custom backend, so your data flows into your business systems automatically and runs on a schedule. If you want an end to end pipeline built as a [done-for-you scraping service](/web-scraping-service), [hire me on Upwork](https://www.upwork.com/freelancers/~01b9886dc1296b3a63) or reach out through the [contact form](/#contact). I respond within 24 hours.

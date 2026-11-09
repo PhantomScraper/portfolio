@@ -60,7 +60,7 @@ The practical consequence: evaluate the actual work, not the brand. Ask any prov
 1. **A sample from your target sites**, not a portfolio screenshot. This is the single strongest signal. Serious providers offer it cheap or free.
 2. **Specifics about protection.** Ask how they would handle Cloudflare or PerimeterX on your target. Vague answers ("we have proprietary technology") are a red flag; concrete ones (fingerprint consistency, residential proxy rotation, session management) mean the person has done it. For reference, this is what a real answer looks like: [how DataDome and PerimeterX are actually bypassed](/blog/bypass-datadome-perimeterx).
 3. **A data quality definition.** Deduplication, field validation, completeness rate, and what happens with failed pages.
-4. **Verifiable history.** This is where marketplaces quietly favor freelancers: an Upwork profile shows every past contract, rating, and hours worked, publicly and unfakeably. Agency case studies are marketing copy.
+4. **Verifiable history.** This is where marketplaces quietly favor freelancers: an Upwork profile shows every past contract, rating, and hours worked, publicly and unfakeably. Agency case studies are marketing copy. My guide to [hiring the best web scraping freelancer on Upwork](/blog/best-web-scraping-freelancer-upwork) shows which of those signals matter and how Upwork compares with Fiverr, Toptal, and Guru.
 
 ## Risk: escrow closed the gap
 
@@ -106,6 +106,6 @@ Choose a **self-serve tool** when:
 
 ## Where I fit in
 
-I run a one-person [custom web scraping service](/web-scraping-service): scoping, a free sample from your target sites, fixed-price quotes within 24 hours, and optional managed pipelines with monitoring and maintenance. My track record is public on [Upwork](https://www.upwork.com/freelancers/phanvuong2): Top Rated Plus, 5.0 rating, 7,200+ hours across 50+ projects, protected by escrow. Rates, process, and a vetting checklist are on the [hire a web scraping developer](/hire-web-scraping-developer) page.
+I run a one-person [custom web scraping service](/web-scraping-service): scoping, a free sample from your target sites, fixed-price quotes within 24 hours, and optional managed pipelines with monitoring and maintenance. My track record is public on [Upwork](https://www.upwork.com/freelancers/~01b9886dc1296b3a63): Top Rated Plus, 5.0 rating, 7,200+ hours across 50+ projects, protected by escrow. Rates, process, and a vetting checklist are on the [hire a web scraping developer](/hire-web-scraping-developer) page.
 
 If you are weighing a web scraping company against hiring a developer directly, send me the sites and fields you need through the [contact form](/#contact). You will get a scope, a price, and a sample fast enough to make the comparison with any agency quote an easy one.

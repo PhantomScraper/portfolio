@@ -70,7 +70,7 @@ Hiring that engineer directly changes the math:
 - **Speed:** a competent freelancer shows you a real data sample in 2 to 3 days. Agencies commonly take 2 to 4 weeks to first data because onboarding calls and sprint boundaries eat your calendar.
 - **Accountability:** on a platform like Upwork, payment sits in escrow and the freelancer's rating is public and unfakeable. That is stronger protection than most agency case studies.
 
-The freelancer model has real limits: one person cannot offer 24/7 coverage, compliance certifications, or a bench of substitutes. If you need those, pick a company from the list above. I break the full decision down in [web scraping company vs freelance developer](/blog/web-scraping-company-vs-freelancer).
+The freelancer model has real limits: one person cannot offer 24/7 coverage, compliance certifications, or a bench of substitutes. If you need those, pick a company from the list above. I break the full decision down in [web scraping company vs freelance developer](/blog/web-scraping-company-vs-freelancer), and if you go the freelancer route, [how to hire the best web scraping freelancer on Upwork](/blog/best-web-scraping-freelancer-upwork) covers where to look and how to vet.
 
 For most price monitoring, lead generation, market research, and data pipeline projects, though, a senior freelancer is the best value on this page. That is the service I run: I am a Top Rated Plus freelance scraping developer on Upwork with a 5.0 rating across 7,200+ hours and 50+ projects, and my [hire a web scraping developer](/hire-web-scraping-developer) page lays out rates, process, and a vetting checklist you can use on any candidate, including me.
 
@@ -92,4 +92,4 @@ For most price monitoring, lead generation, market research, and data pipeline p
 
 ---
 
-*I build custom scrapers and data pipelines as a freelance developer, from single-site extractions to distributed crawlers doing [10 million pages a day](/blog/scaling-amazon-scraper-10-million-products-per-day). If you are comparing web scraping companies for a project, send me the target sites and I will quote it fixed-price within 24 hours: [hire me on Upwork](https://www.upwork.com/freelancers/phanvuong2) or use the [contact form](/#contact).*
+*I build custom scrapers and data pipelines as a freelance developer, from single-site extractions to distributed crawlers doing [10 million pages a day](/blog/scaling-amazon-scraper-10-million-products-per-day). If you are comparing web scraping companies for a project, send me the target sites and I will quote it fixed-price within 24 hours: [hire me on Upwork](https://www.upwork.com/freelancers/~01b9886dc1296b3a63) or use the [contact form](/#contact).*

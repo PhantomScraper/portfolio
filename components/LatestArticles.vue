@@ -16,7 +16,7 @@
         <li v-for="post in posts" :key="post.path">
           <NuxtLink :to="post.path" class="entry">
             <div class="entry__meta">
-              <time :datetime="post.date">{{ formatDate(post.date) }}</time>
+              <time :datetime="post.updated ?? post.date">{{ post.updated && post.updated !== post.date ? 'Updated ' : '' }}{{ formatDate(post.updated ?? post.date) }}</time>
               <span v-if="post.readingTime">{{ post.readingTime }}</span>
             </div>
             <div>
@@ -38,13 +38,17 @@
 </template>
 
 <script setup lang="ts">
-const { data: posts } = await useAsyncData('home-latest-posts', () =>
-  queryCollection('blog')
+// Newest by last activity (published or updated), so refreshed guides resurface
+// on the homepage. Only the listed fields, not 18 article bodies, reach the payload.
+const { data: posts } = await useAsyncData('home-latest-posts', async () => {
+  const all = await queryCollection('blog')
     .where('draft', '=', false)
-    .order('date', 'DESC')
-    .limit(3)
-    .all(),
-)
+    .select('path', 'title', 'description', 'date', 'updated', 'readingTime')
+    .all()
+  return all
+    .sort((a, b) => (b.updated ?? b.date).localeCompare(a.updated ?? a.date))
+    .slice(0, 3)
+})
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString('en-US', {

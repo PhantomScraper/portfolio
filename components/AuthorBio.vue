@@ -17,7 +17,7 @@
       </p>
       <nav class="bio__links" aria-label="Author links">
         <a
-          href="https://www.upwork.com/freelancers/phanvuong2"
+          href="https://www.upwork.com/freelancers/~01b9886dc1296b3a63"
           target="_blank"
           rel="noopener noreferrer"
         >Hire on Upwork ↗</a>

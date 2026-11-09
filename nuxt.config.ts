@@ -48,15 +48,14 @@ export default defineNuxtConfig({
         { rel: 'dns-prefetch', href: 'https://api.emailjs.com' },
         { rel: 'dns-prefetch', href: 'https://www.upwork.com' },
         { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' },
-        // Preconnect for fonts (LCP improvement)
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        // Hallmark Cobalt stack: Space Grotesk display + Geist body +
-        // JetBrains Mono outlier. Six weights total, down from eight.
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap',
-        },
+        // Hallmark Cobalt stack (Space Grotesk display + Geist body + JetBrains
+        // Mono outlier) is self-hosted, see @font-face in assets/css/main.css.
+        // Preload all three latin files: every page's first screen uses them,
+        // and an unpreloaded font starts at VeryHigh priority, which Lighthouse
+        // then counts as render-blocking (measured: FCP 0.15-0.37s worse).
+        { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/geist-latin.woff2', crossorigin: '' },
+        { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/space-grotesk-latin.woff2', crossorigin: '' },
+        { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/jetbrains-mono-latin.woff2', crossorigin: '' },
       ],
     },
   },
