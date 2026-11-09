@@ -77,7 +77,7 @@
           <p class="eyebrow">Quick answer</p>
           <div>
             <h2 class="section-head__title">Hiring a Full Stack Developer in 2026</h2>
-            <p class="dateline">Published August 31, 2026</p>
+            <p class="dateline">Updated November 9, 2026 · First published August 31, 2026</p>
           </div>
         </div>
 
@@ -279,6 +279,10 @@ const skills = [
     text: 'A working first version in weeks: authentication, roles, the core workflow, and a deploy pipeline. Scope-first process so the v1 is small enough to ship and solid enough to grow.',
   },
   {
+    title: 'Business websites and landing pages',
+    text: 'Fast, SEO-ready sites on Nuxt with server rendering, structured data, and an llms.txt for AI assistants. This site is the reference: mobile Lighthouse performance in the mid-to-high 90s and 100 for accessibility, best practices, and SEO.',
+  },
+  {
     title: 'Dashboards and admin panels',
     text: 'Analytics and operations UIs on top of your database, third-party APIs, or scraped data: charts, filters, search, exports, and role-based access.',
   },
@@ -390,18 +394,26 @@ const faqs = [
     answer: 'Yes. Recent work includes LLM document parsing pipelines, retrieval and search over internal data, chat interfaces on OpenAI and Claude APIs, and real-time voice agents built on LiveKit. I integrate AI as a feature with error handling and cost controls, not as a demo.',
   },
   {
+    question: 'Can you build a business website or landing page, not just an app?',
+    answer: 'Yes. I build fast, SEO-ready websites on Nuxt with server rendering, structured data, and an llms.txt so AI assistants can read them correctly. This site is the example: mobile Lighthouse performance in the mid-to-high 90s and 100 for accessibility, best practices, and SEO. Websites are quoted as a fixed price after a short brief.',
+  },
+  {
+    question: 'Do you work in my time zone?',
+    answer: 'My working hours are 12:00 to 02:00 Vietnam time (UTC+7). That covers the full European business day and the US East Coast morning, so live calls and same-day answers work for clients in both regions.',
+  },
+  {
     question: 'What do you need from me to give a quote?',
     answer: 'Three things: what the app should do, who will use it, and the two or three features it cannot launch without. From that I return a fixed scope, price, and timeline within 24 hours. You do not need a specification document; a plain-language description is enough.',
   },
 ]
 
 useSeoMeta({
-  title: 'Hire a Full Stack Developer | Vue, Nuxt, FastAPI, Node',
-  description: 'Hire a freelance full stack developer for dashboards, SaaS apps, and internal tools. Vue, Nuxt, React, FastAPI, Node.js. Fixed quote in 24 hours.',
+  title: 'Hire a Full Stack Web Developer | Vue, Nuxt, FastAPI',
+  description: 'Hire a freelance full stack developer for websites, dashboards, SaaS apps, and internal tools. Vue, Nuxt, React, FastAPI, Node.js. Fixed quote in 24 hours.',
   ogType: 'website',
   ogUrl: pageUrl,
-  ogTitle: 'Hire a Full Stack Developer | Vue, Nuxt, FastAPI, Node',
-  ogDescription: 'Hire a freelance full stack developer for dashboards, SaaS apps, and internal tools. Vue, Nuxt, React, FastAPI, Node.js. Fixed quote in 24 hours.',
+  ogTitle: 'Hire a Full Stack Web Developer | Vue, Nuxt, FastAPI',
+  ogDescription: 'Hire a freelance full stack developer for websites, dashboards, SaaS apps, and internal tools. Vue, Nuxt, React, FastAPI, Node.js. Fixed quote in 24 hours.',
   ogImage: `${siteUrl}/og/pages/hire-fullstack-developer.png`,
   twitterCard: 'summary_large_image',
   twitterImage: `${siteUrl}/og/pages/hire-fullstack-developer.png`,
@@ -468,8 +480,8 @@ useHead({
             '@type': 'WebPage',
             '@id': `${pageUrl}#webpage`,
             url: pageUrl,
-            name: 'Hire a Full Stack Developer | Vue, Nuxt, FastAPI, Node',
-            description: 'Hire a freelance full stack developer for dashboards, SaaS apps, and internal tools. Vue, Nuxt, React, FastAPI, Node.js. Fixed quote in 24 hours.',
+            name: 'Hire a Full Stack Web Developer | Vue, Nuxt, FastAPI',
+            description: 'Hire a freelance full stack developer for websites, dashboards, SaaS apps, and internal tools. Vue, Nuxt, React, FastAPI, Node.js. Fixed quote in 24 hours.',
             isPartOf: { '@id': `${siteUrl}/#website` },
             about: { '@id': `${siteUrl}/#person` },
             inLanguage: 'en-US',

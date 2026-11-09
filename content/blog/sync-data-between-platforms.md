@@ -4,7 +4,7 @@ description: "Four ways to connect two platforms that do not integrate: native c
 date: "2026-08-31"
 updated: "2026-11-09"
 tags: ["automation", "data sync", "integration", "etl", "n8n", "api integration"]
-readingTime: "14 min read"
+readingTime: "15 min read"
 takeaways:
   - "There are four ways to connect two platforms: native integration, an iPaaS like n8n or Make, custom API sync, and browser automation when one side has no API at all."
   - "No API rarely means no exit. A scheduled export, an emailed report, an SFTP drop, a read-only database, or the private API behind the web app usually exists; find it before reaching for browser automation."
@@ -56,9 +56,27 @@ They fail you in two ways: the integration exists but does not map the fields yo
 
 Integration platforms give you prebuilt connectors for thousands of SaaS tools and a visual builder for the logic between them. For standard tools and modest volume, this rung solves most connection problems in days, not weeks.
 
-The trap is pricing. Zapier and Make charge per task or operation, which is fine at 500 syncs a month and painful at 50,000. **Self-hosted n8n removes per-task pricing entirely**: you pay for a small server and own the instance. I cover the trade-offs in detail in my [n8n vs Make vs Zapier guide](/blog/no-code-scraping-automation-n8n), and migrating an expensive Zapier setup to self-hosted n8n is one of my most common fixed-price projects.
+The trap is pricing. Zapier and Make charge per task or operation, which is fine at 500 syncs a month and painful at 50,000. **Self-hosted n8n removes per-task pricing entirely**: you pay for a small server and own the instance. Migrating an expensive Zapier setup to self-hosted n8n is one of my most common fixed-price projects.
+
+| Tool | Hosting | Strength | Best for |
+| --- | --- | --- | --- |
+| n8n | Self-host or cloud | Code-friendly, no per-task fees when self-hosted | Technical teams, data-heavy flows |
+| Make | Cloud | Visual and powerful, good value | Mid-complexity automations |
+| Zapier | Cloud | Largest app catalog, easiest to start | Simple flows across many SaaS tools |
 
 An iPaaS stops being the right tool when your logic outgrows the visual builder: multi-step conflict rules, per-field merge decisions, or throughput that needs real concurrency.
+
+**When one side is a website, not an app.** iPaaS tools are weakest at the extraction itself: their built-in web request actions handle simple static pages, not JavaScript rendering, proxies, or CAPTCHAs. The robust pattern splits the job. A real scraper does the extraction and posts its results to a webhook, and the iPaaS moves the data where it needs to go:
+
+```python
+import requests
+
+def send_to_automation(items: list[dict]):
+    requests.post("https://your-n8n-instance.com/webhook/scrape-results",
+                  json={"items": items}, timeout=10)
+```
+
+A daily price-drop alert is the classic example: a schedule trigger calls the scraper, a code node compares today's prices with yesterday's, and only the drops go on to Slack and a Google Sheet.
 
 ### 3. Custom API sync
 
@@ -132,7 +150,7 @@ If a vendor or freelancer quotes two-way sync without asking about conflicts, de
 | Missed events | Possible, delivery is not guaranteed | Self-healing on next poll |
 | Setup | Needs a public endpoint | Just a scheduler |
 
-The production answer is both: webhooks for freshness, plus a reconciliation poll every few hours that compares record counts and catches anything the webhooks dropped. Running that scheduler reliably is its own topic; my guide to [running scheduled jobs in production](/blog/scheduling-monitoring-scrapers-production) covers the monitoring side.
+The production answer is both: webhooks for freshness, plus a reconciliation poll every few hours that compares record counts and catches anything the webhooks dropped. Running that scheduler reliably is its own topic; the [production monitoring section of my 10-million-pages case study](/blog/scaling-amazon-scraper-10-million-products-per-day#running-it-in-production-retries-monitoring-and-scheduling) covers the alerting side.
 
 ## When you need ETL instead of sync
 

@@ -34,6 +34,17 @@ export default defineNuxtConfig({
     },
   },
 
+  // Posts Google declined to index, merged into stronger articles on
+  // 2026-11-09. Permanent redirects keep old links and signals.
+  routeRules: {
+    '/blog/web-scraping-company-vs-freelancer': { redirect: { to: '/blog/best-web-scraping-freelancer-upwork', statusCode: 301 } },
+    '/blog/scrape-amazon-product-data': { redirect: { to: '/blog/scaling-amazon-scraper-10-million-products-per-day', statusCode: 301 } },
+    '/blog/scrapy-large-scale-scraping': { redirect: { to: '/blog/scaling-amazon-scraper-10-million-products-per-day', statusCode: 301 } },
+    '/blog/scheduling-monitoring-scrapers-production': { redirect: { to: '/blog/scaling-amazon-scraper-10-million-products-per-day', statusCode: 301 } },
+    '/blog/solving-captchas-2captcha-capsolver': { redirect: { to: '/blog/bypass-cloudflare-web-scraping', statusCode: 301 } },
+    '/blog/no-code-scraping-automation-n8n': { redirect: { to: '/blog/sync-data-between-platforms', statusCode: 301 } },
+  },
+
   css: ['~/assets/css/main.css'],
 
   app: {

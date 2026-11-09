@@ -156,7 +156,7 @@ Bind each session to **one** proxy IP for its whole life. Rotating the IP mid-se
 
 ## When the CAPTCHA appears
 
-DataDome serves a puzzle slider; PerimeterX serves a Press and Hold button. Both 2Captcha and CapSolver support these, typically at $1 to $3 per 1,000 solves, and both need the site URL plus the challenge parameters pulled from the block page. The [CAPTCHA solver guide](/blog/solving-captchas-2captcha-capsolver) covers the integration mechanics.
+DataDome serves a puzzle slider; PerimeterX serves a Press and Hold button. Both 2Captcha and CapSolver support these, typically at $1 to $3 per 1,000 solves, and both need the site URL plus the challenge parameters pulled from the block page. The [CAPTCHA solving section of my Cloudflare guide](/blog/bypass-cloudflare-web-scraping#solving-turnstile-and-other-captchas) covers the integration mechanics.
 
 The strategic point matters more than the integration: **a CAPTCHA is a symptom, not the problem.** If you are solving on most requests, something upstream is wrong. Solving every challenge is slower and more expensive than fixing the fingerprint, proxy quality, or pacing that triggered it. Track your CAPTCHA rate as a health metric; if it climbs above roughly 10% of requests, stop and debug the cause rather than scaling up solver spend.
 

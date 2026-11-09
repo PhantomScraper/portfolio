@@ -64,7 +64,7 @@ These services parse far more than organic links: featured snippets, the People 
 If you have very high volume where per query fees become prohibitive, or you need data the APIs do not expose, you build your own. This means combining several techniques from my other guides:
 
 - **Residential proxies** with aggressive rotation, since Google rate limits hard. See my [rotating proxies guide](/blog/rotating-proxies-for-web-scraping).
-- **CAPTCHA solving** for the "unusual traffic" page, covered in my guide on [solving CAPTCHAs](/blog/solving-captchas-2captcha-capsolver).
+- **CAPTCHA solving** for the "unusual traffic" page, covered in my guide on [solving CAPTCHAs](/blog/bypass-cloudflare-web-scraping#solving-turnstile-and-other-captchas).
 - **Resilient parsing** with fallback selectors, because the markup changes often.
 
 ```python

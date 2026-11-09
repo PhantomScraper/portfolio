@@ -214,7 +214,7 @@
 
         <p class="footnote">
           Full breakdown in
-          <NuxtLink to="/blog/web-scraping-company-vs-freelancer">Web Scraping Company vs Freelance Developer</NuxtLink>.
+          <NuxtLink to="/blog/best-web-scraping-freelancer-upwork#freelancer-web-scraping-company-or-a-self-serve-tool">Freelancer, Web Scraping Company, or a Self-Serve Tool?</NuxtLink>.
         </p>
       </div>
     </section>
@@ -323,8 +323,8 @@ const stacks = [
   {
     title: 'Hire a Scrapy developer',
     text: 'Production Scrapy projects: spiders, item pipelines, middlewares, AutoThrottle tuning, distributed crawls with scrapy-redis, and deployment to Scrapyd or a container scheduler. Used on crawls in the millions of pages per day range.',
-    link: '/blog/scrapy-large-scale-scraping',
-    linkText: 'Scrapy at scale guide',
+    link: '/blog/scaling-amazon-scraper-10-million-products-per-day#the-scrapy-layer-in-code',
+    linkText: 'Scrapy at 10 million pages a day',
   },
   {
     title: 'Hire a Playwright or Puppeteer developer',

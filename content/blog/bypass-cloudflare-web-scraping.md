@@ -1,16 +1,17 @@
 ---
 title: "How to Scrape Cloudflare-Protected Websites (Python, 2026)"
-description: "Whether cloudscraper still works, which Python stack gets through Cloudflare in 2026, and how the paid scraping APIs compare on price and success rate."
+description: "Which Python stack gets through Cloudflare in 2026, whether cloudscraper still works, solving Turnstile and CAPTCHAs, and how scraping APIs compare."
 date: "2026-06-10"
-updated: "2026-08-28"
-tags: ["web scraping", "cloudflare", "anti-bot", "playwright", "python", "cloudscraper"]
-readingTime: "12 min read"
+updated: "2026-11-09"
+tags: ["web scraping", "cloudflare", "anti-bot", "playwright", "python", "cloudscraper", "captcha", "turnstile"]
+readingTime: "14 min read"
 takeaways:
   - "Cloudflare scores you across TLS, HTTP/2, browser fingerprint, behavior, and IP reputation."
   - "cloudscraper and the original cloudflare-scrape are effectively dead against modern Bot Management."
   - "Plain HTTP clients fail at the TLS layer; curl_cffi impersonates a real browser and handles low security settings."
   - "Managed challenges need a patched stealth browser (Camoufox, nodriver, patchright), not a stock headless launch."
   - "Residential proxies matched to the site's country are required, and a 200 response can still be a block page."
+  - "CAPTCHA solvers such as CapSolver and 2Captcha return a token you inject; solve only when actually blocked and reuse the session afterwards."
   - "Scraping APIs cost roughly $1 to $5 per 1,000 successful requests and are cheaper than DIY below a few million pages a month."
 faqs:
   - question: "Does Cloudflare prevent web scraping?"
@@ -21,6 +22,8 @@ faqs:
     answer: "There is no single library. For sites on low security settings, curl_cffi with impersonate=\"chrome131\" is the fastest and cheapest option at roughly 20 to 50 pages per second. For managed challenges and Turnstile you need a patched browser such as Camoufox, nodriver, or patchright, paired with residential proxies. Most production systems use curl_cffi first and fall back to the browser only when a block is detected."
   - question: "What is the best scraping API for Cloudflare-protected sites?"
     answer: "Bright Data Web Unlocker and Scrapfly have the highest success rates on hard Cloudflare targets, ZenRows and ScraperAPI are cheaper for medium difficulty, and ScrapingBee sits in between with the simplest API. Expect roughly $1 to $5 per 1,000 successful requests. Below about two million pages a month an API is usually cheaper than building and maintaining the equivalent stack yourself."
+  - question: "Is CapSolver or 2Captcha better for Cloudflare Turnstile?"
+    answer: "CapSolver is usually the better first choice for Turnstile and other token challenges because it is faster and cheaper at volume; 2Captcha is a solid fallback with broader coverage of unusual image puzzles. Both return a token you inject into the page. Reach for either only after a stealth browser fails to pass the challenge passively, and reuse the resulting session so you are not paying for a solve on every request."
   - question: "Is it legal to scrape a Cloudflare-protected website?"
     answer: "Cloudflare is a technical control, not a legal one, and its presence does not by itself make scraping illegal. What matters is the same set of questions as any other site: whether the data is public, what the terms of service say, whether personal data is involved under GDPR or CCPA, and whether your request volume harms the service. Get legal advice for anything involving personal data, paywalled content, or a site you have an account on."
   - question: "How much does it cost to hire someone to scrape a Cloudflare-protected site?"
@@ -152,14 +155,55 @@ On Cloudflare-protected sites, datacenter IPs start with a trust deficit you usu
 
 See my detailed guide on [integrating rotating proxies](/blog/rotating-proxies-for-web-scraping) and the [residential proxy provider comparison](/blog/residential-proxy-services-compared) for rotation and retry logic.
 
-## Handling Turnstile challenges
+## Solving Turnstile and other CAPTCHAs
 
-When a Turnstile or interactive challenge appears, you have two paths:
+When a Turnstile widget or another CAPTCHA appears, you have two paths:
 
-1. **Let the stealth browser solve it passively.** With a clean fingerprint and good IP, Turnstile often passes without interaction.
-2. **Use a solver service** (2Captcha, CapSolver) for the token when passive solving fails. The solver returns a token you inject into the form submission.
+1. **Let the stealth browser pass it passively.** With a clean fingerprint and a good IP, Turnstile often clears without any interaction.
+2. **Use a solving service** when passive solving fails.
 
-In practice, a well-configured stealth browser passes most non-interactive challenges on its own, and the solver is the fallback for the hardest cases. More detail in the guide on [solving CAPTCHAs with 2Captcha and CapSolver](/blog/solving-captchas-2captcha-capsolver).
+A solving service does not solve the puzzle in your browser. You send the challenge's site key and the page URL, poll until the service returns a token, and inject that token exactly where the page expects it. The token, not the image, is what the site validates, which is why this also works on invisible challenges such as reCAPTCHA v3.
+
+| Factor | CapSolver | 2Captcha |
+| --- | --- | --- |
+| Speed | AI powered, faster | Human powered, slower |
+| Cloudflare Turnstile | Strong | Supported |
+| reCAPTCHA v2 and v3 | Reliable, strong on v3 | Reliable, supports v3 |
+| Pricing | Per solve, cheaper at volume | Per solve |
+| Best for | High-volume token tasks | Odd image puzzles, broad coverage |
+
+Rule of thumb: CapSolver first for token challenges, 2Captcha as the fallback. For Turnstile with CapSolver, the flow is create a task, then poll for the token:
+
+```python
+import time
+import requests
+
+def solve_turnstile(site_key: str, page_url: str, api_key: str) -> str:
+    task = requests.post("https://api.capsolver.com/createTask", json={
+        "clientKey": api_key,
+        "task": {"type": "AntiTurnstileTaskProxyLess",
+                 "websiteURL": page_url, "websiteKey": site_key},
+    }).json()
+    for _ in range(40):
+        time.sleep(3)
+        res = requests.post("https://api.capsolver.com/getTaskResult", json={
+            "clientKey": api_key, "taskId": task["taskId"],
+        }).json()
+        if res["status"] == "ready":
+            return res["solution"]["token"]
+    raise TimeoutError("Turnstile not solved in time")
+```
+
+For reCAPTCHA v2 the token goes into the hidden `#g-recaptcha-response` textarea before you submit the form; for v3 you also pass the site's `action` and a `min_score` to the solver so the token matches what the site expects.
+
+Solving is the fallback, not the strategy, because every solve costs money:
+
+- **Reduce triggers first.** A clean residential IP and a consistent fingerprint mean fewer challenges in the first place.
+- **Reuse the session.** Once a challenge passes, keep the cookies, including `cf_clearance`, instead of solving again on every request.
+- **Solve only when blocked**, never pre-emptively on every page.
+- **Cap the budget.** Track solves per run and stop the job if the count spikes; that usually means the fingerprint or a proxy went bad.
+
+Some sites layer behavioral analysis on top, and a valid token from a session that never scrolled can still be rejected. There the solver is one piece of the full stealth stack, not the answer on its own.
 
 ## Validate the response, not just the status
 

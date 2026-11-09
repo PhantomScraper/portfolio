@@ -98,7 +98,7 @@ Some sites sign each request with a token computed in obfuscated JavaScript. You
 
 ## Respecting limits and staying reliable
 
-A private API is still subject to rate limiting and can still ban you. Apply the same discipline as any scraper: rotate proxies if needed, throttle your rate, and add retries with backoff. See my guides on [rotating proxies](/blog/rotating-proxies-for-web-scraping) and [running scrapers in production](/blog/scheduling-monitoring-scrapers-production).
+A private API is still subject to rate limiting and can still ban you. Apply the same discipline as any scraper: rotate proxies if needed, throttle your rate, and add retries with backoff. See my guides on [rotating proxies](/blog/rotating-proxies-for-web-scraping) and [running scrapers in production](/blog/scaling-amazon-scraper-10-million-products-per-day#running-it-in-production-retries-monitoring-and-scheduling).
 
 Watch for the API changing. Internal APIs are more stable than markup but not permanent. A version bump in the path or a new required header will break your client, so monitor your success rate.
 

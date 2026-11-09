@@ -310,13 +310,13 @@ const tools = [
   {
     title: 'Hire an n8n developer',
     text: 'Production n8n on your own server: complex branching, sub-workflows, custom code nodes, credentials management, and version-controlled exports. You own the instance, so there is no per-task pricing creep.',
-    link: '/blog/no-code-scraping-automation-n8n',
-    linkText: 'n8n vs Make vs Zapier guide',
+    link: '/blog/sync-data-between-platforms#_2-ipaas-zapier-make-or-n8n',
+    linkText: 'n8n vs Make vs Zapier compared',
   },
   {
     title: 'Hire a Make or Zapier developer',
     text: 'New scenarios built, or existing ones untangled and documented. When Zapier task pricing outgrows your budget, I migrate the workflows to self-hosted n8n or custom code and cut the monthly bill.',
-    link: '/blog/no-code-scraping-automation-n8n',
+    link: '/blog/sync-data-between-platforms#_2-ipaas-zapier-make-or-n8n',
     linkText: 'When to migrate off Zapier',
   },
   {
@@ -328,7 +328,7 @@ const tools = [
   {
     title: 'Hire a Python scripting developer',
     text: 'Standalone scripts and scheduled jobs: file processing, report generation, data cleanup, and alerts, deployed with cron or a queue and monitored so failures surface immediately.',
-    link: '/blog/scheduling-monitoring-scrapers-production',
+    link: '/blog/scaling-amazon-scraper-10-million-products-per-day#running-it-in-production-retries-monitoring-and-scheduling',
     linkText: 'Running scheduled jobs in production',
   },
   {
